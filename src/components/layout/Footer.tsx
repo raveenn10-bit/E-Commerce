@@ -80,40 +80,37 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto space-y-16">
           {/* ── UPPER SECTION: CONTACT FORM & SILHOUETTE BRANDING (EXACT REFERENCE DESIGN) ── */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center pt-4 border-b border-white/10 pb-14">
-            {/* LEFT: Silhouette Character & Floating Socials (5 cols) */}
-            <div className="lg:col-span-5 flex flex-col justify-center relative space-y-6 text-center lg:text-left">
-              {/* Botanical & Silhouette Art Group */}
-              <div className="relative inline-flex flex-col items-center lg:items-start">
-                <div className="flex items-center gap-3">
-                  <div className="relative w-14 h-14 rounded-full overflow-hidden shadow-luxury bg-white shrink-0 p-1 border-2 border-champagne">
-                    <Image
-                      src="/logo.png"
-                      alt="Sweet Moon Logo"
-                      fill
-                      className="object-contain p-1"
-                    />
-                  </div>
-                  <div>
-                    <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight leading-none">
-                      Sweet <span className="text-champagne">Moon</span>
-                    </h2>
-                    <p className="text-champagne-light text-[11px] tracking-widest uppercase mt-1 font-semibold">
-                      Chocolates &amp; Nuts — Galle
-                    </p>
-                  </div>
+            {/* LEFT: Centered Large Logo, Brand & Floating Socials (5 cols) */}
+            <div className="lg:col-span-5 flex flex-col justify-center relative space-y-6 text-center items-center">
+              {/* Centered Large Logo Above Sweet Moon */}
+              <div className="flex flex-col items-center text-center">
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-luxury bg-white shrink-0 p-1.5 border-2 border-champagne mb-3 hover:scale-105 transition-transform duration-300">
+                  <Image
+                    src="/logo.png"
+                    alt="Sweet Moon Official Logo"
+                    fill
+                    className="object-contain p-1"
+                    priority
+                  />
                 </div>
+                <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight">
+                  Sweet <span className="text-champagne">Moon</span>
+                </h2>
+                <p className="text-champagne-light text-xs tracking-[0.2em] uppercase mt-1 font-bold">
+                  Chocolates &amp; Nuts — Galle
+                </p>
 
-                <p className="text-chocolate-200/80 text-sm leading-relaxed max-w-sm mt-4">
+                <p className="text-chocolate-200/80 text-xs sm:text-sm leading-relaxed max-w-sm mt-3">
                   Galle&apos;s luxury boutique for imported chocolates, Korean spicy noodles, exotic beverages, and bespoke gift hampers.
                 </p>
               </div>
 
               {/* Floating Social Icons */}
-              <div>
-                <span className="text-xs uppercase font-bold tracking-widest text-chocolate-300 block mb-3">
+              <div className="w-full">
+                <span className="text-[11px] uppercase font-bold tracking-widest text-chocolate-300 block mb-3 text-center">
                   Connect With Us
                 </span>
-                <div className="flex items-center justify-center lg:justify-start gap-3 flex-wrap">
+                <div className="flex items-center justify-center gap-3 flex-wrap">
                   {/* Instagram */}
                   <a
                     href="https://instagram.com"

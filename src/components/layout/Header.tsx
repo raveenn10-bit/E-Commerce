@@ -62,9 +62,9 @@ export default function Header() {
             {/* ── Logo ── */}
             <Link
               href="/"
-              className="flex items-center gap-2.5 shrink-0 group"
+              className="flex items-center gap-3 shrink-0 group py-1"
             >
-              <div className="relative w-11 h-11 md:w-12 md:h-12 rounded-full overflow-hidden shadow-luxury group-hover:scale-105 transition-transform bg-white shrink-0 border border-champagne/30">
+              <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden shadow-luxury group-hover:scale-105 transition-transform bg-white shrink-0 border-2 border-champagne p-0.5">
                 <Image
                   src="/logo.png"
                   alt="Sweet Moon Logo"
@@ -74,11 +74,11 @@ export default function Header() {
                 />
               </div>
               <div className="hidden sm:flex flex-col">
-                <span className="font-serif text-xl font-bold text-espresso-950 leading-none tracking-tight">
+                <span className="font-serif text-2xl font-bold text-espresso-950 leading-none tracking-tight">
                   Sweet{" "}
                   <span className="text-champagne">Moon</span>
                 </span>
-                <p className="text-chocolate-500 text-[10px] tracking-widest uppercase leading-none mt-1 font-semibold">
+                <p className="text-chocolate-600 text-[11px] tracking-widest uppercase leading-none mt-1 font-bold">
                   Chocolates &amp; Nuts
                 </p>
               </div>

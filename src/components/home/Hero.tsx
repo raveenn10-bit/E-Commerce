@@ -31,16 +31,15 @@ interface HeroSlide {
 const HERO_SLIDES: HeroSlide[] = [
   {
     id: "slide-1",
-    slug: "ferrero-rocher-t24",
-    headline: "Indulge in Golden Luxury",
+    slug: "coca-cola-vanilla-zero-sugar-325ml",
+    headline: "Crisp Sparkling Refreshment",
     subheadline:
-      "Whole roasted hazelnuts enveloped in velvety chocolate cream, encased in a crispy wafer shell covered in milk chocolate and chopped hazelnuts.",
-    tagline: "Signature Italian Chocolates",
-    image:
-      "https://images.unsplash.com/photo-1548907040-4baa42d10919?w=800&h=800&fit=crop",
-    accentColor: "#C9A84C",
-    accentBadge: "Gold Reserve",
-    shadowColor: "rgba(201,168,76,0.35)",
+      "Authentic imported Coca-Cola served ice-cold. Crisp effervescence, signature rich taste, and revitalizing fizz perfect for every sweet celebration.",
+    tagline: "Ice Cold Refreshment",
+    image: "/hero/slide-1-coca-cola.png",
+    accentColor: "#dc2626",
+    accentBadge: "Classic Reserve",
+    shadowColor: "rgba(220,38,38,0.35)",
   },
   {
     id: "slide-2",
@@ -49,7 +48,7 @@ const HERO_SLIDES: HeroSlide[] = [
     subheadline:
       "Sweet, effervescent, and bursting with vibrant wild cherry flavor. A rare imported 100% natural flavor Fanta edition perfect for fruity refreshment.",
     tagline: "Imported Sparkling Soda",
-    image: "/hero/fanta.png",
+    image: "/hero/slide-2-fanta.png",
     accentColor: "#db2777",
     accentBadge: "Wild Cherry Edition",
     shadowColor: "rgba(219,39,119,0.35)",
@@ -61,7 +60,7 @@ const HERO_SLIDES: HeroSlide[] = [
     subheadline:
       "The world-famous Samyang 3X Spicy Hot Chicken Flavor Ramen. Thick chewy noodles tossed in rich, fiery Korean chili sauce for true spice lovers.",
     tagline: "Viral Spicy Selection",
-    image: "/hero/buldak-ramen.png",
+    image: "/hero/slide-3-buldak.png",
     accentColor: "#ea580c",
     accentBadge: "Extreme 3X Spicy",
     shadowColor: "rgba(234,88,12,0.35)",
@@ -73,7 +72,7 @@ const HERO_SLIDES: HeroSlide[] = [
     subheadline:
       "The pinnacle of gifting in Galle. An opulent bespoke collection of luxury imported chocolates, Ferrero, Nutella, roses, and savory gourmet treats.",
     tagline: "Custom Boutique Gifting",
-    image: "/hero/gift-box.png",
+    image: "/hero/slide-4-hamper.png",
     accentColor: "#e11d48",
     accentBadge: "Luxury Collection",
     shadowColor: "rgba(225,29,72,0.35)",
