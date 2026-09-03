@@ -15,6 +15,7 @@ import {
 import { getProductBySlug, formatPrice, Product } from "@/lib/data";
 import { useCartStore } from "@/store/cart";
 import { useUIStore } from "@/store/ui";
+import { BreathingText } from "@/components/ui/breathing-text";
 
 interface HeroSlide {
   id: string;
@@ -195,12 +196,18 @@ export default function Hero() {
               )}
             </div>
 
-            {/* Headline */}
+            {/* Headline with BreathingText */}
             <h1
               key={`headline-${currentIndex}`}
-              className="font-serif text-3xl sm:text-4xl lg:text-6xl font-bold text-espresso-950 tracking-tight leading-[1.1] animate-hero-text"
+              className="font-serif text-3xl sm:text-4xl lg:text-6xl font-bold text-espresso-950 dark:text-white tracking-tight leading-[1.1] animate-hero-text"
             >
-              {currentSlide.headline}
+              <BreathingText
+                label={currentSlide.headline}
+                staggerDuration={0.06}
+                staggerFrom="first"
+                fromFontVariationSettings="'wght' 300, 'slnt' 0"
+                toFontVariationSettings="'wght' 800, 'slnt' -8"
+              />
             </h1>
 
             {/* Subcopy */}
