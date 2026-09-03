@@ -1,0 +1,33 @@
+{
+  "name": "Sweet Moon",
+  "short_name": "Sweet Moon",
+  "description": "Premium chocolates, imported treats, and luxury gift boxes in Galle, Sri Lanka",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1a0a00",
+  "background_color": "#FAF6EF",
+  "display": "standalone",
+  "start_url": "/"
+}
