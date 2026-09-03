@@ -81,25 +81,35 @@ export default function ProductCard({ product, className = "", compact = false }
 
   const imageAspect = compact ? "aspect-[4/3]" : "aspect-square";
   const padding = compact ? "p-3" : "p-4";
+  const isCannedDrink = product.categorySlug === "canned-drinks";
 
   return (
     <>
       <Link
         href={`/product/${product.slug}`}
-        className={`group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col transition-shadow duration-300 hover:shadow-xl ${className}`}
+        className={`group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col transition-all duration-300 hover:shadow-luxury ${className}`}
       >
         {/* ── Image area ──────────────────────────────────────── */}
-        <div className={`relative ${imageAspect} overflow-hidden bg-ivory`}>
+        <div className={`relative ${imageAspect} overflow-hidden ${isCannedDrink ? "bg-gradient-to-b from-white to-[#FAF6EF]" : "bg-ivory"}`}>
           <Image
             src={product.image}
             alt={product.name}
             fill
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className={`${
+              isCannedDrink
+                ? "object-contain p-3 drop-shadow-[0_12px_14px_rgba(0,0,0,0.18)] transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1"
+                : "object-cover transition-transform duration-500 group-hover:scale-105"
+            }`}
           />
 
           {/* ── Badges top-left ─────────────────────────────── */}
           <div className="absolute top-2 left-2 flex flex-col gap-1.5 z-10">
+            {isCannedDrink && (
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-espresso-950 text-champagne shadow">
+                3D CAN
+              </span>
+            )}
             {product.discount && (
               <span className="badge-discount text-xs font-bold px-2 py-0.5 rounded-full bg-red-500 text-white shadow">
                 -{product.discount}%

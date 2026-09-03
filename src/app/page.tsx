@@ -1,6 +1,7 @@
 import Hero from "@/components/home/Hero";
 import TrustBar from "@/components/home/TrustBar";
 import CategorySection from "@/components/home/CategorySection";
+import CannedDrinks3DSection from "@/components/home/CannedDrinks3DSection";
 import FeaturedProducts from "@/components/home/FeaturedProducts";
 import PromoBanner from "@/components/home/PromoBanner";
 import BestSellers from "@/components/home/BestSellers";
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Hero />
       <TrustBar />
       <CategorySection />
+      <CannedDrinks3DSection />
       <FeaturedProducts />
       <PromoBanner />
       <BestSellers />

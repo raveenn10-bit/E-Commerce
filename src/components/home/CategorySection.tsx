@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -34,28 +34,30 @@ export default function CategorySection() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
-          {categories.map((cat, index) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4">
+          {categories.map((cat) => (
             <Link
               key={cat.id}
-              href={`/shop/${cat.slug}`}
-              className={`group relative rounded-2xl overflow-hidden cursor-pointer block ${
-                index < 2 ? "sm:col-span-1 lg:col-span-2 lg:row-span-1" : ""
-              }`}
+              href={cat.slug === "canned-drinks" ? "/canned-drinks" : `/shop/${cat.slug}`}
+              className="group relative rounded-2xl overflow-hidden cursor-pointer block bg-espresso-950 shadow-sm hover:shadow-luxury transition-all duration-300"
             >
               <div
-                className="relative overflow-hidden bg-gray-100"
+                className="relative overflow-hidden bg-espresso-900"
                 style={{ aspectRatio: "4/3" }}
               >
                 <Image
                   src={cat.image}
                   alt={cat.name}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                  className={`${
+                    cat.slug === "canned-drinks"
+                      ? "object-contain p-2 transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_8px_8px_rgba(0,0,0,0.3)]"
+                      : "object-cover transition-transform duration-500 group-hover:scale-105"
+                  }`}
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 14vw"
                 />
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a0a00]/80 via-[#1a0a00]/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a0a00]/90 via-[#1a0a00]/30 to-transparent" />
 
                 {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-3">

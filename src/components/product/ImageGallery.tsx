@@ -24,11 +24,15 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
     setZoomPos({ x, y });
   }
 
+  const isTransparentCan = mainImage.includes("canned-drinks");
+
   return (
     <div className="flex flex-col gap-4">
       {/* ── Main image ───────────────────────────────────────── */}
       <div
-        className="relative w-full aspect-square rounded-2xl overflow-hidden bg-ivory border border-gray-100 shadow-sm cursor-zoom-in select-none"
+        className={`relative w-full aspect-square rounded-2xl overflow-hidden ${
+          isTransparentCan ? "bg-gradient-to-b from-white to-[#FAF6EF]" : "bg-ivory"
+        } border border-gray-100 shadow-sm cursor-zoom-in select-none`}
         onMouseEnter={() => setIsZoomed(true)}
         onMouseLeave={() => setIsZoomed(false)}
         onMouseMove={handleMouseMove}
@@ -39,7 +43,11 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
           fill
           priority
           sizes="(max-width: 768px) 100vw, 50vw"
-          className={`object-cover transition-transform duration-200 ${
+          className={`${
+            isTransparentCan
+              ? "object-contain p-6 drop-shadow-[0_20px_25px_rgba(0,0,0,0.22)]"
+              : "object-cover"
+          } transition-transform duration-200 ${
             isZoomed ? "scale-150" : "scale-100"
           }`}
           style={

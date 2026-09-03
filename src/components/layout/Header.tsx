@@ -21,6 +21,7 @@ import MegaMenu from "@/components/layout/MegaMenu";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Shop", href: "/shop" },
+  { label: "Canned Drinks", href: "/canned-drinks" },
   { label: "Categories", href: "/shop", hasMegaMenu: true, menuType: "categories" as const },
   { label: "Gift Boxes", href: "/shop/gift-boxes", hasMegaMenu: true, menuType: "gift-boxes" as const },
   { label: "Offers", href: "/shop?filter=offers" },
