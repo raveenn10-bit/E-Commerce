@@ -77,7 +77,7 @@ export default function Can3DViewer({
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
-      className="relative group select-none flex flex-col items-center justify-center p-6 rounded-3xl bg-gradient-to-b from-white to-[#FAF6EF] border border-chocolate-100 shadow-card hover:shadow-luxury transition-all duration-300 overflow-hidden"
+      className="relative group select-none flex flex-col items-center justify-center p-4 sm:p-5 pt-6 pb-5 rounded-3xl bg-gradient-to-b from-white to-[#FAF6EF] dark:from-[#1D2C44] dark:to-[#141E30] border border-chocolate-100 dark:border-white/10 shadow-card hover:shadow-luxury transition-all duration-300 overflow-hidden"
       style={{
         perspective: "1000px",
       }}
@@ -112,9 +112,9 @@ export default function Can3DViewer({
         <RotateCw size={14} className={isSpinning ? "animate-spin" : ""} />
       </button>
 
-      {/* 3D Can Container */}
+      {/* 3D Can Container (35% Bigger) */}
       <div
-        className="relative w-full aspect-[3/4] max-w-[220px] flex items-center justify-center my-2"
+        className="relative w-full h-[245px] sm:h-[270px] max-w-[260px] flex items-center justify-center my-3"
         style={{
           transformStyle: "preserve-3d",
           transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) scale(${
@@ -137,24 +137,26 @@ export default function Can3DViewer({
           }}
         />
 
-        {/* Can Image */}
-        <div className="relative w-full h-full drop-shadow-[0_15px_15px_rgba(0,0,0,0.18)]">
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 25vw"
-            className="object-contain filter transition-all duration-300"
-            priority
-          />
+        {/* Can Image - 35% Larger */}
+        <div className="relative w-full h-full drop-shadow-[0_20px_22px_rgba(0,0,0,0.22)] flex items-center justify-center">
+          <div className="relative w-full h-full scale-[1.35] transition-transform duration-300">
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 25vw"
+              className="object-contain filter transition-all duration-300"
+              priority
+            />
+          </div>
         </div>
 
         {/* 3D Floating Base Radial Shadow */}
         <div
-          className="absolute -bottom-4 w-32 h-6 bg-chocolate-950/20 rounded-[100%] filter blur-[6px] pointer-events-none transition-all duration-300"
+          className="absolute -bottom-3 w-40 h-7 bg-chocolate-950/25 rounded-[100%] filter blur-[8px] pointer-events-none transition-all duration-300"
           style={{
-            transform: `scale(${isHovered ? 1.2 : 0.9}) translateZ(-20px)`,
-            opacity: isHovered ? 0.4 : 0.25,
+            transform: `scale(${isHovered ? 1.2 : 1}) translateZ(-20px)`,
+            opacity: isHovered ? 0.45 : 0.3,
           }}
         />
       </div>
