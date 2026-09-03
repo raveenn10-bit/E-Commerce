@@ -52,6 +52,11 @@ const config: Config = {
           DEFAULT: "#FFD3B6",
           dark: "#E8B291",
         },
+        indigoSteel: {
+          dark: "#2C3E50",
+          DEFAULT: "#3A6F7F",
+          light: "#4CA1AF",
+        },
         gold: {
           DEFAULT: "#C9A84C",
           50: "#fdf9ec",
@@ -85,6 +90,12 @@ const config: Config = {
           "linear-gradient(135deg, #FFD3B6 0%, #F5C6A5 50%, #E8B291 100%)",
         "peach-champagne-3":
           "linear-gradient(180deg, #FFD3B6 0%, #DFF7FF 100%)",
+        "indigo-steel-1":
+          "linear-gradient(180deg, #2C3E50 0%, #4CA1AF 100%)",
+        "indigo-steel-2":
+          "linear-gradient(135deg, #2C3E50 0%, #3B7080 50%, #4CA1AF 100%)",
+        "indigo-steel-3":
+          "linear-gradient(180deg, #4CA1AF 0%, #2C3E50 100%)",
       },
       boxShadow: {
         luxury: "0 4px 24px rgba(201,168,76,0.15), 0 1px 4px rgba(0,0,0,0.1)",
