@@ -12,8 +12,8 @@ interface MegaMenuProps {
 const giftBoxOptions = [
   {
     name: "Classic Gift Box",
-    slug: "sweet-moon-classic-gift-box",
-    href: "/product/sweet-moon-classic-gift-box",
+    slug: "apex-moon-classic-gift-box",
+    href: "/product/apex-moon-classic-gift-box",
     description: "Curated premium chocolates — perfect for birthdays & celebrations",
     price: "From Rs. 4,500",
     badge: "Bestseller",
@@ -22,8 +22,8 @@ const giftBoxOptions = [
   },
   {
     name: "Luxury Hamper",
-    slug: "sweet-moon-luxury-hamper",
-    href: "/product/sweet-moon-luxury-hamper",
+    slug: "apex-moon-luxury-hamper",
+    href: "/product/apex-moon-luxury-hamper",
     description: "Ultimate luxury hamper with premium treats in gold packaging",
     price: "From Rs. 8,950",
     badge: "New",
@@ -32,7 +32,7 @@ const giftBoxOptions = [
   },
   {
     name: "Korean Lover Box",
-    slug: "sweet-moon-korean-lover-box",
+    slug: "apex-moon-korean-lover-box",
     href: "/shop/korean-ramen",
     description: "For the K-food enthusiast — ramen, snacks & Korean treats",
     price: "From Rs. 3,950",

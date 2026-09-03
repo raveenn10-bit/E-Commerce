@@ -68,14 +68,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <div className="relative w-9 h-9 rounded-full overflow-hidden shadow-luxury bg-white shrink-0">
               <Image
                 src="/logo.png"
-                alt="Sweet Moon Admin"
+                alt="Apex Moon Admin"
                 fill
                 className="object-cover"
               />
             </div>
             <div>
               <span className="font-serif text-lg font-bold text-white tracking-tight">
-                Sweet Moon
+                Apex Moon
               </span>
               <span className="block text-[10px] text-champagne uppercase tracking-widest">
                 Admin Panel
@@ -131,7 +131,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <ShieldCheck size={18} className="text-green-600" />
             <span className="text-xs font-semibold text-gray-700">Authenticated Admin Session</span>
           </div>
-          <span className="text-xs text-gray-500">Sweet Moon Galle &bull; Always Open</span>
+          <span className="text-xs text-gray-500">Apex Moon Galle &bull; Always Open</span>
         </header>
         <main className="p-6 md:p-8 flex-1 overflow-y-auto">{children}</main>
       </div>

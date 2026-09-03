@@ -31,7 +31,7 @@ export default function GiftBoxPromo() {
               <div className="relative w-full h-full animate-hamper-float">
                 <Image
                   src="/products/luxury-hamper-transparent.png"
-                  alt="Sweet Moon Luxury Custom Gift Hamper with Chocolates and Roses"
+                  alt="Apex Moon Luxury Custom Gift Hamper with Chocolates and Roses"
                   fill
                   sizes="(max-width: 640px) 300px, (max-width: 1024px) 420px, 480px"
                   className="object-contain filter drop-shadow-[0_30px_35px_rgba(0,0,0,0.25)]"

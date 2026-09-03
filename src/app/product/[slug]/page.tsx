@@ -50,7 +50,7 @@ export default function ProductPage() {
   const stars = Array.from({ length: 5 }, (_, i) => i < Math.floor(product.rating));
 
   const whatsappMsg = encodeURIComponent(
-    `Hi Sweet Moon! 🍫\n\nI would like to order:\n\nProduct: ${product.name}\nPrice: ${formatPrice(product.price)}\nQuantity: ${quantity}\n\nPlease confirm availability and delivery.\n\nThank you!`
+    `Hi Apex Moon! 🍫\n\nI would like to order:\n\nProduct: ${product.name}\nPrice: ${formatPrice(product.price)}\nQuantity: ${quantity}\n\nPlease confirm availability and delivery.\n\nThank you!`
   );
 
   return (
@@ -169,7 +169,7 @@ export default function ProductPage() {
 
               {/* WhatsApp Order */}
               <a
-                href={`https://wa.me/94766089763?text=${whatsappMsg}`}
+                href={`https://wa.me/94770663154?text=${whatsappMsg}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 py-3 px-5 rounded-full border-2 border-green-500 text-green-600 font-semibold text-sm hover:bg-green-500 hover:text-white transition-all duration-200"
@@ -234,7 +234,7 @@ export default function ProductPage() {
               <div className="space-y-6 max-w-2xl">
                 {[
                   { name: "Amali P.", rating: 5, comment: "Absolutely delicious! Arrived perfectly packaged and tasted amazing. Will order again!" },
-                  { name: "Ravindu J.", rating: 5, comment: "Great quality and fast delivery. Exactly as described. Love Sweet Moon!" },
+                  { name: "Ravindu J.", rating: 5, comment: "Great quality and fast delivery. Exactly as described. Love Apex Moon!" },
                   { name: "Dilini F.", rating: 4, comment: "Very good product. Packaging was neat. Would recommend to everyone." },
                 ].map((review, i) => (
                   <div key={i} className="flex gap-4">

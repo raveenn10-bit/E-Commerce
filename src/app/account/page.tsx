@@ -19,7 +19,7 @@ export default function AccountDashboardPage() {
               My Account
             </h1>
             <p className="text-xs text-chocolate-600 mt-1">
-              Welcome back to your Sweet Moon customer portal
+              Welcome back to your Apex Moon customer portal
             </p>
           </div>
           <Link href="/shop" className="btn-primary text-xs py-2.5">
@@ -35,9 +35,9 @@ export default function AccountDashboardPage() {
                 SM
               </div>
               <h2 className="font-serif text-lg font-bold text-espresso-950">
-                Sweet Moon VIP Customer
+                Apex Moon VIP Customer
               </h2>
-              <p className="text-xs text-chocolate-500">customer@sweetmoon.lk</p>
+              <p className="text-xs text-chocolate-500">customer@apexmoon.lk</p>
               <div className="mt-4 inline-block bg-champagne/10 text-champagne text-[11px] font-semibold px-3 py-1 rounded-full">
                 Loyalty Member
               </div>

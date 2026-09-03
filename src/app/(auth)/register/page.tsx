@@ -68,7 +68,7 @@ export default function RegisterPage() {
       await new Promise((resolve) => setTimeout(resolve, 1800));
       addToast({
         type: "success",
-        message: "Account created! Welcome to Sweet Moon 🍫",
+        message: "Account created! Welcome to Apex Moon 🍫",
       });
       router.push("/account");
     } catch {
@@ -100,7 +100,7 @@ export default function RegisterPage() {
           <div className="flex items-center justify-center mb-6">
             <Moon className="text-champagne w-10 h-10 mr-3" />
             <span className="font-playfair text-4xl font-bold text-ivory tracking-wide">
-              Sweet Moon
+              Apex Moon
             </span>
           </div>
           <div className="w-24 h-px bg-champagne mx-auto mb-8 opacity-60" />
@@ -142,7 +142,7 @@ export default function RegisterPage() {
           <div className="flex lg:hidden items-center justify-center mb-8">
             <Moon className="text-chocolate-800 w-7 h-7 mr-2" />
             <span className="font-playfair text-2xl font-bold text-espresso-950">
-              Sweet Moon
+              Apex Moon
             </span>
           </div>
 
@@ -152,7 +152,7 @@ export default function RegisterPage() {
                 Create Account
               </h1>
               <p className="text-chocolate-500 text-sm">
-                Join Sweet Moon for exclusive chocolatey perks
+                Join Apex Moon for exclusive chocolatey perks
               </p>
             </div>
 
@@ -326,7 +326,7 @@ export default function RegisterPage() {
                     htmlFor="acceptTerms"
                     className="text-sm text-chocolate-600 cursor-pointer leading-relaxed"
                   >
-                    I agree to Sweet Moon&apos;s{" "}
+                    I agree to Apex Moon&apos;s{" "}
                     <Link href="/policies/terms" className="text-champagne hover:underline font-medium">
                       Terms & Conditions
                     </Link>{" "}

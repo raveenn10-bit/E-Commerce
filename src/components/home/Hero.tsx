@@ -67,7 +67,7 @@ const HERO_SLIDES: HeroSlide[] = [
   },
   {
     id: "slide-4",
-    slug: "sweet-moon-luxury-hamper",
+    slug: "apex-moon-luxury-hamper",
     headline: "Handcrafted Gift Hampers",
     subheadline:
       "The pinnacle of gifting in Galle. An opulent bespoke collection of luxury imported chocolates, Ferrero, Nutella, roses, and savory gourmet treats.",

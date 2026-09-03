@@ -8,7 +8,7 @@ export default function OrderSuccessPage() {
   const [show, setShow] = useState(false);
   useEffect(() => { setTimeout(() => setShow(true), 100); }, []);
 
-  const whatsappMsg = encodeURIComponent(`Hi Sweet Moon! 🍫\n\nI just placed an order with ID: ${orderId}\n\nCould you please confirm the details and expected delivery time? Thank you!`);
+  const whatsappMsg = encodeURIComponent(`Hi Apex Moon! 🍫\n\nI just placed an order with ID: ${orderId}\n\nCould you please confirm the details and expected delivery time? Thank you!`);
 
   return (
     <div className="min-h-screen bg-ivory flex items-center justify-center px-4 py-16">
@@ -42,12 +42,12 @@ export default function OrderSuccessPage() {
           <div className="bg-white rounded-2xl p-4 shadow-card text-center">
             <Phone size={24} className="text-champagne mx-auto mb-2" />
             <p className="text-xs font-semibold text-espresso-950">Support</p>
-            <p className="text-xs text-chocolate-400 mt-0.5">076 608 9763</p>
+            <p className="text-xs text-chocolate-400 mt-0.5">077 066 3154</p>
           </div>
         </div>
 
         <div className={`flex flex-col sm:flex-row gap-3 justify-center transition-all duration-700 delay-600 ${show ? "opacity-100" : "opacity-0"}`}>
-          <a href={`https://wa.me/94766089763?text=${whatsappMsg}`} target="_blank" rel="noopener noreferrer"
+          <a href={`https://wa.me/94770663154?text=${whatsappMsg}`} target="_blank" rel="noopener noreferrer"
             className="flex items-center gap-2 justify-center py-3 px-6 rounded-full bg-green-500 text-white font-semibold text-sm hover:bg-green-600 transition-colors">
             Track on WhatsApp
           </a>

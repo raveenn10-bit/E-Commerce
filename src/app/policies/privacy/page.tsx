@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Privacy Policy | Sweet Moon Galle",
-  description: "Sweet Moon customer data protection and privacy policy.",
+  title: "Privacy Policy | Apex Moon Galle",
+  description: "Apex Moon customer data protection and privacy policy.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
         <section className="space-y-2">
           <h2 className="font-serif text-xl font-bold text-espresso-950">1. Information We Collect</h2>
           <p>
-            When you purchase from Sweet Moon or communicate with us through WhatsApp or website checkout, we collect necessary customer details including your name, contact phone number, WhatsApp number, email address, and shipping address.
+            When you purchase from Apex Moon or communicate with us through WhatsApp or website checkout, we collect necessary customer details including your name, contact phone number, WhatsApp number, email address, and shipping address.
           </p>
         </section>
 
@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
         <section className="space-y-2">
           <h2 className="font-serif text-xl font-bold text-espresso-950">4. Contact &amp; Inquiries</h2>
           <p>
-            If you have questions about your data or wish to update your details, please reach out to us at orders@sweetmoon.lk or visit our store at No 01 Main Street, Galle.
+            If you have questions about your data or wish to update your details, please reach out to us at orders@apexmoon.lk or visit our store at No. 88 Moonlit Boulevard, Colombo 03.
           </p>
         </section>
       </div>

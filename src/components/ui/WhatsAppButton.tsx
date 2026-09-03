@@ -8,7 +8,7 @@ interface WhatsAppButtonProps {
   cartItems?: Array<{ name: string; quantity: number; price: number }>;
 }
 
-const WHATSAPP_NUMBER = "94766089763";
+const WHATSAPP_NUMBER = "94770663154";
 
 function generateMessage(
   productName?: string,
@@ -21,16 +21,16 @@ function generateMessage(
       .join("\n");
     const total = cartItems.reduce((s, i) => s + i.price * i.quantity, 0);
     return encodeURIComponent(
-      `Hi Sweet Moon! 🍫\n\nI would like to order:\n\n${itemList}\n\nTotal: Rs. ${total.toLocaleString()}\n\nPlease confirm availability and delivery.\n\nThank you!`
+      `Hi Apex Moon! 🍫\n\nI would like to order:\n\n${itemList}\n\nTotal: Rs. ${total.toLocaleString()}\n\nPlease confirm availability and delivery.\n\nThank you!`
     );
   }
   if (productName) {
     return encodeURIComponent(
-      `Hi Sweet Moon! 🍫\n\nI would like to order:\n\nProduct: ${productName}\nPrice: Rs. ${productPrice?.toLocaleString() ?? ""}\n\nPlease confirm availability and delivery.\n\nThank you!`
+      `Hi Apex Moon! 🍫\n\nI would like to order:\n\nProduct: ${productName}\nPrice: Rs. ${productPrice?.toLocaleString() ?? ""}\n\nPlease confirm availability and delivery.\n\nThank you!`
     );
   }
   return encodeURIComponent(
-    `Hi Sweet Moon! 🍫\n\nI'm interested in your products. Can you help me?\n\nThank you!`
+    `Hi Apex Moon! 🍫\n\nI'm interested in your products. Can you help me?\n\nThank you!`
   );
 }
 

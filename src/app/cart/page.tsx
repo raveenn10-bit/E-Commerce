@@ -146,7 +146,7 @@ export default function CartPage() {
               <Link href="/checkout" className="btn-primary w-full justify-center mt-5 text-center block">
                 Proceed to Checkout <ArrowRight size={16} />
               </Link>
-              <a href={`https://wa.me/94766089763?text=${encodeURIComponent("Hi Sweet Moon! I'd like to place an order via WhatsApp.")}`} target="_blank" rel="noopener noreferrer" className="block text-center text-sm text-green-600 hover:underline mt-3">
+              <a href={`https://wa.me/94770663154?text=${encodeURIComponent("Hi Apex Moon! I'd like to place an order via WhatsApp.")}`} target="_blank" rel="noopener noreferrer" className="block text-center text-sm text-green-600 hover:underline mt-3">
                 💬 Order via WhatsApp
               </a>
               <div className="mt-5 pt-4 border-t border-chocolate-100">

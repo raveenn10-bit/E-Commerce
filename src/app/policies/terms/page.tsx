@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Terms & Conditions | Sweet Moon Galle",
-  description: "Terms and conditions of purchase and service for Sweet Moon.",
+  title: "Terms & Conditions | Apex Moon Galle",
+  description: "Terms and conditions of purchase and service for Apex Moon.",
 };
 
 export default function TermsPage() {
@@ -15,7 +15,7 @@ export default function TermsPage() {
         <section className="space-y-2">
           <h2 className="font-serif text-xl font-bold text-espresso-950">1. Agreement to Terms</h2>
           <p>
-            By accessing or ordering through Sweet Moon (online or in-store), you agree to be bound by these terms. We offer genuine imported food items, confectionery, and customized gifting services subject to availability.
+            By accessing or ordering through Apex Moon (online or in-store), you agree to be bound by these terms. We offer genuine imported food items, confectionery, and customized gifting services subject to availability.
           </p>
         </section>
 

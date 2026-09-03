@@ -9,7 +9,7 @@ export default function TopBar() {
           {/* Address — hidden on mobile */}
           <span className="hidden sm:flex items-center gap-1 text-chocolate-200">
             <MapPin size={12} className="text-champagne shrink-0" />
-            <span>No 01 Main Street, Galle</span>
+            <span>No. 88 Moonlit Boulevard, Colombo 03</span>
           </span>
 
           {/* Separator — hidden on mobile */}
@@ -26,11 +26,11 @@ export default function TopBar() {
 
           {/* Phone — always visible */}
           <a
-            href="tel:+94766089763"
+            href="tel:+94770663154"
             className="flex items-center gap-1 text-chocolate-200 hover:text-champagne transition-colors duration-200"
           >
             <Phone size={12} className="text-champagne shrink-0" />
-            <span>076 608 9763</span>
+            <span>077 066 3154</span>
           </a>
         </div>
 

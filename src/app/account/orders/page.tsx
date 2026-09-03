@@ -30,8 +30,8 @@ const mockOrders = [
 ];
 
 export const metadata = {
-  title: "My Orders | Sweet Moon Galle",
-  description: "View and track all your Sweet Moon orders and delivery status.",
+  title: "My Orders | Apex Moon Galle",
+  description: "View and track all your Apex Moon orders and delivery status.",
 };
 
 export default function OrdersHistoryPage() {

@@ -1,5 +1,5 @@
 // ============================================================
-// SWEET MOON — COMPLETE PRODUCT & SITE DATA
+// APEX MOON — COMPLETE PRODUCT & SITE DATA
 // ============================================================
 
 export interface Product {
@@ -584,11 +584,11 @@ export const products: Product[] = [
   // GIFT BOXES
   {
     id: "p-017",
-    slug: "sweet-moon-classic-gift-box",
-    name: "Sweet Moon Classic Gift Box",
+    slug: "apex-moon-classic-gift-box",
+    name: "Apex Moon Classic Gift Box",
     category: "Gift Boxes",
     categorySlug: "gift-boxes",
-    brand: "Sweet Moon",
+    brand: "Apex Moon",
     price: 4500,
     originalPrice: 5500,
     discount: 18,
@@ -599,7 +599,7 @@ export const products: Product[] = [
       "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600&h=600&fit=crop",
       "https://images.unsplash.com/photo-1543158181-e6f9f6712055?w=600&h=600&fit=crop",
     ],
-    description: "The Sweet Moon Classic Gift Box — a carefully curated collection of premium chocolates and imported treats. Perfect for birthdays, anniversaries, and celebrations. Includes: Ferrero Rocher (8pcs), Lindt truffles (6pcs), KitKat, and a sweet surprise.",
+    description: "The Apex Moon Classic Gift Box — a carefully curated collection of premium chocolates and imported treats. Perfect for birthdays, anniversaries, and celebrations. Includes: Ferrero Rocher (8pcs), Lindt truffles (6pcs), KitKat, and a sweet surprise.",
     shortDescription: "Curated premium chocolate gift box",
     inStock: true,
     stockCount: 30,
@@ -612,11 +612,11 @@ export const products: Product[] = [
   },
   {
     id: "p-018",
-    slug: "sweet-moon-luxury-hamper",
-    name: "Sweet Moon Luxury Hamper",
+    slug: "apex-moon-luxury-hamper",
+    name: "Apex Moon Luxury Hamper",
     category: "Gift Boxes",
     categorySlug: "gift-boxes",
-    brand: "Sweet Moon",
+    brand: "Apex Moon",
     price: 8950,
     originalPrice: 11000,
     discount: 19,
@@ -626,7 +626,7 @@ export const products: Product[] = [
     images: [
       "https://images.unsplash.com/photo-1543158181-e6f9f6712055?w=600&h=600&fit=crop",
     ],
-    description: "The ultimate luxury gift hamper from Sweet Moon. A grand collection of premium chocolates, imported snacks, Korean treats, exotic drinks, and a personalised greeting card. Everything beautifully wrapped in our signature gold packaging.",
+    description: "The ultimate luxury gift hamper from Apex Moon. A grand collection of premium chocolates, imported snacks, Korean treats, exotic drinks, and a personalised greeting card. Everything beautifully wrapped in our signature gold packaging.",
     shortDescription: "Ultimate luxury gift hamper with premium treats",
     inStock: true,
     stockCount: 15,
@@ -639,11 +639,11 @@ export const products: Product[] = [
   },
   {
     id: "p-019",
-    slug: "sweet-moon-korean-lover-box",
+    slug: "apex-moon-korean-lover-box",
     name: "Korean Lover Gift Box",
     category: "Gift Boxes",
     categorySlug: "gift-boxes",
-    brand: "Sweet Moon",
+    brand: "Apex Moon",
     price: 3950,
     originalPrice: 4500,
     discount: 12,
@@ -1066,7 +1066,7 @@ export const testimonials: Testimonial[] = [
     name: "Faham Saharudeen",
     location: "Galle",
     rating: 5,
-    comment: "Best place. If you're looking for premium chocolates, imported treats, and Korean ramen in Galle — Sweet Moon is the only place you need to visit!",
+    comment: "Best place. If you're looking for premium chocolates, imported treats, and Korean ramen in Galle — Apex Moon is the only place you need to visit!",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face",
     date: "a year ago",
   },
@@ -1075,7 +1075,7 @@ export const testimonials: Testimonial[] = [
     name: "Amali Wickramasinghe",
     location: "Matara",
     rating: 5,
-    comment: "Ordered the custom gift box for Valentine's Day and it was absolutely stunning! The presentation was perfect. My partner was so happy. Thank you Sweet Moon! 🍫",
+    comment: "Ordered the custom gift box for Valentine's Day and it was absolutely stunning! The presentation was perfect. My partner was so happy. Thank you Apex Moon! 🍫",
     avatar: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=80&h=80&fit=crop&crop=face",
     date: "1 month ago",
   },

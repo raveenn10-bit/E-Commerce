@@ -37,7 +37,7 @@ export default function Footer() {
       setSent(true);
       addToast({
         type: "success",
-        message: "Thank you! Your message has been sent to Sweet Moon.",
+        message: "Thank you! Your message has been sent to Apex Moon.",
       });
       setFormState({ name: "", email: "", message: "" });
       setTimeout(() => setSent(false), 5000);
@@ -82,26 +82,26 @@ export default function Footer() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center pt-4 border-b border-white/10 pb-14">
             {/* LEFT: Centered Large Logo, Brand & Floating Socials (5 cols) */}
             <div className="lg:col-span-5 flex flex-col justify-center relative space-y-6 text-center items-center">
-              {/* Centered Large Logo Above Sweet Moon */}
+              {/* Centered Large Logo Above Apex Moon */}
               <div className="flex flex-col items-center text-center">
                 <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-luxury bg-white shrink-0 p-1.5 border-2 border-champagne mb-3 hover:scale-105 transition-transform duration-300">
                   <Image
                     src="/logo.png"
-                    alt="Sweet Moon Official Logo"
+                    alt="Apex Moon Official Logo"
                     fill
                     className="object-contain p-1"
                     priority
                   />
                 </div>
                 <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight">
-                  Sweet <span className="text-champagne">Moon</span>
+                  Apex <span className="text-champagne">Moon</span>
                 </h2>
                 <p className="text-champagne-light text-xs tracking-[0.2em] uppercase mt-1 font-bold">
-                  Chocolates &amp; Nuts — Galle
+                  Premium Chocolates &amp; Treats
                 </p>
 
                 <p className="text-chocolate-200/80 text-xs sm:text-sm leading-relaxed max-w-sm mt-3">
-                  Galle&apos;s luxury boutique for imported chocolates, Korean spicy noodles, exotic beverages, and bespoke gift hampers.
+                  Sri Lanka&apos;s luxury boutique for imported chocolates, Korean spicy noodles, exotic beverages, and bespoke gift hampers.
                 </p>
               </div>
 
@@ -141,7 +141,7 @@ export default function Footer() {
 
                   {/* WhatsApp */}
                   <a
-                    href="https://wa.me/94766089763"
+                    href="https://wa.me/94770663154"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="WhatsApp"
@@ -239,7 +239,7 @@ export default function Footer() {
                   </button>
 
                   <span className="text-[11px] text-chocolate-400 hidden sm:inline">
-                    Direct WhatsApp: 076 608 9763
+                    Direct WhatsApp: 077 066 3154
                   </span>
                 </div>
               </form>
@@ -280,14 +280,14 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Galle Main Boutique */}
+            {/* Colombo Main Boutique */}
             <div>
               <h4 className="font-serif text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-white/10 pb-2">
                 Main Boutique
               </h4>
               <p className="text-chocolate-300 leading-relaxed">
-                No. 01 Main Street (New Street),<br />
-                Galle 80000, Sri Lanka
+                No. 88 Moonlit Boulevard,<br />
+                Colombo 03, Sri Lanka
               </p>
               <p className="text-chocolate-400 mt-2">
                 Walk-in: 9:00 AM – 9:00 PM Daily
@@ -299,17 +299,23 @@ export default function Footer() {
               <h4 className="font-serif text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-white/10 pb-2">
                 Customer Care
               </h4>
-              <p className="text-chocolate-300">📞 076 608 9763 / 077 690 3192</p>
-              <p className="text-chocolate-300 mt-1">💬 WhatsApp Orders: Always Active</p>
+              <p className="text-chocolate-300">📞 077 066 3154</p>
+              <p className="text-chocolate-300 mt-1">💬 WhatsApp: 077 066 3154</p>
               <p className="text-chocolate-300 mt-1">🚚 Island-wide Secure Delivery</p>
             </div>
           </div>
 
           {/* ── BOTTOM COPYRIGHT & LEGAL BAR ── */}
-          <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-chocolate-400">
-            <p>
-              Copyright © Sweet Moon {currentYear}. All Rights Reserved.
-            </p>
+          <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-chocolate-400">
+            <div className="flex flex-col sm:flex-row items-center gap-2 text-center sm:text-left">
+              <p>
+                Copyright © Apex Moon {currentYear}. All Rights Reserved.
+              </p>
+              <span className="hidden sm:inline text-white/20">|</span>
+              <p className="text-chocolate-300 font-medium">
+                Crafted by <span className="text-white font-bold tracking-wide">Harsh Apex Digital Solutions</span>
+              </p>
+            </div>
             <div className="flex items-center gap-4">
               <Link href="/policies/privacy" className="hover:text-champagne transition-colors">
                 Privacy Policy

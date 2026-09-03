@@ -30,7 +30,7 @@ export default function AdminLoginPage() {
             Admin Access
           </h1>
           <p className="text-xs text-chocolate-600 mt-1">
-            Sweet Moon Galle Management System
+            Apex Moon Galle Management System
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export default function AdminLoginPage() {
         </form>
 
         <p className="text-[11px] text-chocolate-400">
-          Authorized personnel only &bull; Sweet Moon Galle
+          Authorized personnel only &bull; Apex Moon Galle
         </p>
       </div>
     </div>

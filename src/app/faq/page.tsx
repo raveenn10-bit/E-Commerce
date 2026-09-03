@@ -19,12 +19,12 @@ const faqs: FAQItem[] = [
   {
     category: "Ordering & Delivery",
     q: "What are your delivery fees?",
-    a: "Standard islandwide delivery is Rs. 350. Orders above Rs. 5,000 enjoy 100% FREE delivery! Express delivery is Rs. 650, and in-person store pickup at No 01 Main Street, Galle is completely free.",
+    a: "Standard islandwide delivery is Rs. 350. Orders above Rs. 5,000 enjoy 100% FREE delivery! Express delivery is Rs. 650, and in-person store pickup at No. 88 Moonlit Boulevard, Colombo 03 is completely free.",
   },
   {
     category: "Ordering & Delivery",
     q: "Can I place an order directly through WhatsApp?",
-    a: "Yes! Click any 'Order via WhatsApp' button across our store or message us directly at 076 608 9763. Our team will verify your item list, payment option, and confirm your delivery immediately.",
+    a: "Yes! Click any 'Order via WhatsApp' button across our store or message us directly at 077 066 3154. Our team will verify your item list, payment option, and confirm your delivery immediately.",
   },
   {
     category: "Products & Authenticity",
@@ -78,7 +78,7 @@ export default function FAQPage() {
             Frequently Asked Questions
           </h1>
           <p className="text-chocolate-200 text-sm md:text-base max-w-xl mx-auto">
-            Everything you need to know about shopping, gift customization, and delivery with Sweet Moon.
+            Everything you need to know about shopping, gift customization, and delivery with Apex Moon.
           </p>
         </div>
       </section>
@@ -145,7 +145,7 @@ export default function FAQPage() {
           </p>
           <div className="flex justify-center gap-4 pt-2">
             <a
-              href="https://wa.me/94766089763?text=Hi%20Sweet%20Moon!%20I%20have%20a%20question."
+              href="https://wa.me/94770663154?text=Hi%20Sweet%20Moon!%20I%20have%20a%20question."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center gap-2"

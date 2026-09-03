@@ -4,7 +4,7 @@ import Can3DViewer from "@/components/product/Can3DViewer";
 import { Sparkles, GlassWater, ShieldCheck, Flame } from "lucide-react";
 
 export const metadata = {
-  title: "3D Canned Drinks Collection | Sweet Moon Galle",
+  title: "3D Canned Drinks Collection | Apex Moon Galle",
   description: "Experience our exotic imported sodas, fruit juices, and rare canned beverages in stunning interactive 3D view.",
 };
 

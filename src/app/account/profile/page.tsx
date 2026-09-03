@@ -10,7 +10,7 @@ export default function AccountProfilePage() {
   const [saved, setSaved] = useState(false);
   const [profile, setProfile] = useState({
     fullName: "Kasun Silva",
-    email: "customer@sweetmoon.lk",
+    email: "customer@apexmoon.lk",
     phone: "077 456 7890",
     address: "No 45 Wakwella Road",
     city: "Galle",

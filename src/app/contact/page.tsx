@@ -34,7 +34,7 @@ export default function ContactPage() {
             Get In Touch
           </p>
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
-            Contact Sweet Moon
+            Contact Apex Moon
           </h1>
           <p className="text-chocolate-200 text-sm md:text-base max-w-xl mx-auto">
             Have questions about customized gift boxes, imported treats, or bulk orders? We are here to help!
@@ -58,7 +58,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-sm text-espresso-950">Address</h3>
                     <p className="text-xs text-chocolate-700 mt-0.5">
-                      No 01 Main Street (New Street), Galle 80000, Sri Lanka
+                      No. 88 Moonlit Boulevard, Colombo 03, Sri Lanka
                     </p>
                   </div>
                 </div>
@@ -69,9 +69,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-sm text-espresso-950">Phone &amp; WhatsApp</h3>
-                    <p className="text-xs text-chocolate-700 mt-0.5">076 608 9763 / 077 690 3192</p>
+                    <p className="text-xs text-chocolate-700 mt-0.5">077 066 3154 / 077 066 3154</p>
                     <a
-                      href="https://wa.me/94766089763"
+                      href="https://wa.me/94770663154"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs text-green-600 font-semibold hover:underline block mt-0.5"
@@ -98,7 +98,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-sm text-espresso-950">Email</h3>
-                    <p className="text-xs text-chocolate-700 mt-0.5">orders@sweetmoon.lk</p>
+                    <p className="text-xs text-chocolate-700 mt-0.5">orders@apexmoon.lk</p>
                   </div>
                 </div>
               </div>
@@ -106,7 +106,7 @@ export default function ContactPage() {
               {/* Direct Maps Link & Interactive Map Embed */}
               <div className="pt-4 border-t border-chocolate-100 space-y-3">
                 <a
-                  href="https://maps.google.com/?q=Sweet+Moon+Chocolates+Galle+Sri+Lanka"
+                  href="https://maps.google.com/?q=Apex+Moon+Chocolates+Galle+Sri+Lanka"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary w-full justify-center text-center text-xs"
@@ -115,8 +115,8 @@ export default function ContactPage() {
                 </a>
                 <div className="w-full h-44 rounded-2xl overflow-hidden border border-chocolate-200">
                   <iframe
-                    title="Sweet Moon Store Galle Map"
-                    src="https://maps.google.com/maps?q=Main+Street+Galle+Sri+Lanka&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    title="Apex Moon Store Galle Map"
+                    src="https://maps.google.com/maps?q=Colombo+03+Sri+Lanka&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

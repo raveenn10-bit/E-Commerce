@@ -51,7 +51,7 @@ export default function ForgotPasswordPage() {
       >
         <Moon className="text-chocolate-800 w-7 h-7" />
         <span className="font-playfair text-2xl font-bold text-espresso-950">
-          Sweet Moon
+          Apex Moon
         </span>
       </Link>
 
@@ -172,7 +172,7 @@ export default function ForgotPasswordPage() {
         <p className="text-center text-xs text-chocolate-400 mt-6">
           Need help?{" "}
           <a
-            href="mailto:hello@sweetmoon.lk"
+            href="mailto:hello@apexmoon.lk"
             className="text-champagne hover:underline"
           >
             Contact Support

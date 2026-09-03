@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Delivery Policy | Sweet Moon Galle",
+  title: "Delivery Policy | Apex Moon Galle",
   description: "Shipping rates, delivery timeframes, and handling procedures across Sri Lanka.",
 };
 

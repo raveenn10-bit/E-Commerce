@@ -78,19 +78,19 @@ export default function Header() {
               <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden shadow-luxury group-hover:scale-105 transition-transform bg-white shrink-0 border-2 border-champagne p-0.5">
                 <Image
                   src="/logo.png"
-                  alt="Sweet Moon Logo"
+                  alt="Apex Moon Logo"
                   fill
                   className="object-contain p-0.5"
                   priority
                 />
               </div>
               <div className="hidden sm:flex flex-col">
-                <span className="font-serif text-2xl font-bold text-espresso-950 leading-none tracking-tight">
-                  Sweet{" "}
+                <span className="font-serif text-2xl font-bold text-espresso-950 dark:text-white leading-none tracking-tight">
+                  Apex{" "}
                   <span className="text-champagne">Moon</span>
                 </span>
-                <p className="text-chocolate-600 text-[11px] tracking-widest uppercase leading-none mt-1 font-bold">
-                  Chocolates &amp; Nuts
+                <p className="text-chocolate-600 dark:text-silver text-[11px] tracking-widest uppercase leading-none mt-1 font-bold">
+                  Chocolates &amp; Treats
                 </p>
               </div>
             </Link>

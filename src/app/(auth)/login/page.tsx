@@ -79,7 +79,7 @@ export default function LoginPage() {
           <div className="flex items-center justify-center mb-6">
             <Moon className="text-champagne w-10 h-10 mr-3" />
             <span className="font-playfair text-4xl font-bold text-ivory tracking-wide">
-              Sweet Moon
+              Apex Moon
             </span>
           </div>
 
@@ -133,7 +133,7 @@ export default function LoginPage() {
           <div className="flex lg:hidden items-center justify-center mb-8">
             <Moon className="text-chocolate-800 w-7 h-7 mr-2" />
             <span className="font-playfair text-2xl font-bold text-espresso-950">
-              Sweet Moon
+              Apex Moon
             </span>
           </div>
 
@@ -143,7 +143,7 @@ export default function LoginPage() {
                 Welcome Back
               </h1>
               <p className="text-chocolate-500 text-sm">
-                Sign in to your Sweet Moon account
+                Sign in to your Apex Moon account
               </p>
             </div>
 

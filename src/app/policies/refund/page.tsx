@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Refund & Returns Policy | Sweet Moon Galle",
-  description: "Hassle-free replacement and refund policy for Sweet Moon customers.",
+  title: "Refund & Returns Policy | Apex Moon Galle",
+  description: "Hassle-free replacement and refund policy for Apex Moon customers.",
 };
 
 export default function RefundPolicyPage() {
@@ -15,7 +15,7 @@ export default function RefundPolicyPage() {
         <section className="space-y-2">
           <h2 className="font-serif text-xl font-bold text-espresso-950">1. Damaged or Incorrect Items</h2>
           <p>
-            We take pride in exceptional quality packaging. If an item arrives damaged or incorrect, please take a quick photo and message us on WhatsApp (076 608 9763) within 48 hours of receiving the parcel. We will arrange a replacement or full refund immediately.
+            We take pride in exceptional quality packaging. If an item arrives damaged or incorrect, please take a quick photo and message us on WhatsApp (077 066 3154) within 48 hours of receiving the parcel. We will arrange a replacement or full refund immediately.
           </p>
         </section>
 

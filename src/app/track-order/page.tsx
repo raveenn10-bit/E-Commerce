@@ -49,12 +49,12 @@ interface MockOrder {
 const MOCK_ORDERS: Record<string, MockOrder> = {
   "SM-48291": {
     id: "SM-48291",
-    phone: "0766089763",
+    phone: "0770663154",
     customerName: "Kasun Perera",
     date: "Sep 02, 2026",
     status: "Out for Delivery",
     estimatedDelivery: "Today by 6:00 PM",
-    carrier: "Sweet Moon Express Courier — Galle",
+    carrier: "Apex Moon Express Courier — Galle",
     trackingNumber: "TRK-GL-89210",
     deliveryAddress: "No. 45, Wakwella Road, Galle, Southern Province",
     paymentMethod: "Cash on Delivery (COD)",
@@ -75,13 +75,13 @@ const MOCK_ORDERS: Record<string, MockOrder> = {
     events: [
       {
         title: "Order Placed & Confirmed",
-        description: "Your order has been verified and registered at Sweet Moon.",
+        description: "Your order has been verified and registered at Apex Moon.",
         date: "Sep 02, 2026 • 10:30 AM",
         completed: true,
       },
       {
         title: "Packed with Luxury Ribbon",
-        description: "Handpicked fresh from Galle Boutique with signature wrapping.",
+        description: "Handpicked fresh from Colombo Boutique with signature wrapping.",
         date: "Sep 02, 2026 • 02:15 PM",
         completed: true,
       },
@@ -113,7 +113,7 @@ const MOCK_ORDERS: Record<string, MockOrder> = {
     paymentMethod: "Bank Transfer (Confirmed)",
     items: [
       {
-        name: "Sweet Moon Luxury Hamper",
+        name: "Apex Moon Luxury Hamper",
         image: "/products/luxury-hamper-transparent.png",
         qty: 1,
         price: 8950,
@@ -273,8 +273,8 @@ export default function TrackOrderPage() {
 
                   {/* WhatsApp Help CTA */}
                   <a
-                    href={`https://wa.me/94766089763?text=${encodeURIComponent(
-                      `Hi Sweet Moon, I am inquiring about my order #${searchedOrder.id} for ${searchedOrder.customerName}.`
+                    href={`https://wa.me/94770663154?text=${encodeURIComponent(
+                      `Hi Apex Moon, I am inquiring about my order #${searchedOrder.id} for ${searchedOrder.customerName}.`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -408,7 +408,7 @@ export default function TrackOrderPage() {
                 We couldn&apos;t find any order matching &ldquo;{searchInput}&rdquo;. Please verify your Order ID or chat with us on WhatsApp.
               </p>
               <a
-                href="https://wa.me/94766089763"
+                href="https://wa.me/94770663154"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-green-600 hover:bg-green-500 text-white font-bold text-xs uppercase tracking-wider transition-all mt-2"

@@ -4,8 +4,8 @@ import ProductCard from "@/components/product/ProductCard";
 import { Sparkles } from "lucide-react";
 
 export const metadata = {
-  title: "New Arrivals | Sweet Moon Galle",
-  description: "Check out the newest imported chocolates, ramen, and trending snacks freshly stocked at Sweet Moon Galle.",
+  title: "New Arrivals | Apex Moon Galle",
+  description: "Check out the newest imported chocolates, ramen, and trending snacks freshly stocked at Apex Moon Galle.",
 };
 
 export default function NewArrivalsPage() {

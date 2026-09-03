@@ -4,8 +4,8 @@ import ProductCard from "@/components/product/ProductCard";
 import { Flame } from "lucide-react";
 
 export const metadata = {
-  title: "Best Sellers | Sweet Moon Galle",
-  description: "Customer favorites! The most popular chocolates, Buldak noodles, and gift boxes at Sweet Moon Galle.",
+  title: "Best Sellers | Apex Moon Galle",
+  description: "Customer favorites! The most popular chocolates, Buldak noodles, and gift boxes at Apex Moon Galle.",
 };
 
 export default function BestSellersPage() {

@@ -25,17 +25,17 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Sweet Moon — Premium Chocolates & Gift Boxes in Galle",
-    template: "%s | Sweet Moon",
+    default: "Apex Moon — Premium Chocolates & Gift Boxes in Galle",
+    template: "%s | Apex Moon",
   },
   description:
     "Sri Lanka's premium chocolate shop in Galle. Imported chocolates, Korean ramen, exotic drinks, and customized gift boxes delivered islandwide.",
   keywords: ["chocolates", "gift boxes", "Korean ramen", "imported snacks", "Galle", "Sri Lanka"],
   openGraph: {
-    title: "Sweet Moon — Premium Chocolates & Gift Boxes",
+    title: "Apex Moon — Premium Chocolates & Gift Boxes",
     description: "Premium chocolates, imported treats, and perfect gift boxes for every occasion.",
-    url: "https://sweetmoon.lk",
-    siteName: "Sweet Moon",
+    url: "https://apexmoon.lk",
+    siteName: "Apex Moon",
     locale: "en_LK",
     type: "website",
   },
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   appleWebApp: {
-    title: "Sweet Moon",
+    title: "Apex Moon",
     statusBarStyle: "default",
     capable: true,
   },

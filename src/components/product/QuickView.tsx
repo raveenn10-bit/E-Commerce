@@ -88,7 +88,7 @@ export default function QuickView({ product, onClose }: QuickViewProps) {
   const handleWhatsApp = useCallback(() => {
     if (!product) return;
     const text = encodeURIComponent(
-      `Hi Sweet Moon! 🍫\nI'd like to order:\n• ${product.name} (x${quantity})\nPrice: ${formatPrice(product.price * quantity)}\n\nPlease confirm availability.`
+      `Hi Apex Moon! 🍫\nI'd like to order:\n• ${product.name} (x${quantity})\nPrice: ${formatPrice(product.price * quantity)}\n\nPlease confirm availability.`
     );
     window.open(`https://wa.me/94XXXXXXXXX?text=${text}`, "_blank");
   }, [product, quantity]);

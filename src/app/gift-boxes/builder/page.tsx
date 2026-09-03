@@ -58,7 +58,7 @@ export default function GiftBoxBuilderPage() {
       name: `Custom ${selectedSize.name} Gift Box`,
       category: "Gift Boxes",
       categorySlug: "gift-boxes",
-      brand: "Sweet Moon",
+      brand: "Apex Moon",
       price: grandTotal,
       rating: 5,
       reviewCount: 0,

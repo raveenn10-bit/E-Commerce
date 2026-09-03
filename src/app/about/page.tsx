@@ -3,8 +3,8 @@ import Link from "next/link";
 import { Sparkles, Heart, Award, ShieldCheck, MapPin, Phone, Clock } from "lucide-react";
 
 export const metadata = {
-  title: "About Us | Sweet Moon Galle",
-  description: "Learn about Sweet Moon, Galle's premier destination for imported chocolates, Korean ramen, exotic snacks, and luxury gift boxes.",
+  title: "About Us | Apex Moon Galle",
+  description: "Learn about Apex Moon, Galle's premier destination for imported chocolates, Korean ramen, exotic snacks, and luxury gift boxes.",
 };
 
 export default function AboutPage() {
@@ -23,7 +23,7 @@ export default function AboutPage() {
             Our Story &amp; Passion
           </p>
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
-            About Sweet Moon
+            About Apex Moon
           </h1>
           <p className="text-chocolate-200 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
             Galle&apos;s premier boutique for authentic imported chocolates, famous Korean ramen, global confectionery, and luxury bespoke gift hampers.
@@ -37,7 +37,7 @@ export default function AboutPage() {
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-luxury">
             <Image
               src="https://images.unsplash.com/photo-1548907040-4baa42d10919?w=800&h=600&fit=crop"
-              alt="Sweet Moon boutique interior"
+              alt="Apex Moon boutique interior"
               fill
               className="object-cover"
             />
@@ -48,7 +48,7 @@ export default function AboutPage() {
               Where Every Treat Tells a Sweet Story
             </h2>
             <p className="text-chocolate-800 text-sm md:text-base leading-relaxed">
-              Located in the historic southern coastal city of Galle, Sweet Moon was born out of a profound passion for bringing the world&apos;s most beloved sweets, artisan chocolates, and culinary delights directly to Sri Lankan doorsteps.
+              Located in the historic southern coastal city of Galle, Apex Moon was born out of a profound passion for bringing the world&apos;s most beloved sweets, artisan chocolates, and culinary delights directly to Sri Lankan doorsteps.
             </p>
             <p className="text-chocolate-800 text-sm md:text-base leading-relaxed">
               Whether you crave authentic Swiss Lindt truffles, Italian Ferrero Rocher, viral spicy Korean Buldak ramen, or a customized luxury gift hamper for someone special, we curate every item with strict standards of authenticity and freshness.
@@ -136,12 +136,12 @@ export default function AboutPage() {
               <span className="text-xs font-semibold text-espresso-950">Galle City</span>
             </div>
             <h3 className="font-serif text-xl font-bold text-espresso-950">
-              Sweet Moon — Main Street
+              Apex Moon — Main Street
             </h3>
             <div className="space-y-2.5 text-xs text-espresso-900">
               <div className="flex items-start gap-2.5">
                 <MapPin className="text-champagne shrink-0 mt-0.5" size={16} />
-                <span>No. 01 Main Street (New Street), Galle 80000, Sri Lanka</span>
+                <span>No. 01 Main Street (New Street), Colombo 03, Sri Lanka</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Clock className="text-champagne shrink-0" size={16} />
@@ -149,11 +149,11 @@ export default function AboutPage() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="text-champagne shrink-0" size={16} />
-                <span>076 608 9763 / 077 690 3192</span>
+                <span>077 066 3154 / 077 066 3154</span>
               </div>
             </div>
             <a
-              href="https://maps.google.com/?q=Sweet+Moon+Chocolates+Galle+Sri+Lanka"
+              href="https://maps.google.com/?q=Apex+Moon+Chocolates+Galle+Sri+Lanka"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-xs font-bold text-espresso-950 hover:text-champagne pt-2 transition-colors"
@@ -171,7 +171,7 @@ export default function AboutPage() {
               <span className="text-xs font-semibold text-espresso-950">Dewata</span>
             </div>
             <h3 className="font-serif text-xl font-bold text-espresso-950">
-              Sweet Moon — Dewata
+              Apex Moon — Dewata
             </h3>
             <div className="space-y-2.5 text-xs text-espresso-900">
               <div className="flex items-start gap-2.5">
@@ -184,7 +184,7 @@ export default function AboutPage() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="text-champagne shrink-0" size={16} />
-                <span>076 608 9763</span>
+                <span>077 066 3154</span>
               </div>
             </div>
             <a
@@ -201,8 +201,8 @@ export default function AboutPage() {
         {/* Embedded Google Map */}
         <div className="w-full h-80 rounded-3xl overflow-hidden shadow-luxury border border-chocolate-200">
           <iframe
-            title="Sweet Moon Galle Location"
-            src="https://maps.google.com/maps?q=Main+Street+Galle+Sri+Lanka&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            title="Apex Moon Galle Location"
+            src="https://maps.google.com/maps?q=Colombo+03+Sri+Lanka&t=&z=15&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}

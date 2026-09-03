@@ -106,13 +106,13 @@ export default function OrderDetailPage() {
             <div className="text-xs text-chocolate-700 space-y-1">
               <p className="font-semibold text-espresso-950">Kasun Silva</p>
               <p>No 45 Wakwella Road</p>
-              <p>Galle 80000, Southern Province</p>
+              <p>Colombo 03, Southern Province</p>
               <p className="pt-1 text-chocolate-500">Phone: 077 456 7890</p>
             </div>
 
             <div className="pt-4 border-t border-chocolate-100">
               <a
-                href={`https://wa.me/94766089763?text=${encodeURIComponent(`Hi Sweet Moon! I have an inquiry regarding my order #${id}`)}`}
+                href={`https://wa.me/94770663154?text=${encodeURIComponent(`Hi Apex Moon! I have an inquiry regarding my order #${id}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary w-full text-xs justify-center flex items-center gap-1.5"

@@ -14,7 +14,7 @@ export default function GiftBoxesPage() {
           <Image src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=1200&h=600&fit=crop" alt="Gift boxes" fill className="object-cover" />
         </div>
         <div className="relative max-w-4xl mx-auto text-center">
-          <p className="text-champagne text-sm font-medium uppercase tracking-widest mb-3">🎁 Sweet Moon</p>
+          <p className="text-champagne text-sm font-medium uppercase tracking-widest mb-3">🎁 Apex Moon</p>
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">The Perfect Gift<br />for Every Occasion</h1>
           <p className="text-chocolate-300 text-lg max-w-2xl mx-auto mb-8">Handcrafted with love — premium chocolates, imported treats, and beautiful packaging that says it all.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

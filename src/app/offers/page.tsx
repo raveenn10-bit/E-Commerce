@@ -4,7 +4,7 @@ import ProductCard from "@/components/product/ProductCard";
 import { Tag, Sparkles } from "lucide-react";
 
 export const metadata = {
-  title: "Special Offers & Deals | Sweet Moon Galle",
+  title: "Special Offers & Deals | Apex Moon Galle",
   description: "Exclusive discounts and limited-time deals on premium chocolates, gift sets, and imported snacks in Sri Lanka.",
 };
 

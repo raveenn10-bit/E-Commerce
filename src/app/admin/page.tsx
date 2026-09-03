@@ -14,7 +14,7 @@ export default function AdminDashboardPage() {
           Store Overview
         </h1>
         <p className="text-xs text-gray-500 mt-1">
-          Real-time metrics and inventory health for Sweet Moon Galle
+          Real-time metrics and inventory health for Apex Moon Galle
         </p>
       </div>
 

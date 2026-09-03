@@ -96,14 +96,14 @@ export default function MobileNav() {
             <div className="relative w-9 h-9 rounded-full overflow-hidden shadow-luxury bg-white shrink-0">
               <Image
                 src="/logo.png"
-                alt="Sweet Moon Logo"
+                alt="Apex Moon Logo"
                 fill
                 className="object-cover"
               />
             </div>
             <div>
               <p className="font-serif text-lg font-bold text-ivory leading-none">
-                Sweet <span className="text-champagne">Moon</span>
+                Apex <span className="text-champagne">Moon</span>
               </p>
               <p className="text-espresso-400 text-[10px] tracking-widest uppercase leading-none mt-0.5">
                 Chocolates &amp; Nuts
@@ -230,8 +230,8 @@ export default function MobileNav() {
               <ul className="mt-1 ml-4 border-l border-espresso-700 pl-3 space-y-1">
                 {[
                   { name: "All Gift Boxes", href: "/shop/gift-boxes" },
-                  { name: "Classic Gift Box", href: "/product/sweet-moon-classic-gift-box" },
-                  { name: "Luxury Hamper", href: "/product/sweet-moon-luxury-hamper" },
+                  { name: "Classic Gift Box", href: "/product/apex-moon-classic-gift-box" },
+                  { name: "Luxury Hamper", href: "/product/apex-moon-luxury-hamper" },
                   { name: "Korean Lover Box", href: "/shop/korean-ramen" },
                   { name: "Custom Gift Box", href: "/gift-boxes/builder" },
                 ].map((box) => (
@@ -257,20 +257,20 @@ export default function MobileNav() {
             Contact Us
           </p>
           <a
-            href="https://maps.google.com?q=No+01+Main+Street+Galle"
+            href="https://maps.google.com?q=No+01+Colombo+03"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-start gap-2.5 text-xs text-ivory/60 hover:text-ivory/90 transition-colors"
           >
             <MapPin size={14} className="text-champagne shrink-0 mt-0.5" />
-            <span>No 01 Main Street, Galle, Sri Lanka</span>
+            <span>No. 88 Moonlit Boulevard, Colombo 03, Sri Lanka</span>
           </a>
           <a
-            href="tel:+94766089763"
+            href="tel:+94770663154"
             className="flex items-center gap-2.5 text-xs text-ivory/60 hover:text-ivory/90 transition-colors"
           >
             <Phone size={14} className="text-champagne shrink-0" />
-            <span>076 608 9763</span>
+            <span>077 066 3154</span>
           </a>
           <div className="flex items-center gap-2.5 text-xs text-ivory/60">
             <Clock size={14} className="text-champagne shrink-0" />
@@ -309,7 +309,7 @@ export default function MobileNav() {
               </svg>
             </a>
             <a
-              href="https://wa.me/94766089763"
+              href="https://wa.me/94770663154"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"

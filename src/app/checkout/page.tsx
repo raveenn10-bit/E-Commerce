@@ -150,7 +150,7 @@ export default function CheckoutPage() {
                   {[
                     { id: "standard", label: "Standard Delivery", desc: "3–5 business days", price: "Rs. 350", icon: "🚚" },
                     { id: "express", label: "Express Delivery", desc: "1–2 business days", price: "Rs. 650", icon: "⚡" },
-                    { id: "pickup", label: "Galle Pickup", desc: "No. 01 Main Street, Galle", price: "FREE", icon: "📍" },
+                    { id: "pickup", label: "Galle Pickup", desc: "No. 88 Moonlit Boulevard, Colombo 03", price: "FREE", icon: "📍" },
                   ].map((opt) => (
                     <label key={opt.id} className={`flex items-center gap-4 p-4 rounded-xl border-2 cursor-pointer transition-all ${form.delivery === opt.id ? "border-champagne bg-champagne/5" : "border-chocolate-100 hover:border-chocolate-200"}`}>
                       <input type="radio" name="delivery" value={opt.id} checked={form.delivery === opt.id} onChange={(e) => set("delivery", e.target.value)} className="sr-only" />

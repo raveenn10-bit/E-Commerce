@@ -42,7 +42,7 @@ export default function Newsletter() {
           <div className="flex flex-col items-center gap-3 py-4 animate-fade-in">
             <CheckCircle size={48} className="text-green-400" />
             <p className="text-white font-semibold text-lg">You&apos;re subscribed!</p>
-            <p className="text-chocolate-300 text-sm">Get ready for exclusive Sweet Moon offers 🎉</p>
+            <p className="text-chocolate-300 text-sm">Get ready for exclusive Apex Moon offers 🎉</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
