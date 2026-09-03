@@ -1,6 +1,6 @@
 "use client";
 
-import { useCurrencyStore, formatWithCurrency } from "@/store/currency";
+import { useCurrencyStore, formatWithCurrency, CURRENCIES, CurrencyCode } from "@/store/currency";
 import { useEffect, useState } from "react";
 
 interface PriceProps {
@@ -15,9 +15,13 @@ export default function Price({ amount, className = "" }: PriceProps) {
 
   useEffect(() => {
     setMounted(true);
-    const saved = localStorage.getItem("apex-currency");
-    if (saved && (saved in useCurrencyStore.getState())) {
-      setCurrency(saved as any);
+    try {
+      const saved = localStorage.getItem("apex-currency") as CurrencyCode;
+      if (saved && saved in CURRENCIES) {
+        setCurrency(saved);
+      }
+    } catch {
+      // ignore
     }
   }, [setCurrency]);
 

@@ -5,6 +5,7 @@ import { Search, X, TrendingUp, Clock, Package, ArrowRight } from "lucide-react"
 import { products, categories, formatPrice } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
+import Price from "@/components/ui/Price";
 
 const trendingSearches = [
   "Buldak Ramen",
@@ -185,11 +186,11 @@ export default function SearchOverlay() {
                     {/* Price & Discount */}
                     <div className="text-right shrink-0">
                       <p className="text-sm font-bold text-champagne font-serif">
-                        {formatPrice(product.price)}
+                        <Price amount={product.price} />
                       </p>
                       {product.originalPrice && (
                         <p className="text-[11px] text-chocolate-400 line-through">
-                          {formatPrice(product.originalPrice)}
+                          <Price amount={product.originalPrice} />
                         </p>
                       )}
                     </div>

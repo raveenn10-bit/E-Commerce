@@ -6,6 +6,7 @@ import { ShoppingCart } from "lucide-react";
 import { getBestSellers, formatPrice } from "@/lib/data";
 import { useCartStore } from "@/store/cart";
 import type { Product } from "@/lib/data";
+import Price from "@/components/ui/Price";
 
 function BestSellerCard({ product }: { product: Product }) {
   const addItem = useCartStore((s) => s.addItem);
@@ -44,7 +45,7 @@ function BestSellerCard({ product }: { product: Product }) {
           className="text-[#1a0a00] font-bold text-sm mb-2"
           style={{ fontFamily: "Inter, sans-serif" }}
         >
-          {formatPrice(product.price)}
+          <Price amount={product.price} />
         </p>
         <button
           onClick={() => addItem(product, 1)}

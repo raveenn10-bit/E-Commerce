@@ -5,6 +5,7 @@ import Link from "next/link";
 import { X, ShoppingBag, Trash2, Plus, Minus } from "lucide-react";
 import { useCartStore } from "@/store/cart";
 import { formatPrice } from "@/lib/data";
+import Price from "@/components/ui/Price";
 
 export default function MiniCart() {
   const { items, isOpen, closeCart, removeItem, updateQuantity, getSubtotal, getDeliveryFee, getTotal, getTotalItems } = useCartStore();
@@ -109,7 +110,7 @@ export default function MiniCart() {
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="text-sm font-bold text-espresso-950">
-                          {formatPrice(item.product.price * item.quantity)}
+                          <Price amount={item.product.price * item.quantity} />
                         </span>
                         <button
                           onClick={() => removeItem(item.product.id)}
@@ -128,17 +129,17 @@ export default function MiniCart() {
             <div className="border-t border-chocolate-100 bg-white p-5 space-y-3">
               <div className="flex justify-between text-sm">
                 <span className="text-chocolate-500">Subtotal</span>
-                <span className="font-semibold">{formatPrice(subtotal)}</span>
+                <span className="font-semibold"><Price amount={subtotal} /></span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-chocolate-500">Delivery</span>
                 <span className={delivery === 0 ? "text-green-600 font-semibold" : "font-semibold"}>
-                  {delivery === 0 ? "FREE" : formatPrice(delivery)}
+                  {delivery === 0 ? "FREE" : <Price amount={delivery} />}
                 </span>
               </div>
               <div className="flex justify-between font-bold text-base border-t border-chocolate-100 pt-3">
                 <span>Total</span>
-                <span className="text-champagne">{formatPrice(getTotal())}</span>
+                <span className="text-champagne"><Price amount={getTotal()} /></span>
               </div>
               <Link
                 href="/checkout"

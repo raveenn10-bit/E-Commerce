@@ -16,6 +16,7 @@ import { getProductBySlug, formatPrice, Product } from "@/lib/data";
 import { useCartStore } from "@/store/cart";
 import { useUIStore } from "@/store/ui";
 import { BreathingText } from "@/components/ui/breathing-text";
+import Price from "@/components/ui/Price";
 
 interface HeroSlide {
   id: string;
@@ -233,11 +234,11 @@ export default function Hero() {
                     className="font-bold text-2xl sm:text-3xl tracking-tight"
                     style={{ color: currentSlide.accentColor }}
                   >
-                    {formatPrice(currentProduct.price)}
+                    <Price amount={currentProduct.price} />
                   </span>
                   {currentProduct.originalPrice && (
                     <span className="text-sm sm:text-base text-chocolate-400 line-through">
-                      {formatPrice(currentProduct.originalPrice)}
+                      <Price amount={currentProduct.originalPrice} />
                     </span>
                   )}
                 </div>

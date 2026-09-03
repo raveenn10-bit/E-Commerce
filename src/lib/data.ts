@@ -1116,10 +1116,31 @@ export const giftBoxExtras = [
   { id: "ribbon", name: "Premium Ribbon", price: 200, icon: "🎀" },
 ];
 
-// ============================================================
-// UTILITY FUNCTIONS
-// ============================================================
+const CURRENCY_RATES: Record<string, { symbol: string; rate: number }> = {
+  LKR: { symbol: "Rs. ", rate: 1 },
+  USD: { symbol: "$", rate: 0.0033 },
+  EUR: { symbol: "€", rate: 0.0031 },
+  GBP: { symbol: "£", rate: 0.0026 },
+  AED: { symbol: "AED ", rate: 0.0121 },
+  AUD: { symbol: "A$", rate: 0.0051 },
+};
+
 export function formatPrice(amount: number): string {
+  if (typeof window !== "undefined") {
+    try {
+      const saved = localStorage.getItem("apex-currency");
+      if (saved && saved in CURRENCY_RATES && saved !== "LKR") {
+        const item = CURRENCY_RATES[saved];
+        const val = amount * item.rate;
+        return `${item.symbol}${val.toLocaleString("en-US", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        })}`;
+      }
+    } catch {
+      // ignore
+    }
+  }
   return `Rs. ${amount.toLocaleString("en-LK")}`;
 }
 

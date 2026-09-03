@@ -22,12 +22,6 @@ export const CURRENCIES: Record<CurrencyCode, CurrencyConfig> = {
   AUD: { code: "AUD", symbol: "A$", name: "Australian Dollar", rate: 0.0051, flag: "🇦🇺", prefix: true },
 };
 
-interface CurrencyStore {
-  currentCurrency: CurrencyCode;
-  setCurrency: (code: CurrencyCode) => void;
-  formatPrice: (amountInLkr: number) => string;
-}
-
 export function formatWithCurrency(amountInLkr: number, currency: CurrencyCode): string {
   const conf = CURRENCIES[currency] || CURRENCIES.LKR;
   const converted = amountInLkr * conf.rate;
@@ -42,11 +36,35 @@ export function formatWithCurrency(amountInLkr: number, currency: CurrencyCode):
   })}`;
 }
 
+interface CurrencyStore {
+  currentCurrency: CurrencyCode;
+  setCurrency: (code: CurrencyCode) => void;
+  formatPrice: (amountInLkr: number) => string;
+}
+
+const getInitialCurrency = (): CurrencyCode => {
+  if (typeof window !== "undefined") {
+    try {
+      const saved = localStorage.getItem("apex-currency") as CurrencyCode;
+      if (saved && saved in CURRENCIES) {
+        return saved;
+      }
+    } catch {
+      // ignore
+    }
+  }
+  return "LKR";
+};
+
 export const useCurrencyStore = create<CurrencyStore>((set, get) => ({
-  currentCurrency: "LKR",
+  currentCurrency: getInitialCurrency(),
   setCurrency: (code: CurrencyCode) => {
     if (typeof window !== "undefined") {
-      localStorage.setItem("apex-currency", code);
+      try {
+        localStorage.setItem("apex-currency", code);
+      } catch {
+        // ignore
+      }
     }
     set({ currentCurrency: code });
   },

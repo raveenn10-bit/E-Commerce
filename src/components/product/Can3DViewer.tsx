@@ -6,6 +6,7 @@ import { Sparkles, RotateCw, ShoppingCart, Check } from "lucide-react";
 import { Product, formatPrice } from "@/lib/data";
 import { useCartStore } from "@/store/cart";
 import { useUIStore } from "@/store/ui";
+import Price from "@/components/ui/Price";
 
 interface Can3DViewerProps {
   product: Product;
@@ -174,11 +175,11 @@ export default function Can3DViewer({
         <div className="flex items-center justify-between gap-2 pt-2 border-t border-chocolate-100/70">
           <div className="text-left">
             <span className="font-bold text-espresso-950 text-base">
-              {formatPrice(product.price)}
+              <Price amount={product.price} />
             </span>
             {product.originalPrice && (
               <span className="text-gray-400 text-xs line-through block -mt-1">
-                {formatPrice(product.originalPrice)}
+                <Price amount={product.originalPrice} />
               </span>
             )}
           </div>
