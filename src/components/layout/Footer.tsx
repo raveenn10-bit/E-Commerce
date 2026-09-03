@@ -172,7 +172,7 @@ export default function Footer() {
                 Contact Us
               </h3>
               <p className="text-xs sm:text-sm text-chocolate-300 mb-6">
-                Have a question about custom gift hampers or bulk delivery in Galle? Send us a quick note.
+                Have a question about custom gift hampers or island-wide delivery? Send us a quick note.
               </p>
 
               <form onSubmit={handleSendMessage} className="space-y-4">
