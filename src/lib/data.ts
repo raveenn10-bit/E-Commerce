@@ -1,0 +1,876 @@
+// ============================================================
+// SWEET MOON — COMPLETE PRODUCT & SITE DATA
+// ============================================================
+
+export interface Product {
+  id: string;
+  slug: string;
+  name: string;
+  category: string;
+  categorySlug: string;
+  brand: string;
+  price: number;
+  originalPrice?: number;
+  discount?: number;
+  rating: number;
+  reviewCount: number;
+  image: string;
+  images: string[];
+  description: string;
+  shortDescription: string;
+  inStock: boolean;
+  stockCount: number;
+  isNew: boolean;
+  isBestSeller: boolean;
+  isFeatured: boolean;
+  tags: string[];
+  weight?: string;
+  origin?: string;
+  sku: string;
+}
+
+export interface Category {
+  id: string;
+  slug: string;
+  name: string;
+  description: string;
+  image: string;
+  productCount: number;
+  color: string;
+}
+
+export interface Testimonial {
+  id: string;
+  name: string;
+  location: string;
+  rating: number;
+  comment: string;
+  avatar: string;
+  date: string;
+}
+
+export interface Banner {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  cta: string;
+  ctaLink: string;
+  badge: string;
+  image: string;
+}
+
+// ============================================================
+// CATEGORIES
+// ============================================================
+export const categories: Category[] = [
+  {
+    id: "cat-1",
+    slug: "chocolates",
+    name: "Chocolates",
+    description: "Premium imported chocolates from around the world",
+    image: "https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=400&h=300&fit=crop",
+    productCount: 48,
+    color: "from-chocolate-800 to-chocolate-950",
+  },
+  {
+    id: "cat-2",
+    slug: "gift-boxes",
+    name: "Gift Boxes",
+    description: "Curated luxury gift boxes for every occasion",
+    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400&h=300&fit=crop",
+    productCount: 24,
+    color: "from-champagne-dark to-chocolate-800",
+  },
+  {
+    id: "cat-3",
+    slug: "korean-ramen",
+    name: "Korean Ramen",
+    description: "Authentic Korean instant noodles & ramen",
+    image: "https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=400&h=300&fit=crop",
+    productCount: 32,
+    color: "from-red-700 to-red-900",
+  },
+  {
+    id: "cat-4",
+    slug: "imported-drinks",
+    name: "Imported Drinks",
+    description: "Exotic juices, sodas & energy drinks",
+    image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop",
+    productCount: 56,
+    color: "from-blue-700 to-indigo-900",
+  },
+  {
+    id: "cat-5",
+    slug: "candies-snacks",
+    name: "Candies & Snacks",
+    description: "Imported chips, candies & gourmet snacks",
+    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=400&h=300&fit=crop",
+    productCount: 64,
+    color: "from-orange-600 to-red-700",
+  },
+  {
+    id: "cat-6",
+    slug: "seasonal-specials",
+    name: "Seasonal Specials",
+    description: "Limited edition seasonal collections",
+    image: "https://images.unsplash.com/photo-1543158181-e6f9f6712055?w=400&h=300&fit=crop",
+    productCount: 18,
+    color: "from-purple-700 to-purple-900",
+  },
+];
+
+// ============================================================
+// PRODUCTS
+// ============================================================
+export const products: Product[] = [
+  // CHOCOLATES
+  {
+    id: "p-001",
+    slug: "ferrero-rocher-t24",
+    name: "Ferrero Rocher T24",
+    category: "Chocolates",
+    categorySlug: "chocolates",
+    brand: "Ferrero",
+    price: 6950,
+    originalPrice: 7800,
+    discount: 11,
+    rating: 4.9,
+    reviewCount: 234,
+    image: "https://images.unsplash.com/photo-1548907040-4baa42d10919?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1548907040-4baa42d10919?w=600&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1611080626919-7cf5a9dbab12?w=600&h=600&fit=crop",
+    ],
+    description: "A box of 24 iconic Ferrero Rocher golden chocolates. Each piece is a whole roasted hazelnut surrounded by a smooth creamy filling, all encased in a crispy wafer shell covered in milk chocolate and chopped hazelnuts.",
+    shortDescription: "24 pieces of iconic golden hazelnut chocolates",
+    inStock: true,
+    stockCount: 45,
+    isNew: false,
+    isBestSeller: true,
+    isFeatured: true,
+    tags: ["ferrero", "hazelnut", "premium", "gift"],
+    weight: "300g",
+    origin: "Italy",
+    sku: "SM-CHO-001",
+  },
+  {
+    id: "p-002",
+    slug: "lindt-lindor-milk-box-200g",
+    name: "Lindt Lindor Milk Box 200g",
+    category: "Chocolates",
+    categorySlug: "chocolates",
+    brand: "Lindt",
+    price: 3450,
+    originalPrice: 3900,
+    discount: 12,
+    rating: 4.8,
+    reviewCount: 189,
+    image: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=600&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&h=600&fit=crop",
+    ],
+    description: "Lindt LINDOR Milk Chocolate Truffles offer an irresistibly smooth melting chocolate experience. The LINDOR truffle is the ultimate chocolate indulgence — a masterpiece of chocolate craftsmanship.",
+    shortDescription: "Smooth melting milk chocolate truffles 200g",
+    inStock: true,
+    stockCount: 67,
+    isNew: false,
+    isBestSeller: true,
+    isFeatured: true,
+    tags: ["lindt", "truffle", "milk chocolate", "smooth"],
+    weight: "200g",
+    origin: "Switzerland",
+    sku: "SM-CHO-002",
+  },
+  {
+    id: "p-003",
+    slug: "galaxy-smooth-milk-80g",
+    name: "Galaxy Smooth Milk 80g",
+    category: "Chocolates",
+    categorySlug: "chocolates",
+    brand: "Galaxy",
+    price: 950,
+    originalPrice: 1100,
+    discount: 14,
+    rating: 4.7,
+    reviewCount: 156,
+    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&h=600&fit=crop",
+    ],
+    description: "Galaxy Smooth Milk Chocolate — silky smooth milk chocolate made with Galaxy's signature smooth recipe. A luxuriously rich taste for everyday moments.",
+    shortDescription: "Silky smooth milk chocolate bar 80g",
+    inStock: true,
+    stockCount: 120,
+    isNew: false,
+    isBestSeller: true,
+    isFeatured: true,
+    tags: ["galaxy", "milk chocolate", "smooth"],
+    weight: "80g",
+    origin: "UK",
+    sku: "SM-CHO-003",
+  },
+  {
+    id: "p-004",
+    slug: "kinder-bueno",
+    name: "Kinder Bueno",
+    category: "Chocolates",
+    categorySlug: "chocolates",
+    brand: "Kinder",
+    price: 880,
+    originalPrice: 1000,
+    discount: 12,
+    rating: 4.8,
+    reviewCount: 312,
+    image: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=600&h=600&fit=crop",
+    ],
+    description: "Kinder Bueno combines delicious chocolate with creamy hazelnut filling in a crispy wafer. The perfect balance of light yet indulgent chocolate.",
+    shortDescription: "Crispy wafer with hazelnut cream & milk chocolate",
+    inStock: true,
+    stockCount: 200,
+    isNew: false,
+    isBestSeller: true,
+    isFeatured: false,
+    tags: ["kinder", "hazelnut", "wafer"],
+    weight: "43g",
+    origin: "Germany",
+    sku: "SM-CHO-004",
+  },
+  {
+    id: "p-005",
+    slug: "kitkat-4-finger-45g",
+    name: "KitKat 4 Finger 45g",
+    category: "Chocolates",
+    categorySlug: "chocolates",
+    brand: "Nestlé",
+    price: 450,
+    rating: 4.6,
+    reviewCount: 445,
+    image: "https://images.unsplash.com/photo-1575377222312-dd1a63a51638?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1575377222312-dd1a63a51638?w=600&h=600&fit=crop",
+    ],
+    description: "Have a break, have a KitKat! Four fingers of light crisp wafer covered in smooth milk chocolate. The classic chocolate bar loved worldwide.",
+    shortDescription: "Classic crispy wafer fingers with milk chocolate",
+    inStock: true,
+    stockCount: 350,
+    isNew: false,
+    isBestSeller: true,
+    isFeatured: false,
+    tags: ["kitkat", "wafer", "nestle"],
+    weight: "45g",
+    origin: "UK",
+    sku: "SM-CHO-005",
+  },
+  {
+    id: "p-006",
+    slug: "mars-chocolate-51g",
+    name: "Mars Chocolate 51g",
+    category: "Chocolates",
+    categorySlug: "chocolates",
+    brand: "Mars",
+    price: 450,
+    rating: 4.5,
+    reviewCount: 234,
+    image: "https://images.unsplash.com/photo-1560181379-6a6ebf38d4dd?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1560181379-6a6ebf38d4dd?w=600&h=600&fit=crop",
+    ],
+    description: "Mars chocolate bar with soft caramel and nougat covered in milk chocolate. A satisfying combination of textures and flavors.",
+    shortDescription: "Nougat & caramel covered in milk chocolate",
+    inStock: true,
+    stockCount: 280,
+    isNew: false,
+    isBestSeller: true,
+    isFeatured: false,
+    tags: ["mars", "caramel", "nougat"],
+    weight: "51g",
+    origin: "UK",
+    sku: "SM-CHO-006",
+  },
+  {
+    id: "p-007",
+    slug: "nutella-350g",
+    name: "Nutella 350g",
+    category: "Chocolates",
+    categorySlug: "chocolates",
+    brand: "Nutella",
+    price: 1650,
+    originalPrice: 1900,
+    discount: 13,
+    rating: 4.9,
+    reviewCount: 567,
+    image: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=600&h=600&fit=crop",
+    ],
+    description: "Nutella hazelnut spread with cocoa. Made with quality ingredients including roasted hazelnuts and cocoa, Nutella is a beloved breakfast spread enjoyed by millions worldwide.",
+    shortDescription: "Iconic hazelnut cocoa spread 350g",
+    inStock: true,
+    stockCount: 145,
+    isNew: false,
+    isBestSeller: true,
+    isFeatured: false,
+    tags: ["nutella", "hazelnut", "spread"],
+    weight: "350g",
+    origin: "Italy",
+    sku: "SM-CHO-007",
+  },
+  {
+    id: "p-008",
+    slug: "toblerone-milk-100g",
+    name: "Toblerone Milk 100g",
+    category: "Chocolates",
+    categorySlug: "chocolates",
+    brand: "Toblerone",
+    price: 1200,
+    rating: 4.7,
+    reviewCount: 178,
+    image: "https://images.unsplash.com/photo-1548907040-4baa42d10919?w=400&h=400&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1548907040-4baa42d10919?w=600&h=600&fit=crop",
+    ],
+    description: "The iconic Swiss chocolate with honey and almond nougat. Toblerone's unique triangular shape and distinctive flavour make it one of the world's most loved chocolates.",
+    shortDescription: "Swiss milk chocolate with honey almond nougat",
+    inStock: true,
+    stockCount: 90,
+    isNew: true,
+    isBestSeller: false,
+    isFeatured: true,
+    tags: ["toblerone", "swiss", "almond", "nougat"],
+    weight: "100g",
+    origin: "Switzerland",
+    sku: "SM-CHO-008",
+  },
+
+  // KOREAN RAMEN
+  {
+    id: "p-009",
+    slug: "buldak-ramen-5-pack-spicy",
+    name: "Buldak Ramen 5 Pack Spicy",
+    category: "Korean Ramen",
+    categorySlug: "korean-ramen",
+    brand: "Samyang",
+    price: 2750,
+    originalPrice: 3100,
+    discount: 11,
+    rating: 4.8,
+    reviewCount: 398,
+    image: "https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=600&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&h=600&fit=crop",
+    ],
+    description: "Samyang Buldak Bokkeummyeon — the legendary Fire Noodles! This pack contains 5 packs of Korea's most famous spicy noodles. Are you brave enough to handle the heat?",
+    shortDescription: "5 packs of Korea's legendary fire noodles",
+    inStock: true,
+    stockCount: 85,
+    isNew: false,
+    isBestSeller: true,
+    isFeatured: true,
+    tags: ["buldak", "spicy", "ramen", "korean"],
+    weight: "700g (5×140g)",
+    origin: "South Korea",
+    sku: "SM-RAM-001",
+  },
+  {
+    id: "p-010",
+    slug: "shin-ramyun-5-pack",
+    name: "Shin Ramyun 5 Pack",
+    category: "Korean Ramen",
+    categorySlug: "korean-ramen",
+    brand: "Nongshim",
+    price: 1950,
+    originalPrice: 2200,
+    discount: 11,
+    rating: 4.7,
+    reviewCount: 267,
+    image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&h=600&fit=crop",
+    ],
+    description: "Nongshim Shin Ramyun — Korea's No.1 spicy noodle soup. The distinctive red broth with mushrooms and beef delivers a bold, satisfying flavour.",
+    shortDescription: "Korea's No.1 spicy beef noodle soup 5-pack",
+    inStock: true,
+    stockCount: 120,
+    isNew: false,
+    isBestSeller: true,
+    isFeatured: false,
+    tags: ["shin", "ramen", "spicy", "beef"],
+    weight: "600g (5×120g)",
+    origin: "South Korea",
+    sku: "SM-RAM-002",
+  },
+  {
+    id: "p-011",
+    slug: "buldak-carbonara-5-pack",
+    name: "Buldak Carbonara 5 Pack",
+    category: "Korean Ramen",
+    categorySlug: "korean-ramen",
+    brand: "Samyang",
+    price: 2850,
+    rating: 4.9,
+    reviewCount: 445,
+    image: "https://images.unsplash.com/photo-1555126634-323283e090fa?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1555126634-323283e090fa?w=600&h=600&fit=crop",
+    ],
+    description: "Samyang Buldak Carbonara — the creamy, slightly spicy twist on the original fire noodles. A perfect balance of spice and cream that took the world by storm.",
+    shortDescription: "Creamy carbonara fire noodles 5-pack",
+    inStock: true,
+    stockCount: 95,
+    isNew: true,
+    isBestSeller: true,
+    isFeatured: false,
+    tags: ["buldak", "carbonara", "creamy", "samyang"],
+    weight: "700g (5×140g)",
+    origin: "South Korea",
+    sku: "SM-RAM-003",
+  },
+
+  // IMPORTED DRINKS
+  {
+    id: "p-012",
+    slug: "vinut-lychee-juice-330ml",
+    name: "Vinut Lychee Juice 330ml",
+    category: "Imported Drinks",
+    categorySlug: "imported-drinks",
+    brand: "Vinut",
+    price: 290,
+    originalPrice: 350,
+    discount: 17,
+    rating: 4.6,
+    reviewCount: 123,
+    image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&h=600&fit=crop",
+    ],
+    description: "Vinut Lychee Juice — a refreshing tropical drink made with real lychee fruit. No artificial flavours, just pure tropical goodness from Vietnam.",
+    shortDescription: "Real lychee fruit juice drink 330ml",
+    inStock: true,
+    stockCount: 300,
+    isNew: false,
+    isBestSeller: false,
+    isFeatured: true,
+    tags: ["vinut", "lychee", "juice", "tropical"],
+    weight: "330ml",
+    origin: "Vietnam",
+    sku: "SM-DRK-001",
+  },
+  {
+    id: "p-013",
+    slug: "mogu-mogu-strawberry-320ml",
+    name: "Mogu Mogu Strawberry 320ml",
+    category: "Imported Drinks",
+    categorySlug: "imported-drinks",
+    brand: "Mogu Mogu",
+    price: 320,
+    rating: 4.7,
+    reviewCount: 234,
+    image: "https://images.unsplash.com/photo-1518946222227-364f22132616?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1518946222227-364f22132616?w=600&h=600&fit=crop",
+    ],
+    description: "Mogu Mogu Strawberry drink with real coconut nata jelly pieces. A fun, chewy drinking experience loved across Asia.",
+    shortDescription: "Strawberry juice drink with coconut jelly 320ml",
+    inStock: true,
+    stockCount: 250,
+    isNew: false,
+    isBestSeller: true,
+    isFeatured: false,
+    tags: ["mogu", "strawberry", "jelly", "tropical"],
+    weight: "320ml",
+    origin: "Thailand",
+    sku: "SM-DRK-002",
+  },
+  {
+    id: "p-014",
+    slug: "sting-energy-drink-250ml",
+    name: "Sting Energy Drink 250ml",
+    category: "Imported Drinks",
+    categorySlug: "imported-drinks",
+    brand: "Sting",
+    price: 180,
+    rating: 4.4,
+    reviewCount: 89,
+    image: "https://images.unsplash.com/photo-1527960471264-932f39eb5846?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1527960471264-932f39eb5846?w=600&h=600&fit=crop",
+    ],
+    description: "Sting Energy Drink — fuel your day with the power of Sting. Energize your life with the bold, refreshing taste.",
+    shortDescription: "Bold energy drink 250ml",
+    inStock: true,
+    stockCount: 400,
+    isNew: false,
+    isBestSeller: false,
+    isFeatured: false,
+    tags: ["sting", "energy", "drink"],
+    weight: "250ml",
+    origin: "Vietnam",
+    sku: "SM-DRK-003",
+  },
+
+  // CANDIES & SNACKS
+  {
+    id: "p-015",
+    slug: "pringles-original-165g",
+    name: "Pringles Original 165g",
+    category: "Candies & Snacks",
+    categorySlug: "candies-snacks",
+    brand: "Pringles",
+    price: 950,
+    originalPrice: 1100,
+    discount: 14,
+    rating: 4.7,
+    reviewCount: 312,
+    image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=600&h=600&fit=crop",
+    ],
+    description: "Pringles Original — once you pop, you can't stop! The iconic saddle-shaped crisps that everyone loves. Made with real potato for a satisfying crunch.",
+    shortDescription: "Iconic stackable crisps original flavour 165g",
+    inStock: true,
+    stockCount: 180,
+    isNew: false,
+    isBestSeller: true,
+    isFeatured: false,
+    tags: ["pringles", "chips", "crisps", "snacks"],
+    weight: "165g",
+    origin: "USA",
+    sku: "SM-SNK-001",
+  },
+  {
+    id: "p-016",
+    slug: "oreo-original-154g",
+    name: "Oreo Original 154g",
+    category: "Candies & Snacks",
+    categorySlug: "candies-snacks",
+    brand: "Oreo",
+    price: 650,
+    rating: 4.8,
+    reviewCount: 456,
+    image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&h=600&fit=crop",
+    ],
+    description: "Oreo Original sandwich cookies — the classic twist, lick, dunk ritual. Two crispy chocolate wafers with sweet cream filling. The world's favourite cookie.",
+    shortDescription: "Classic chocolate sandwich cookies 154g",
+    inStock: true,
+    stockCount: 220,
+    isNew: false,
+    isBestSeller: true,
+    isFeatured: false,
+    tags: ["oreo", "cookies", "chocolate", "snacks"],
+    weight: "154g",
+    origin: "USA",
+    sku: "SM-SNK-002",
+  },
+
+  // GIFT BOXES
+  {
+    id: "p-017",
+    slug: "sweet-moon-classic-gift-box",
+    name: "Sweet Moon Classic Gift Box",
+    category: "Gift Boxes",
+    categorySlug: "gift-boxes",
+    brand: "Sweet Moon",
+    price: 4500,
+    originalPrice: 5500,
+    discount: 18,
+    rating: 4.9,
+    reviewCount: 123,
+    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1543158181-e6f9f6712055?w=600&h=600&fit=crop",
+    ],
+    description: "The Sweet Moon Classic Gift Box — a carefully curated collection of premium chocolates and imported treats. Perfect for birthdays, anniversaries, and celebrations. Includes: Ferrero Rocher (8pcs), Lindt truffles (6pcs), KitKat, and a sweet surprise.",
+    shortDescription: "Curated premium chocolate gift box",
+    inStock: true,
+    stockCount: 30,
+    isNew: false,
+    isBestSeller: true,
+    isFeatured: true,
+    tags: ["gift box", "chocolate", "birthday", "anniversary"],
+    origin: "Sri Lanka",
+    sku: "SM-GFT-001",
+  },
+  {
+    id: "p-018",
+    slug: "sweet-moon-luxury-hamper",
+    name: "Sweet Moon Luxury Hamper",
+    category: "Gift Boxes",
+    categorySlug: "gift-boxes",
+    brand: "Sweet Moon",
+    price: 8950,
+    originalPrice: 11000,
+    discount: 19,
+    rating: 5.0,
+    reviewCount: 67,
+    image: "https://images.unsplash.com/photo-1543158181-e6f9f6712055?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1543158181-e6f9f6712055?w=600&h=600&fit=crop",
+    ],
+    description: "The ultimate luxury gift hamper from Sweet Moon. A grand collection of premium chocolates, imported snacks, Korean treats, exotic drinks, and a personalised greeting card. Everything beautifully wrapped in our signature gold packaging.",
+    shortDescription: "Ultimate luxury gift hamper with premium treats",
+    inStock: true,
+    stockCount: 15,
+    isNew: true,
+    isBestSeller: false,
+    isFeatured: true,
+    tags: ["hamper", "luxury", "premium", "special"],
+    origin: "Sri Lanka",
+    sku: "SM-GFT-002",
+  },
+  {
+    id: "p-019",
+    slug: "sweet-moon-korean-lover-box",
+    name: "Korean Lover Gift Box",
+    category: "Gift Boxes",
+    categorySlug: "gift-boxes",
+    brand: "Sweet Moon",
+    price: 3950,
+    originalPrice: 4500,
+    discount: 12,
+    rating: 4.8,
+    reviewCount: 45,
+    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400&h=400&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600&h=600&fit=crop",
+    ],
+    description: "For the K-food enthusiast! This gift box is filled with the best Korean treats — Buldak ramen, Korean snacks, Pepero, and exclusive Korean candies. Perfect for the Korean culture lover.",
+    shortDescription: "Curated Korean treats & ramen gift box",
+    inStock: true,
+    stockCount: 25,
+    isNew: true,
+    isBestSeller: false,
+    isFeatured: false,
+    tags: ["korean", "ramen", "gift box", "k-food"],
+    origin: "Sri Lanka",
+    sku: "SM-GFT-003",
+  },
+  {
+    id: "p-020",
+    slug: "rafaello-coconut-t30",
+    name: "Raffaello Coconut T30",
+    category: "Chocolates",
+    categorySlug: "chocolates",
+    brand: "Ferrero",
+    price: 7500,
+    originalPrice: 8500,
+    discount: 12,
+    rating: 4.8,
+    reviewCount: 98,
+    image: "https://images.unsplash.com/photo-1603048675584-f4e969a2a8b8?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1603048675584-f4e969a2a8b8?w=600&h=600&fit=crop",
+    ],
+    description: "Raffaello — a delicate almond whole nut encased in a smooth coconut cream filling, wrapped in a white almond and coconut coating. An indulgent treat in a beautiful white gift box of 30 pieces.",
+    shortDescription: "30 pieces coconut almond white chocolates",
+    inStock: true,
+    stockCount: 35,
+    isNew: false,
+    isBestSeller: false,
+    isFeatured: true,
+    tags: ["raffaello", "coconut", "almond", "white chocolate"],
+    weight: "375g",
+    origin: "Italy",
+    sku: "SM-CHO-009",
+  },
+  {
+    id: "p-021",
+    slug: "after-eight-200g",
+    name: "After Eight Mint 200g",
+    category: "Chocolates",
+    categorySlug: "chocolates",
+    brand: "Nestlé",
+    price: 2200,
+    originalPrice: 2600,
+    discount: 15,
+    rating: 4.7,
+    reviewCount: 134,
+    image: "https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=400&h=400&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&h=600&fit=crop",
+    ],
+    description: "After Eight Mint Chocolate Thins — the sophisticated after-dinner chocolate. Dark chocolate enveloping a smooth peppermint fondant. An iconic British luxury since 1962.",
+    shortDescription: "Dark chocolate mint fondant thins 200g",
+    inStock: true,
+    stockCount: 60,
+    isNew: false,
+    isBestSeller: false,
+    isFeatured: false,
+    tags: ["after eight", "mint", "dark chocolate", "nestle"],
+    weight: "200g",
+    origin: "UK",
+    sku: "SM-CHO-010",
+  },
+  {
+    id: "p-022",
+    slug: "haribo-goldbears-200g",
+    name: "Haribo Gold Bears 200g",
+    category: "Candies & Snacks",
+    categorySlug: "candies-snacks",
+    brand: "Haribo",
+    price: 780,
+    rating: 4.6,
+    reviewCount: 267,
+    image: "https://images.unsplash.com/photo-1582820703795-b5e344c2f0c3?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1582820703795-b5e344c2f0c3?w=600&h=600&fit=crop",
+    ],
+    description: "Haribo Gold Bears — the original gummy bear candy. Five fruity flavors of chewy, fun gold bears that kids and adults have loved since 1922.",
+    shortDescription: "Original fruity gummy bears 200g",
+    inStock: true,
+    stockCount: 195,
+    isNew: false,
+    isBestSeller: false,
+    isFeatured: false,
+    tags: ["haribo", "gummy", "candy", "bears"],
+    weight: "200g",
+    origin: "Germany",
+    sku: "SM-SNK-003",
+  },
+  {
+    id: "p-023",
+    slug: "pepero-original-5-pack",
+    name: "Pepero Original 5-Pack",
+    category: "Candies & Snacks",
+    categorySlug: "candies-snacks",
+    brand: "Lotte",
+    price: 1450,
+    originalPrice: 1650,
+    discount: 12,
+    rating: 4.8,
+    reviewCount: 189,
+    image: "https://images.unsplash.com/photo-1574484284002-952d92456975?w=400&h=400&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&h=600&fit=crop",
+    ],
+    description: "Lotte Pepero Original — thin crunchy biscuit sticks dipped in smooth chocolate. Korea's most popular snack, perfect for sharing.",
+    shortDescription: "Korean chocolate dipped biscuit sticks 5-pack",
+    inStock: true,
+    stockCount: 145,
+    isNew: false,
+    isBestSeller: false,
+    isFeatured: false,
+    tags: ["pepero", "korean", "biscuit", "chocolate"],
+    weight: "245g (5×49g)",
+    origin: "South Korea",
+    sku: "SM-SNK-004",
+  },
+];
+
+// ============================================================
+// TESTIMONIALS
+// ============================================================
+export const testimonials: Testimonial[] = [
+  {
+    id: "t-1",
+    name: "Mohamed Infaaz",
+    location: "Galle",
+    rating: 5,
+    comment: "Best place buy chocolate items and exotic food items. Amazing variety of imports — you'll find things here that you can't find anywhere else in Galle. Food: 5/5!",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face",
+    date: "a year ago",
+  },
+  {
+    id: "t-2",
+    name: "Mohomed Mushtaq",
+    location: "Galle",
+    rating: 5,
+    comment: "Reasonable price 😌 Great selection of chocolates and imported snacks. Quality products at very fair prices. Definitely coming back for more!",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face",
+    date: "a year ago",
+  },
+  {
+    id: "t-3",
+    name: "Faham Saharudeen",
+    location: "Galle",
+    rating: 5,
+    comment: "Best place. If you're looking for premium chocolates, imported treats, and Korean ramen in Galle — Sweet Moon is the only place you need to visit!",
+    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b3d3?w=80&h=80&fit=crop&crop=face",
+    date: "a year ago",
+  },
+  {
+    id: "t-4",
+    name: "Amali Wickramasinghe",
+    location: "Matara",
+    rating: 5,
+    comment: "Ordered the custom gift box for Valentine's Day and it was absolutely stunning! The presentation was perfect. My partner was so happy. Thank you Sweet Moon! 🍫",
+    avatar: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=80&h=80&fit=crop&crop=face",
+    date: "1 month ago",
+  },
+  {
+    id: "t-5",
+    name: "Ravindu Jayawardena",
+    location: "Galle",
+    rating: 5,
+    comment: "The Ferrero Rocher gift box was exactly what I was looking for. Delivered the same day! Amazing service and beautiful packaging. 5 stars without a doubt!",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face",
+    date: "2 months ago",
+  },
+];
+
+// ============================================================
+// GIFT BOX OPTIONS
+// ============================================================
+export const giftBoxSizes = [
+  { id: "small", name: "Small Box", description: "3-5 items", price: 200, maxItems: 5, icon: "📦" },
+  { id: "medium", name: "Medium Box", description: "6-9 items", price: 350, maxItems: 9, icon: "🎁" },
+  { id: "large", name: "Large Box", description: "10-14 items", price: 500, maxItems: 14, icon: "📫" },
+  { id: "luxury", name: "Luxury Box", description: "15+ items", price: 800, maxItems: 20, icon: "👑" },
+];
+
+export const giftBoxPackaging = [
+  { id: "classic", name: "Classic", description: "Elegant brown kraft box", color: "#8B6355" },
+  { id: "romantic", name: "Romantic", description: "Pink & red with hearts", color: "#E91E8C" },
+  { id: "birthday", name: "Birthday", description: "Colorful celebration box", color: "#FF6B35" },
+  { id: "luxury-black", name: "Luxury Black", description: "Premium matte black gold", color: "#1a1a1a" },
+  { id: "premium-gold", name: "Premium Gold", description: "Shimmering gold foil", color: "#C9A84C" },
+];
+
+export const giftBoxExtras = [
+  { id: "greeting-card", name: "Greeting Card", price: 150, icon: "💌" },
+  { id: "custom-message", name: "Custom Message", price: 100, icon: "✍️" },
+  { id: "flowers", name: "Flower Bouquet", price: 850, icon: "💐" },
+  { id: "teddy-bear", name: "Teddy Bear (Small)", price: 1200, icon: "🧸" },
+  { id: "ribbon", name: "Premium Ribbon", price: 200, icon: "🎀" },
+];
+
+// ============================================================
+// UTILITY FUNCTIONS
+// ============================================================
+export function formatPrice(amount: number): string {
+  return `Rs. ${amount.toLocaleString("en-LK")}`;
+}
+
+export function getFeaturedProducts(): Product[] {
+  return products.filter((p) => p.isFeatured);
+}
+
+export function getBestSellers(): Product[] {
+  return products.filter((p) => p.isBestSeller);
+}
+
+export function getNewArrivals(): Product[] {
+  return products.filter((p) => p.isNew);
+}
+
+export function getProductsByCategory(categorySlug: string): Product[] {
+  return products.filter((p) => p.categorySlug === categorySlug);
+}
+
+export function getProductBySlug(slug: string): Product | undefined {
+  return products.find((p) => p.slug === slug);
+}
+
+export function getRelatedProducts(product: Product, limit = 4): Product[] {
+  return products
+    .filter((p) => p.categorySlug === product.categorySlug && p.id !== product.id)
+    .slice(0, limit);
+}
