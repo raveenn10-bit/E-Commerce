@@ -67,23 +67,37 @@ const BreathingText = ({
     }
   };
 
-  const letters = label.split("");
+  const words = label.split(" ");
+  let globalIndex = 0;
 
   return (
     <span className={`${className}`} onClick={onClick} {...props}>
-      {letters.map((letter: string, i: number) => (
-        <motion.span
-          key={i}
-          className="inline-block whitespace-pre"
-          aria-hidden="true"
-          variants={letterVariants}
-          initial="initial"
-          animate="animate"
-          custom={getCustomIndex(i, letters.length)}
-        >
-          {letter}
-        </motion.span>
-      ))}
+      {words.map((word, wordIdx) => {
+        const letters = word.split("");
+        return (
+          <span key={wordIdx} className="inline-block whitespace-nowrap">
+            {letters.map((letter) => {
+              const currentIndex = globalIndex++;
+              return (
+                <motion.span
+                  key={currentIndex}
+                  className="inline-block whitespace-pre"
+                  aria-hidden="true"
+                  variants={letterVariants}
+                  initial="initial"
+                  animate="animate"
+                  custom={getCustomIndex(currentIndex, label.length)}
+                >
+                  {letter}
+                </motion.span>
+              );
+            })}
+            {wordIdx < words.length - 1 && (
+              <span className="inline-block whitespace-pre"> </span>
+            )}
+          </span>
+        );
+      })}
       <span className="sr-only">{label}</span>
     </span>
   );
