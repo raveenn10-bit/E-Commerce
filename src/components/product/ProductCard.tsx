@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Heart, ShoppingCart, Eye, Star } from "lucide-react";
 import { type Product, formatPrice } from "@/lib/data";
 import { useCartStore } from "@/store/cart";
@@ -85,23 +86,30 @@ export default function ProductCard({ product, className = "", compact = false }
 
   return (
     <>
-      <Link
-        href={`/product/${product.slug}`}
-        className={`group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col transition-all duration-300 hover:shadow-luxury ${className}`}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="w-full h-full"
       >
-        {/* ── Image area ──────────────────────────────────────── */}
-        <div className={`relative ${imageAspect} overflow-hidden ${isCannedDrink ? "bg-gradient-to-b from-white to-[#FAF6EF]" : "bg-ivory"}`}>
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            className={`${
-              isCannedDrink
-                ? "object-contain p-3 drop-shadow-[0_12px_14px_rgba(0,0,0,0.18)] transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1"
-                : "object-cover transition-transform duration-500 group-hover:scale-105"
-            }`}
-          />
+        <Link
+          href={`/product/${product.slug}`}
+          className={`group relative bg-white dark:bg-[#1D2C44] rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-white/10 flex flex-col transition-all duration-300 hover:shadow-luxury h-full ${className}`}
+        >
+          {/* ── Image area ──────────────────────────────────────── */}
+          <div className={`relative ${imageAspect} overflow-hidden ${isCannedDrink ? "bg-gradient-to-b from-white to-[#FAF6EF]" : "bg-ivory"}`}>
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              className={`${
+                isCannedDrink
+                  ? "object-contain p-3 drop-shadow-[0_12px_14px_rgba(0,0,0,0.18)] transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1"
+                  : "object-cover transition-transform duration-500 group-hover:scale-105"
+              }`}
+            />
 
           {/* ── Badges top-left ─────────────────────────────── */}
           <div className="absolute top-2 left-2 flex flex-col gap-1.5 z-10">
@@ -221,6 +229,7 @@ export default function ProductCard({ product, className = "", compact = false }
           )}
         </div>
       </Link>
+      </motion.div>
 
       {/* ── Quick View Modal (lazy-loaded inline to avoid circular deps) ── */}
       {quickViewOpen && (

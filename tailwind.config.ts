@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -57,6 +58,21 @@ const config: Config = {
           DEFAULT: "#3A6F7F",
           light: "#4CA1AF",
         },
+        navyMirage: {
+          950: "#0b111a",
+          900: "#141E30",
+          800: "#1d2c44",
+          700: "#243B55",
+          600: "#35577D",
+          500: "#456a94",
+          DEFAULT: "#141E30",
+        },
+        silver: {
+          light: "#F8FAFC",
+          DEFAULT: "#E2E8F0",
+          dark: "#CBD5E1",
+          metallic: "#94A3B8",
+        },
         gold: {
           DEFAULT: "#C9A84C",
           50: "#fdf9ec",
@@ -96,6 +112,14 @@ const config: Config = {
           "linear-gradient(135deg, #2C3E50 0%, #3B7080 50%, #4CA1AF 100%)",
         "indigo-steel-3":
           "linear-gradient(180deg, #4CA1AF 0%, #2C3E50 100%)",
+        "navy-mirage-1":
+          "linear-gradient(180deg, #141E30 0%, #35577D 100%)",
+        "navy-mirage-2":
+          "linear-gradient(135deg, #141E30 0%, #243B55 50%, #35577D 100%)",
+        "navy-mirage-3":
+          "linear-gradient(180deg, #35577D 0%, #141E30 100%)",
+        "navy-silver":
+          "linear-gradient(135deg, #141E30 0%, #243B55 60%, #E2E8F0 100%)",
       },
       boxShadow: {
         luxury: "0 4px 24px rgba(201,168,76,0.15), 0 1px 4px rgba(0,0,0,0.1)",

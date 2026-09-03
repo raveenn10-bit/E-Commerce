@@ -11,6 +11,8 @@ import {
   User,
   Menu,
   ChevronDown,
+  Sun,
+  Moon,
 } from "lucide-react";
 import { useCartStore } from "@/store/cart";
 import { useWishlistStore } from "@/store/wishlist";
@@ -36,7 +38,14 @@ export default function Header() {
   const cartItemCount = useCartStore((s) => s.getTotalItems());
   const openCart = useCartStore((s) => s.openCart);
   const wishlistCount = useWishlistStore((s) => s.items.length);
-  const { openSearch, openMobileNav } = useUIStore();
+  const { openSearch, openMobileNav, theme, toggleTheme, setTheme } = useUIStore();
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("sweet-moon-theme");
+    if (savedTheme === "dark") {
+      setTheme("dark");
+    }
+  }, [setTheme]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,8 +62,8 @@ export default function Header() {
 
       {/* Main Header */}
       <header
-        className={`bg-ivory border-b border-chocolate-100 transition-all duration-300 ${
-          scrolled ? "header-scrolled" : ""
+        className={`bg-ivory dark:bg-[#141E30] border-b border-chocolate-100 dark:border-white/10 transition-all duration-300 ${
+          scrolled ? "header-scrolled shadow-md dark:shadow-2xl" : ""
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
@@ -118,13 +127,27 @@ export default function Header() {
               )}
             </nav>
 
-            {/* ── Right Icons ── */}
-            <div className="flex items-center gap-1">
+            {/* ── Action Icons ── */}
+            <div className="flex items-center gap-1 sm:gap-2">
+              {/* Theme Toggle (Navy Mirage & Light Silver Dark Mode) */}
+              <button
+                onClick={toggleTheme}
+                aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+                className="p-2 rounded-lg text-espresso-950 dark:text-silver hover:text-champagne dark:hover:text-white hover:bg-chocolate-50 dark:hover:bg-white/10 transition-all duration-200"
+                title={`Switch to ${theme === "dark" ? "Light Ivory" : "Navy Mirage Dark"} Mode`}
+              >
+                {theme === "dark" ? (
+                  <Sun size={19} className="text-amber-300 animate-spin-slow" />
+                ) : (
+                  <Moon size={19} className="text-navyMirage-900" />
+                )}
+              </button>
+
               {/* Search */}
               <button
                 onClick={openSearch}
                 aria-label="Search products"
-                className="p-2 rounded-lg text-espresso-950 hover:text-champagne hover:bg-chocolate-50 transition-all duration-200"
+                className="p-2 rounded-lg text-espresso-950 dark:text-silver hover:text-champagne dark:hover:text-white hover:bg-chocolate-50 dark:hover:bg-white/10 transition-all duration-200"
               >
                 <Search size={20} />
               </button>
@@ -133,7 +156,7 @@ export default function Header() {
               <Link
                 href="/account/wishlist"
                 aria-label={`Wishlist (${wishlistCount} items)`}
-                className="relative p-2 rounded-lg text-espresso-950 hover:text-champagne hover:bg-chocolate-50 transition-all duration-200"
+                className="relative p-2 rounded-lg text-espresso-950 dark:text-silver hover:text-champagne dark:hover:text-white hover:bg-chocolate-50 dark:hover:bg-white/10 transition-all duration-200"
               >
                 <Heart size={20} />
                 {wishlistCount > 0 && (
@@ -147,7 +170,7 @@ export default function Header() {
               <Link
                 href="/account"
                 aria-label="My account"
-                className="hidden sm:flex p-2 rounded-lg text-espresso-950 hover:text-champagne hover:bg-chocolate-50 transition-all duration-200"
+                className="hidden sm:flex p-2 rounded-lg text-espresso-950 dark:text-silver hover:text-champagne dark:hover:text-white hover:bg-chocolate-50 dark:hover:bg-white/10 transition-all duration-200"
               >
                 <User size={20} />
               </Link>
@@ -156,7 +179,7 @@ export default function Header() {
               <button
                 onClick={openCart}
                 aria-label={`Shopping cart (${cartItemCount} items)`}
-                className="relative p-2 rounded-lg text-espresso-950 hover:text-champagne hover:bg-chocolate-50 transition-all duration-200"
+                className="relative p-2 rounded-lg text-espresso-950 dark:text-silver hover:text-champagne dark:hover:text-white hover:bg-chocolate-50 dark:hover:bg-white/10 transition-all duration-200"
               >
                 <ShoppingCart size={20} />
                 {cartItemCount > 0 && (
@@ -170,7 +193,7 @@ export default function Header() {
               <button
                 onClick={openMobileNav}
                 aria-label="Open navigation menu"
-                className="lg:hidden p-2 rounded-lg text-espresso-950 hover:text-champagne hover:bg-chocolate-50 transition-all duration-200 ml-1"
+                className="lg:hidden p-2 rounded-lg text-espresso-950 dark:text-silver hover:text-champagne dark:hover:text-white hover:bg-chocolate-50 dark:hover:bg-white/10 transition-all duration-200 ml-1"
               >
                 <Menu size={22} />
               </button>

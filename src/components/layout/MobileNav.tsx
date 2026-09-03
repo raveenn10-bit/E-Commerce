@@ -229,15 +229,15 @@ export default function MobileNav() {
             >
               <ul className="mt-1 ml-4 border-l border-espresso-700 pl-3 space-y-1">
                 {[
-                  { name: "All Gift Boxes", slug: "gift-boxes" },
-                  { name: "Classic Gift Box", slug: "sweet-moon-classic-gift-box" },
-                  { name: "Luxury Hamper", slug: "sweet-moon-luxury-hamper" },
-                  { name: "Korean Lover Box", slug: "sweet-moon-korean-lover-box" },
-                  { name: "Custom Gift Box", slug: "gift-boxes" },
+                  { name: "All Gift Boxes", href: "/shop/gift-boxes" },
+                  { name: "Classic Gift Box", href: "/product/sweet-moon-classic-gift-box" },
+                  { name: "Luxury Hamper", href: "/product/sweet-moon-luxury-hamper" },
+                  { name: "Korean Lover Box", href: "/shop/korean-ramen" },
+                  { name: "Custom Gift Box", href: "/gift-boxes/builder" },
                 ].map((box) => (
-                  <li key={box.slug + box.name}>
+                  <li key={box.href + box.name}>
                     <Link
-                      href={`/shop/${box.slug}`}
+                      href={box.href}
                       onClick={closeMobileNav}
                       className="flex items-center justify-between px-3 py-2 rounded-lg text-sm text-ivory/70 hover:text-champagne hover:bg-espresso-800 transition-all duration-200"
                     >

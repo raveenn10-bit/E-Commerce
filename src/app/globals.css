@@ -11,6 +11,16 @@
   --champagne: #C9A84C;
   --blush: #F2C0C0;
   --cream: #FFF8F0;
+  --silver: #E2E8F0;
+}
+
+html.dark {
+  --chocolate: #94A3B8;
+  --espresso: #F8FAFC;
+  --ivory: #141E30;
+  --champagne: #E2E8F0;
+  --cream: #1D2C44;
+  --silver: #F8FAFC;
 }
 
 * {
@@ -29,6 +39,13 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body {
+  background-color: #141E30;
+  background-image: linear-gradient(180deg, #141E30 0%, #0B111A 100%);
+  color: #F8FAFC;
 }
 
 /* ===== SCROLLBAR ===== */

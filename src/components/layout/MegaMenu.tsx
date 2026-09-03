@@ -13,6 +13,7 @@ const giftBoxOptions = [
   {
     name: "Classic Gift Box",
     slug: "sweet-moon-classic-gift-box",
+    href: "/product/sweet-moon-classic-gift-box",
     description: "Curated premium chocolates — perfect for birthdays & celebrations",
     price: "From Rs. 4,500",
     badge: "Bestseller",
@@ -22,6 +23,7 @@ const giftBoxOptions = [
   {
     name: "Luxury Hamper",
     slug: "sweet-moon-luxury-hamper",
+    href: "/product/sweet-moon-luxury-hamper",
     description: "Ultimate luxury hamper with premium treats in gold packaging",
     price: "From Rs. 8,950",
     badge: "New",
@@ -31,6 +33,7 @@ const giftBoxOptions = [
   {
     name: "Korean Lover Box",
     slug: "sweet-moon-korean-lover-box",
+    href: "/shop/korean-ramen",
     description: "For the K-food enthusiast — ramen, snacks & Korean treats",
     price: "From Rs. 3,950",
     badge: "Popular",
@@ -40,6 +43,7 @@ const giftBoxOptions = [
   {
     name: "Custom Gift Box",
     slug: "gift-boxes",
+    href: "/gift-boxes/builder",
     description: "Build your own box — personalise with your favourite items",
     price: "Custom Price",
     badge: "Customize",
@@ -144,7 +148,7 @@ export default function MegaMenu({ type }: MegaMenuProps) {
         {giftBoxOptions.map((box) => (
           <Link
             key={box.slug}
-            href={`/shop/${box.slug}`}
+            href={box.href}
             className={`group relative p-4 rounded-xl border border-champagne/20 bg-gradient-to-br ${box.color} hover:border-champagne/50 hover:shadow-luxury transition-all duration-200`}
           >
             {/* Badge */}
