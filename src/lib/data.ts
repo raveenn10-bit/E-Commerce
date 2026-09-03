@@ -276,9 +276,9 @@ export const products: Product[] = [
     price: 450,
     rating: 4.5,
     reviewCount: 234,
-    image: "https://images.unsplash.com/photo-1560181379-6a6ebf38d4dd?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1582293041079-7814c2f12063?w=400&h=400&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1560181379-6a6ebf38d4dd?w=600&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582293041079-7814c2f12063?w=600&h=600&fit=crop",
     ],
     description: "Mars chocolate bar with soft caramel and nougat covered in milk chocolate. A satisfying combination of textures and flavors.",
     shortDescription: "Nougat & caramel covered in milk chocolate",
