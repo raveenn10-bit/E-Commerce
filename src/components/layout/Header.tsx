@@ -60,10 +60,12 @@ export default function Header() {
       {/* TopBar inside sticky container so it scrolls away */}
       <TopBar />
 
-      {/* Main Header */}
+      {/* Main Header with Transparent Glassmorphism Effect */}
       <header
-        className={`bg-ivory dark:bg-[#141E30] border-b border-chocolate-100 dark:border-white/10 transition-all duration-300 ${
-          scrolled ? "header-scrolled shadow-md dark:shadow-2xl" : ""
+        className={`border-b transition-all duration-300 backdrop-blur-xl backdrop-saturate-150 ${
+          scrolled
+            ? "bg-white/85 dark:bg-[#141E30]/90 border-white/60 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            : "bg-white/65 dark:bg-[#141E30]/70 border-white/40 dark:border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.03)]"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
