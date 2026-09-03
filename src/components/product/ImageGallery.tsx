@@ -91,7 +91,9 @@ export default function ImageGallery({ images, productName }: ImageGalleryProps)
                 alt={`${productName} thumbnail ${idx + 1}`}
                 fill
                 sizes="80px"
-                className="object-cover"
+                className={`${
+                  src.includes("canned-drinks") ? "object-contain p-1.5 bg-gradient-to-b from-white to-[#FAF6EF]" : "object-cover"
+                }`}
               />
             </button>
           ))}
