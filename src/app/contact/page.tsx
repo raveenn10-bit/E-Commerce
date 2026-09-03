@@ -103,16 +103,28 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Direct Maps Link */}
-              <div className="pt-4 border-t border-chocolate-100">
+              {/* Direct Maps Link & Interactive Map Embed */}
+              <div className="pt-4 border-t border-chocolate-100 space-y-3">
                 <a
-                  href="https://maps.app.goo.gl/4B88hA2pTpSAjBwX9"
+                  href="https://maps.google.com/?q=Sweet+Moon+Chocolates+Galle+Sri+Lanka"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-secondary w-full justify-center text-center"
+                  className="btn-secondary w-full justify-center text-center text-xs"
                 >
                   <MapPin size={16} /> Open in Google Maps
                 </a>
+                <div className="w-full h-44 rounded-2xl overflow-hidden border border-chocolate-200">
+                  <iframe
+                    title="Sweet Moon Store Galle Map"
+                    src="https://maps.google.com/maps?q=Main+Street+Galle+Sri+Lanka&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
               </div>
             </div>
           </div>

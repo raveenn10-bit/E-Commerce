@@ -47,6 +47,11 @@ const config: Config = {
           dark: "#E09090",
         },
         cream: "#FFF8F0",
+        peachChampagne: {
+          light: "#DFF7FF",
+          DEFAULT: "#FFD3B6",
+          dark: "#E8B291",
+        },
         gold: {
           DEFAULT: "#C9A84C",
           50: "#fdf9ec",
@@ -74,6 +79,12 @@ const config: Config = {
           "linear-gradient(135deg, #C9A84C 0%, #E8C86D 50%, #A88530 100%)",
         "hero-gradient":
           "linear-gradient(to right, rgba(26,10,0,0.95) 0%, rgba(26,10,0,0.8) 50%, rgba(26,10,0,0.3) 100%)",
+        "peach-champagne-1":
+          "linear-gradient(180deg, #DFF7FF 0%, #FFD3B6 100%)",
+        "peach-champagne-2":
+          "linear-gradient(135deg, #FFD3B6 0%, #F5C6A5 50%, #E8B291 100%)",
+        "peach-champagne-3":
+          "linear-gradient(180deg, #FFD3B6 0%, #DFF7FF 100%)",
       },
       boxShadow: {
         luxury: "0 4px 24px rgba(201,168,76,0.15), 0 1px 4px rgba(0,0,0,0.1)",

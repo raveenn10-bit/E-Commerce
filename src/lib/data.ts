@@ -150,7 +150,7 @@ export const products: Product[] = [
     images: [
       "https://images.unsplash.com/photo-1548907040-4baa42d10919?w=600&h=600&fit=crop",
       "https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1611080626919-7cf5a9dbab12?w=600&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600&h=600&fit=crop",
     ],
     description: "A box of 24 iconic Ferrero Rocher golden chocolates. Each piece is a whole roasted hazelnut surrounded by a smooth creamy filling, all encased in a crispy wafer shell covered in milk chocolate and chopped hazelnuts.",
     shortDescription: "24 pieces of iconic golden hazelnut chocolates",
@@ -313,9 +313,9 @@ export const products: Product[] = [
     discount: 13,
     rating: 4.9,
     reviewCount: 567,
-    image: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400&h=400&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=600&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600&h=600&fit=crop",
     ],
     description: "Nutella hazelnut spread with cocoa. Made with quality ingredients including roasted hazelnuts and cocoa, Nutella is a beloved breakfast spread enjoyed by millions worldwide.",
     shortDescription: "Iconic hazelnut cocoa spread 350g",
@@ -674,9 +674,9 @@ export const products: Product[] = [
     discount: 12,
     rating: 4.8,
     reviewCount: 98,
-    image: "https://images.unsplash.com/photo-1603048675584-f4e969a2a8b8?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400&h=400&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1603048675584-f4e969a2a8b8?w=600&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=600&h=600&fit=crop",
     ],
     description: "Raffaello — a delicate almond whole nut encased in a smooth coconut cream filling, wrapped in a white almond and coconut coating. An indulgent treat in a beautiful white gift box of 30 pieces.",
     shortDescription: "30 pieces coconut almond white chocolates",
@@ -728,9 +728,9 @@ export const products: Product[] = [
     price: 780,
     rating: 4.6,
     reviewCount: 267,
-    image: "https://images.unsplash.com/photo-1582820703795-b5e344c2f0c3?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=400&h=400&fit=crop",
     images: [
-      "https://images.unsplash.com/photo-1582820703795-b5e344c2f0c3?w=600&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=600&h=600&fit=crop",
     ],
     description: "Haribo Gold Bears — the original gummy bear candy. Five fruity flavors of chewy, fun gold bears that kids and adults have loved since 1922.",
     shortDescription: "Original fruity gummy bears 200g",
@@ -1065,7 +1065,7 @@ export const testimonials: Testimonial[] = [
     location: "Galle",
     rating: 5,
     comment: "Best place. If you're looking for premium chocolates, imported treats, and Korean ramen in Galle — Sweet Moon is the only place you need to visit!",
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b3d3?w=80&h=80&fit=crop&crop=face",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face",
     date: "a year ago",
   },
   {

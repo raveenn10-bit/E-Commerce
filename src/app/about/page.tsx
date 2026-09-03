@@ -115,37 +115,101 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Location Details */}
-      <section className="max-w-4xl mx-auto px-4 py-16 text-center">
-        <span className="section-subheading">Visit Our Boutique</span>
-        <h2 className="font-serif text-3xl font-bold text-espresso-950 mt-1 mb-6">
+      {/* Location Details & Google Maps Store Showcase */}
+      <section className="max-w-6xl mx-auto px-4 py-16 text-center">
+        <span className="section-subheading">Visit Our Boutiques</span>
+        <h2 className="font-serif text-3xl sm:text-4xl font-bold text-espresso-950 mt-1 mb-3">
           Find Us in Galle
         </h2>
-        <div className="bg-white p-8 rounded-2xl shadow-card border border-chocolate-100 flex flex-col md:flex-row justify-around gap-6 text-left">
-          <div className="flex items-start gap-3">
-            <MapPin className="text-champagne shrink-0 mt-1" size={20} />
-            <div>
-              <p className="font-semibold text-espresso-950 text-sm">Store Address</p>
-              <p className="text-xs text-chocolate-600 mt-0.5">No 01 Main Street (New Street)</p>
-              <p className="text-xs text-chocolate-600">Galle 80000, Sri Lanka</p>
+        <p className="text-sm text-chocolate-600 max-w-xl mx-auto mb-10">
+          Visit our flagship store on Main Street or our new branch in Dewata to experience luxury confectionery in person.
+        </p>
+
+        {/* 2 Store Locations Cards with Peach Champagne Accent Gradients */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left mb-12">
+          {/* Main Branch */}
+          <div className="bg-gradient-to-b from-[#DFF7FF]/40 to-[#FFD3B6]/40 p-7 rounded-3xl border border-[#FFD3B6] shadow-card space-y-4 hover:shadow-luxury transition-all">
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-bold uppercase tracking-widest px-3 py-1 bg-espresso-950 text-champagne rounded-full">
+                Flagship Store
+              </span>
+              <span className="text-xs font-semibold text-espresso-950">Galle City</span>
             </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <Clock className="text-champagne shrink-0 mt-1" size={20} />
-            <div>
-              <p className="font-semibold text-espresso-950 text-sm">Business Hours</p>
-              <p className="text-xs text-chocolate-600 mt-0.5">Store: 9:00 AM – 9:00 PM</p>
-              <p className="text-xs text-chocolate-600">Online &amp; Delivery: Always Open</p>
+            <h3 className="font-serif text-xl font-bold text-espresso-950">
+              Sweet Moon — Main Street
+            </h3>
+            <div className="space-y-2.5 text-xs text-espresso-900">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="text-champagne shrink-0 mt-0.5" size={16} />
+                <span>No. 01 Main Street (New Street), Galle 80000, Sri Lanka</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Clock className="text-champagne shrink-0" size={16} />
+                <span>9:00 AM – 9:00 PM (Daily)</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Phone className="text-champagne shrink-0" size={16} />
+                <span>076 608 9763 / 077 690 3192</span>
+              </div>
             </div>
+            <a
+              href="https://maps.google.com/?q=Sweet+Moon+Chocolates+Galle+Sri+Lanka"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs font-bold text-espresso-950 hover:text-champagne pt-2 transition-colors"
+            >
+              Get Google Maps Directions →
+            </a>
           </div>
-          <div className="flex items-start gap-3">
-            <Phone className="text-champagne shrink-0 mt-1" size={20} />
-            <div>
-              <p className="font-semibold text-espresso-950 text-sm">Direct Contact</p>
-              <p className="text-xs text-chocolate-600 mt-0.5">076 608 9763 / 077 690 3192</p>
-              <p className="text-xs text-champagne font-medium">WhatsApp Available</p>
+
+          {/* Dewata Branch */}
+          <div className="bg-gradient-to-b from-[#FFD3B6]/40 to-[#DFF7FF]/40 p-7 rounded-3xl border border-[#DFF7FF] shadow-card space-y-4 hover:shadow-luxury transition-all">
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-bold uppercase tracking-widest px-3 py-1 bg-champagne text-espresso-950 rounded-full">
+                New Branch
+              </span>
+              <span className="text-xs font-semibold text-espresso-950">Dewata</span>
             </div>
+            <h3 className="font-serif text-xl font-bold text-espresso-950">
+              Sweet Moon — Dewata
+            </h3>
+            <div className="space-y-2.5 text-xs text-espresso-900">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="text-champagne shrink-0 mt-0.5" size={16} />
+                <span>No. 321/C, Matara Road, Dewata, Galle, Sri Lanka</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Clock className="text-champagne shrink-0" size={16} />
+                <span>9:00 AM – 9:00 PM (Daily)</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Phone className="text-champagne shrink-0" size={16} />
+                <span>076 608 9763</span>
+              </div>
+            </div>
+            <a
+              href="https://maps.google.com/?q=Matara+Road+Dewata+Galle+Sri+Lanka"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs font-bold text-espresso-950 hover:text-champagne pt-2 transition-colors"
+            >
+              Get Google Maps Directions →
+            </a>
           </div>
+        </div>
+
+        {/* Embedded Google Map */}
+        <div className="w-full h-80 rounded-3xl overflow-hidden shadow-luxury border border-chocolate-200">
+          <iframe
+            title="Sweet Moon Galle Location"
+            src="https://maps.google.com/maps?q=Main+Street+Galle+Sri+Lanka&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen={false}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </section>
     </div>
