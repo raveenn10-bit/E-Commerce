@@ -67,34 +67,41 @@ const BreathingText = ({
     }
   };
 
-  const words = label.split(" ");
+  const lines = label.split("\n");
   let globalIndex = 0;
 
   return (
     <span className={`${className}`} onClick={onClick} {...props}>
-      {words.map((word, wordIdx) => {
-        const letters = word.split("");
+      {lines.map((line, lineIdx) => {
+        const words = line.split(" ");
         return (
-          <span key={wordIdx} className="inline-block whitespace-nowrap">
-            {letters.map((letter) => {
-              const currentIndex = globalIndex++;
+          <span key={lineIdx} className="block">
+            {words.map((word, wordIdx) => {
+              const letters = word.split("");
               return (
-                <motion.span
-                  key={currentIndex}
-                  className="inline-block whitespace-pre"
-                  aria-hidden="true"
-                  variants={letterVariants}
-                  initial="initial"
-                  animate="animate"
-                  custom={getCustomIndex(currentIndex, label.length)}
-                >
-                  {letter}
-                </motion.span>
+                <span key={wordIdx} className="inline-block whitespace-nowrap">
+                  {letters.map((letter) => {
+                    const currentIndex = globalIndex++;
+                    return (
+                      <motion.span
+                        key={currentIndex}
+                        className="inline-block whitespace-pre"
+                        aria-hidden="true"
+                        variants={letterVariants}
+                        initial="initial"
+                        animate="animate"
+                        custom={getCustomIndex(currentIndex, label.length)}
+                      >
+                        {letter}
+                      </motion.span>
+                    );
+                  })}
+                  {wordIdx < words.length - 1 && (
+                    <span className="inline-block whitespace-pre"> </span>
+                  )}
+                </span>
               );
             })}
-            {wordIdx < words.length - 1 && (
-              <span className="inline-block whitespace-pre"> </span>
-            )}
           </span>
         );
       })}

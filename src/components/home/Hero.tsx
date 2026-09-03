@@ -33,7 +33,7 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     id: "slide-1",
     slug: "coca-cola-vanilla-zero-sugar-325ml",
-    headline: "Crisp Sparkling Refreshment",
+    headline: "Crisp Sparkling\nRefreshment",
     subheadline:
       "Authentic imported Coca-Cola served ice-cold. Crisp effervescence, signature rich taste, and revitalizing fizz perfect for every sweet celebration.",
     tagline: "Ice Cold Refreshment",
@@ -45,7 +45,7 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     id: "slide-2",
     slug: "fanta-strawberry-soda-250ml",
-    headline: "Fizzy Wild Cherry Rush",
+    headline: "Fizzy Wild Cherry\nRush",
     subheadline:
       "Sweet, effervescent, and bursting with vibrant wild cherry flavor. A rare imported 100% natural flavor Fanta edition perfect for fruity refreshment.",
     tagline: "Imported Sparkling Soda",
@@ -57,7 +57,7 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     id: "slide-3",
     slug: "buldak-ramen-5-pack-spicy",
-    headline: "Intense Korean Heat",
+    headline: "Intense Korean\nHeat",
     subheadline:
       "The world-famous Samyang 3X Spicy Hot Chicken Flavor Ramen. Thick chewy noodles tossed in rich, fiery Korean chili sauce for true spice lovers.",
     tagline: "Viral Spicy Selection",
@@ -69,7 +69,7 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     id: "slide-4",
     slug: "apex-moon-luxury-hamper",
-    headline: "Handcrafted Gift Hampers",
+    headline: "Handcrafted Gift\nHampers",
     subheadline:
       "The pinnacle of gifting in Galle. An opulent bespoke collection of luxury imported chocolates, Ferrero, Nutella, roses, and savory gourmet treats.",
     tagline: "Custom Boutique Gifting",
