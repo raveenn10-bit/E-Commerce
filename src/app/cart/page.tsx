@@ -6,6 +6,7 @@ import { useCartStore } from "@/store/cart";
 import { useUIStore } from "@/store/ui";
 import { formatPrice, products } from "@/lib/data";
 import { Trash2, Plus, Minus, ShoppingBag, Tag, ArrowRight, ChevronRight } from "lucide-react";
+import Price from "@/components/ui/Price";
 
 const COUPONS: Record<string, number> = {
   SWEET10: 10, WELCOME20: 20, GALLE50: 5, GIFT15: 15,
@@ -88,8 +89,8 @@ export default function CartPage() {
                       <button onClick={() => updateQuantity(item.product.id, item.quantity + 1)} className="px-3 py-1.5 hover:bg-chocolate-50 transition-colors"><Plus size={12} /></button>
                     </div>
                     <div className="text-right">
-                      <p className="font-bold text-espresso-950">{formatPrice(item.product.price * item.quantity)}</p>
-                      <p className="text-xs text-chocolate-400">{formatPrice(item.product.price)} each</p>
+                      <p className="font-bold text-espresso-950"><Price amount={item.product.price * item.quantity} /></p>
+                      <p className="text-xs text-chocolate-400"><Price amount={item.product.price} /> each</p>
                     </div>
                   </div>
                 </div>
@@ -130,17 +131,17 @@ export default function CartPage() {
             <div className="bg-white rounded-2xl shadow-card p-6 sticky top-24">
               <h2 className="font-serif text-xl font-bold text-espresso-950 mb-5">Order Summary</h2>
               <div className="space-y-3 text-sm">
-                <div className="flex justify-between"><span className="text-chocolate-500">Subtotal</span><span className="font-medium">{formatPrice(subtotal)}</span></div>
-                <div className="flex justify-between"><span className="text-chocolate-500">Delivery</span><span className={delivery === 0 ? "text-green-600 font-medium" : "font-medium"}>{delivery === 0 ? "FREE" : formatPrice(delivery)}</span></div>
+                <div className="flex justify-between"><span className="text-chocolate-500">Subtotal</span><span className="font-medium"><Price amount={subtotal} /></span></div>
+                <div className="flex justify-between"><span className="text-chocolate-500">Delivery</span><span className={delivery === 0 ? "text-green-600 font-medium" : "font-medium"}>{delivery === 0 ? "FREE" : <Price amount={delivery} />}</span></div>
                 {appliedCoupon && (
                   <div className="flex justify-between text-green-600">
                     <span>Discount ({appliedCoupon.code})</span>
-                    <span>-{formatPrice(discount)}</span>
+                    <span>-<Price amount={discount} /></span>
                   </div>
                 )}
                 <div className="border-t border-chocolate-100 pt-3 flex justify-between font-bold text-base">
                   <span>Total</span>
-                  <span className="text-champagne text-lg">{formatPrice(total)}</span>
+                  <span className="text-champagne text-lg"><Price amount={total} /></span>
                 </div>
               </div>
               <Link href="/checkout" className="btn-primary w-full justify-center mt-5 text-center block">

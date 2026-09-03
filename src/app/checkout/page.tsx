@@ -7,6 +7,7 @@ import { useCartStore } from "@/store/cart";
 import { useUIStore } from "@/store/ui";
 import { formatPrice } from "@/lib/data";
 import { ChevronRight, CreditCard, Banknote, Smartphone, MapPin, Shield } from "lucide-react";
+import Price from "@/components/ui/Price";
 
 const sriLankaDistricts = ["Galle","Colombo","Kandy","Matara","Hambantota","Kalutara","Gampaha","Ratnapura","Kegalle","Kurunegala","Puttalam","Anuradhapura","Polonnaruwa","Badulla","Monaragala","Nuwara Eliya","Trincomalee","Batticaloa","Ampara","Jaffna","Kilinochchi","Mannar","Vavuniya","Mullaitivu"];
 
@@ -210,16 +211,16 @@ export default function CheckoutPage() {
                       <div className="flex-1 min-w-0">
                         <p className="text-xs font-medium text-espresso-950 truncate">{item.product.name}</p>
                       </div>
-                      <p className="text-xs font-semibold text-espresso-950 flex-shrink-0">{formatPrice(item.product.price * item.quantity)}</p>
+                      <p className="text-xs font-semibold text-espresso-950 flex-shrink-0"><Price amount={item.product.price * item.quantity} /></p>
                     </div>
                   ))}
                 </div>
                 <div className="border-t border-chocolate-100 pt-4 space-y-2 text-sm">
-                  <div className="flex justify-between"><span className="text-chocolate-500">Subtotal</span><span>{formatPrice(subtotal)}</span></div>
-                  <div className="flex justify-between"><span className="text-chocolate-500">Delivery</span><span className={deliveryFee === 0 ? "text-green-600 font-medium" : ""}>{deliveryFee === 0 ? "FREE" : formatPrice(deliveryFee)}</span></div>
+                  <div className="flex justify-between"><span className="text-chocolate-500">Subtotal</span><span><Price amount={subtotal} /></span></div>
+                  <div className="flex justify-between"><span className="text-chocolate-500">Delivery</span><span className={deliveryFee === 0 ? "text-green-600 font-medium" : ""}>{deliveryFee === 0 ? "FREE" : <Price amount={deliveryFee} />}</span></div>
                   <div className="flex justify-between font-bold text-base border-t border-chocolate-100 pt-2">
                     <span>Total</span>
-                    <span className="text-champagne">{formatPrice(total)}</span>
+                    <span className="text-champagne"><Price amount={total} /></span>
                   </div>
                 </div>
                 <button type="submit" disabled={loading} className="btn-primary w-full justify-center mt-5 disabled:opacity-70">

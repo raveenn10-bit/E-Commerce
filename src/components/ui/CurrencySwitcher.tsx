@@ -11,9 +11,14 @@ interface CurrencySwitcherProps {
 export default function CurrencySwitcher({ compact = false }: CurrencySwitcherProps) {
   const { currentCurrency, setCurrency } = useCurrencyStore();
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const selected = CURRENCIES[currentCurrency] || CURRENCIES.LKR;
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const selected = mounted ? (CURRENCIES[currentCurrency] || CURRENCIES.LKR) : CURRENCIES.LKR;
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {

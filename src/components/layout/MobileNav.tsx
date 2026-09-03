@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { useUIStore } from "@/store/ui";
 import { categories } from "@/lib/data";
+import CurrencySwitcher from "@/components/ui/CurrencySwitcher";
 
 const topNavLinks = [
   { label: "Home", href: "/", icon: Home },
@@ -106,7 +107,7 @@ export default function MobileNav() {
                 Apex <span className="text-champagne">Moon</span>
               </p>
               <p className="text-espresso-400 text-[10px] tracking-widest uppercase leading-none mt-0.5">
-                Chocolates &amp; Nuts
+                Chocolates &amp; Treats
               </p>
             </div>
           </Link>
@@ -275,6 +276,12 @@ export default function MobileNav() {
           <div className="flex items-center gap-2.5 text-xs text-ivory/60">
             <Clock size={14} className="text-champagne shrink-0" />
             <span>Always Open — 24/7</span>
+          </div>
+
+          {/* Currency Switcher in Mobile Drawer */}
+          <div className="pt-2 border-t border-espresso-800/80 flex items-center justify-between">
+            <span className="text-xs text-ivory/70 font-medium">Currency:</span>
+            <CurrencySwitcher />
           </div>
 
           {/* Social Icons */}
