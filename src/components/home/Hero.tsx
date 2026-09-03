@@ -359,6 +359,7 @@ export default function Hero() {
                 src={nextSlide.image}
                 alt={nextSlide.headline}
                 fill
+                sizes="24px"
                 className="object-contain p-0.5 group-hover:scale-110 transition-transform"
               />
             </div>

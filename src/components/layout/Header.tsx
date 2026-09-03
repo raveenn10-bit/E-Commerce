@@ -75,6 +75,7 @@ export default function Header() {
                   src="/harsh-apex-logo.png"
                   alt="Apex Moon Logo"
                   fill
+                  sizes="(max-width: 768px) 56px, 64px"
                   className="object-contain p-0.5"
                   priority
                 />
