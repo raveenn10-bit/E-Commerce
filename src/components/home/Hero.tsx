@@ -203,12 +203,12 @@ export default function Hero() {
             >
               <BreathingText
                 label={currentSlide.headline}
-                staggerDuration={0.07}
+                staggerDuration={0.025}
                 staggerFrom="first"
                 fromFontVariationSettings="'wght' 400, 'slnt' 0"
                 toFontVariationSettings="'wght' 900, 'slnt' -6"
                 transition={{
-                  duration: 1.6,
+                  duration: 0.75,
                   ease: "easeInOut",
                 }}
               />

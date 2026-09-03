@@ -19,12 +19,12 @@ const BreathingText = ({
   fromFontVariationSettings,
   toFontVariationSettings,
   transition = {
-    duration: 1.5,
+    duration: 0.8,
     ease: "easeInOut",
   },
-  staggerDuration = 0.1,
+  staggerDuration = 0.03,
   staggerFrom = "first",
-  repeatDelay = 0.1,
+  repeatDelay = 0.05,
   className = "",
   onClick,
   ...props
