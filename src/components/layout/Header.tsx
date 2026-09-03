@@ -77,7 +77,7 @@ export default function Header() {
             >
               <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden shadow-luxury group-hover:scale-105 transition-transform bg-white shrink-0 border-2 border-champagne p-0.5">
                 <Image
-                  src="/logo.png"
+                  src="/harsh-apex-logo.png"
                   alt="Apex Moon Logo"
                   fill
                   className="object-contain p-0.5"

@@ -95,7 +95,7 @@ export default function MobileNav() {
           >
             <div className="relative w-9 h-9 rounded-full overflow-hidden shadow-luxury bg-white shrink-0">
               <Image
-                src="/logo.png"
+                src="/harsh-apex-logo.png"
                 alt="Apex Moon Logo"
                 fill
                 className="object-cover"

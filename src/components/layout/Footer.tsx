@@ -86,7 +86,7 @@ export default function Footer() {
               <div className="flex flex-col items-center text-center">
                 <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-luxury bg-white shrink-0 p-1.5 border-2 border-champagne mb-3 hover:scale-105 transition-transform duration-300">
                   <Image
-                    src="/logo.png"
+                    src="/harsh-apex-logo.png"
                     alt="Apex Moon Official Logo"
                     fill
                     className="object-contain p-1"
