@@ -199,14 +199,18 @@ export default function Hero() {
             {/* Headline with BreathingText */}
             <h1
               key={`headline-${currentIndex}`}
-              className="font-serif text-3xl sm:text-4xl lg:text-6xl font-bold text-espresso-950 dark:text-white tracking-tight leading-[1.1] animate-hero-text"
+              className="font-serif text-3xl sm:text-4xl lg:text-6xl font-bold text-espresso-950 tracking-tight leading-[1.1] animate-hero-text"
             >
               <BreathingText
                 label={currentSlide.headline}
-                staggerDuration={0.06}
+                staggerDuration={0.07}
                 staggerFrom="first"
-                fromFontVariationSettings="'wght' 300, 'slnt' 0"
-                toFontVariationSettings="'wght' 800, 'slnt' -8"
+                fromFontVariationSettings="'wght' 400, 'slnt' 0"
+                toFontVariationSettings="'wght' 900, 'slnt' -6"
+                transition={{
+                  duration: 1.6,
+                  ease: "easeInOut",
+                }}
               />
             </h1>
 

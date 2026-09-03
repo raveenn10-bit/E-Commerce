@@ -29,12 +29,19 @@ const BreathingText = ({
   onClick,
   ...props
 }: TextProps) => {
+  const fromMatch = fromFontVariationSettings.match(/'wght'\s+(\d+)/);
+  const toMatch = toFontVariationSettings.match(/'wght'\s+(\d+)/);
+  const fromWeight = fromMatch ? parseInt(fromMatch[1], 10) : 400;
+  const toWeight = toMatch ? parseInt(toMatch[1], 10) : 800;
+
   const letterVariants: Variants = {
     initial: {
       fontVariationSettings: fromFontVariationSettings,
+      fontWeight: fromWeight,
     },
     animate: (i: number) => ({
       fontVariationSettings: toFontVariationSettings,
+      fontWeight: toWeight,
       transition: {
         ...transition,
         repeat: Infinity,
