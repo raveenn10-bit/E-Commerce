@@ -102,7 +102,7 @@ export default function Header() {
             </Link>
 
             {/* ── Unique Floating Island Navigation ── */}
-            <nav className="hidden lg:flex items-center gap-1 bg-espresso-950/[0.03] dark:bg-white/[0.05] p-1.5 rounded-full border border-espresso-950/[0.07] dark:border-white/10 backdrop-blur-md shadow-inner">
+            <nav className="hidden xl:flex items-center gap-1 bg-espresso-950/[0.03] dark:bg-white/[0.05] p-1.5 rounded-full border border-espresso-950/[0.07] dark:border-white/10 backdrop-blur-md shadow-inner shrink-0">
               {navLinks.map((link) => {
                 const isActive =
                   pathname === link.href ||
@@ -160,9 +160,9 @@ export default function Header() {
             </nav>
 
             {/* ── Action Icons ── */}
-            <div className="flex items-center gap-1 sm:gap-2">
+            <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
               {/* Currency Switcher */}
-              <div className="mr-0.5">
+              <div className="mr-0.5 shrink-0">
                 <CurrencySwitcher />
               </div>
 
@@ -170,7 +170,7 @@ export default function Header() {
               <button
                 onClick={toggleTheme}
                 aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-                className="p-2 rounded-lg text-espresso-950 dark:text-silver hover:text-champagne dark:hover:text-white hover:bg-chocolate-50 dark:hover:bg-white/10 transition-all duration-200"
+                className="p-1.5 sm:p-2 rounded-lg text-espresso-950 dark:text-silver hover:text-champagne dark:hover:text-white hover:bg-chocolate-50 dark:hover:bg-white/10 transition-all duration-200"
                 title={`Switch to ${theme === "dark" ? "Light Ivory" : "Navy Mirage Dark"} Mode`}
               >
                 {theme === "dark" ? (
@@ -184,20 +184,20 @@ export default function Header() {
               <button
                 onClick={openSearch}
                 aria-label="Search products"
-                className="p-2 rounded-lg text-espresso-950 dark:text-silver hover:text-champagne dark:hover:text-white hover:bg-chocolate-50 dark:hover:bg-white/10 transition-all duration-200"
+                className="p-1.5 sm:p-2 rounded-lg text-espresso-950 dark:text-silver hover:text-champagne dark:hover:text-white hover:bg-chocolate-50 dark:hover:bg-white/10 transition-all duration-200"
               >
-                <Search size={20} />
+                <Search size={19} />
               </button>
 
               {/* Wishlist */}
               <Link
                 href="/account/wishlist"
                 aria-label={`Wishlist (${wishlistCount} items)`}
-                className="relative p-2 rounded-lg text-espresso-950 dark:text-silver hover:text-champagne dark:hover:text-white hover:bg-chocolate-50 dark:hover:bg-white/10 transition-all duration-200"
+                className="relative p-1.5 sm:p-2 rounded-lg text-espresso-950 dark:text-silver hover:text-champagne dark:hover:text-white hover:bg-chocolate-50 dark:hover:bg-white/10 transition-all duration-200"
               >
-                <Heart size={20} />
+                <Heart size={19} />
                 {wishlistCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] bg-blush text-espresso-950 text-[10px] font-bold rounded-full flex items-center justify-center px-1 leading-none">
+                  <span className="absolute -top-0.5 -right-0.5 min-w-[17px] h-[17px] bg-blush text-espresso-950 text-[10px] font-bold rounded-full flex items-center justify-center px-1 leading-none">
                     {wishlistCount > 99 ? "99+" : wishlistCount}
                   </span>
                 )}
@@ -207,30 +207,30 @@ export default function Header() {
               <Link
                 href="/account"
                 aria-label="My account"
-                className="hidden sm:flex p-2 rounded-lg text-espresso-950 dark:text-silver hover:text-champagne dark:hover:text-white hover:bg-chocolate-50 dark:hover:bg-white/10 transition-all duration-200"
+                className="hidden sm:flex p-1.5 sm:p-2 rounded-lg text-espresso-950 dark:text-silver hover:text-champagne dark:hover:text-white hover:bg-chocolate-50 dark:hover:bg-white/10 transition-all duration-200"
               >
-                <User size={20} />
+                <User size={19} />
               </Link>
 
               {/* Cart */}
               <button
                 onClick={openCart}
                 aria-label={`Shopping cart (${cartItemCount} items)`}
-                className="relative p-2 rounded-lg text-espresso-950 dark:text-silver hover:text-champagne dark:hover:text-white hover:bg-chocolate-50 dark:hover:bg-white/10 transition-all duration-200"
+                className="relative p-1.5 sm:p-2 rounded-lg text-espresso-950 dark:text-silver hover:text-champagne dark:hover:text-white hover:bg-chocolate-50 dark:hover:bg-white/10 transition-all duration-200"
               >
-                <ShoppingCart size={20} />
+                <ShoppingCart size={19} />
                 {cartItemCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] bg-red-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center px-1 leading-none">
+                  <span className="absolute -top-0.5 -right-0.5 min-w-[17px] h-[17px] bg-red-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center px-1 leading-none">
                     {cartItemCount > 99 ? "99+" : cartItemCount}
                   </span>
                 )}
               </button>
 
-              {/* Mobile Hamburger */}
+              {/* Mobile/Tablet Hamburger (Visible in Portrait Mode < xl) */}
               <button
                 onClick={openMobileNav}
                 aria-label="Open navigation menu"
-                className="lg:hidden p-2 rounded-lg text-espresso-950 dark:text-silver hover:text-champagne dark:hover:text-white hover:bg-chocolate-50 dark:hover:bg-white/10 transition-all duration-200 ml-1"
+                className="xl:hidden p-1.5 sm:p-2 rounded-lg text-espresso-950 dark:text-silver hover:text-champagne dark:hover:text-white hover:bg-chocolate-50 dark:hover:bg-white/10 transition-all duration-200 ml-0.5"
               >
                 <Menu size={22} />
               </button>
