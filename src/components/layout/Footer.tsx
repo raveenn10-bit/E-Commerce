@@ -3,299 +3,329 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { MapPin, Phone, Clock, Send, ChevronRight } from "lucide-react";
+import { MapPin, Phone, Clock, Send, CheckCircle2, Heart, Sparkles } from "lucide-react";
 import { categories } from "@/lib/data";
+import { useUIStore } from "@/store/ui";
 
 const quickLinks = [
   { label: "Home", href: "/" },
-  { label: "Shop", href: "/shop" },
-  { label: "Gift Boxes", href: "/shop/gift-boxes" },
+  { label: "Shop All", href: "/shop" },
+  { label: "Canned Drinks 3D", href: "/canned-drinks" },
+  { label: "Gift Box Builder", href: "/gift-boxes/builder" },
+  { label: "Special Offers", href: "/offers" },
   { label: "About Us", href: "/about" },
   { label: "Contact Us", href: "/contact" },
   { label: "FAQ", href: "/faq" },
 ];
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
+  const [formState, setFormState] = useState({ name: "", email: "", message: "" });
+  const [sent, setSent] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const addToast = useUIStore((s) => s.addToast);
   const currentYear = new Date().getFullYear();
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim()) return;
-    setSubscribed(true);
-    setEmail("");
-    setTimeout(() => setSubscribed(false), 4000);
+    if (!formState.name.trim() || !formState.email.trim() || !formState.message.trim()) {
+      addToast({ type: "error", message: "Please fill in all fields." });
+      return;
+    }
+    setIsSending(true);
+    setTimeout(() => {
+      setIsSending(false);
+      setSent(true);
+      addToast({
+        type: "success",
+        message: "Thank you! Your message has been sent to Sweet Moon.",
+      });
+      setFormState({ name: "", email: "", message: "" });
+      setTimeout(() => setSent(false), 5000);
+    }, 600);
   };
 
   return (
-    <footer className="bg-espresso-950 text-ivory">
-      {/* ── Main Footer Content ── */}
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pt-14 pb-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
-          {/* ── Column 1: Brand ── */}
-          <div className="lg:col-span-1 sm:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="relative w-12 h-12 rounded-full overflow-hidden shadow-luxury bg-white shrink-0">
-                <Image
-                  src="/logo.png"
-                  alt="Sweet Moon Logo"
-                  fill
-                  className="object-cover"
-                />
+    <footer className="relative bg-[#FAF6EF] text-ivory overflow-hidden pt-12">
+      {/* ── TOP ORGANIC FLUID WAVE SILHOUETTE (INSPIRED BY REFERENCE) ── */}
+      <div className="relative w-full overflow-hidden leading-none z-10 -mb-1">
+        <svg
+          viewBox="0 0 1440 220"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-auto block preserve-3d"
+          style={{ transform: "scale(1.01)" }}
+        >
+          <path
+            d="M0,80 C180,160 320,20 540,110 C740,190 920,40 1140,130 C1280,180 1380,100 1440,70 L1440,220 L0,220 Z"
+            fill="#160714"
+          />
+          <path
+            d="M0,110 C220,180 400,60 620,130 C820,195 1020,80 1260,150 C1360,180 1410,140 1440,120 L1440,220 L0,220 Z"
+            fill="#120510"
+            opacity="0.95"
+          />
+        </svg>
+      </div>
+
+      {/* ── MAIN DEEP DARK FOOTER BODY ── */}
+      <div className="relative bg-[#120510] z-20 pb-12 pt-4 px-4 sm:px-6 lg:px-8">
+        {/* Floating Ambient Sparkles & Stars */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
+          <div className="absolute top-1/4 left-10 w-2 h-2 rounded-full bg-champagne blur-[1px] animate-pulse" />
+          <div className="absolute top-1/2 left-1/4 w-1.5 h-1.5 rounded-full bg-white blur-[0.5px] animate-ping" />
+          <div className="absolute top-1/3 right-1/3 w-2 h-2 rounded-full bg-pink-300 blur-[1px] animate-pulse" />
+          <div className="absolute bottom-1/4 right-20 w-1.5 h-1.5 rounded-full bg-champagne blur-[0.5px] animate-pulse" />
+        </div>
+
+        <div className="max-w-7xl mx-auto space-y-16">
+          {/* ── UPPER SECTION: CONTACT FORM & SILHOUETTE BRANDING (EXACT REFERENCE DESIGN) ── */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center pt-4 border-b border-white/10 pb-14">
+            {/* LEFT: Silhouette Character & Floating Socials (5 cols) */}
+            <div className="lg:col-span-5 flex flex-col justify-center relative space-y-6 text-center lg:text-left">
+              {/* Botanical & Silhouette Art Group */}
+              <div className="relative inline-flex flex-col items-center lg:items-start">
+                <div className="flex items-center gap-3">
+                  <div className="relative w-14 h-14 rounded-full overflow-hidden shadow-luxury bg-white shrink-0 p-1 border-2 border-champagne">
+                    <Image
+                      src="/logo.png"
+                      alt="Sweet Moon Logo"
+                      fill
+                      className="object-contain p-1"
+                    />
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight leading-none">
+                      Sweet <span className="text-champagne">Moon</span>
+                    </h2>
+                    <p className="text-champagne-light text-[11px] tracking-widest uppercase mt-1 font-semibold">
+                      Chocolates &amp; Nuts — Galle
+                    </p>
+                  </div>
+                </div>
+
+                <p className="text-chocolate-200/80 text-sm leading-relaxed max-w-sm mt-4">
+                  Galle&apos;s luxury boutique for imported chocolates, Korean spicy noodles, exotic beverages, and bespoke gift hampers.
+                </p>
               </div>
+
+              {/* Floating Social Icons */}
               <div>
-                <p className="font-serif text-xl font-bold text-ivory leading-none">
-                  Sweet <span className="text-champagne">Moon</span>
-                </p>
-                <p className="text-espresso-400 text-[10px] tracking-widest uppercase leading-none mt-0.5">
-                  Chocolates &amp; Nuts
-                </p>
-              </div>
-            </div>
-            <p className="text-chocolate-300 text-sm leading-relaxed mb-5 max-w-xs">
-              Galle's premier destination for imported chocolates, Korean
-              treats, exotic drinks, and luxury gift boxes. Sweetening every
-              moment since 2020.
-            </p>
-
-            {/* Social Icons */}
-            <div className="flex items-center gap-3">
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="w-9 h-9 rounded-full bg-espresso-800 hover:bg-champagne flex items-center justify-center text-chocolate-300 hover:text-espresso-950 transition-all duration-200 group"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                </svg>
-              </a>
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="w-9 h-9 rounded-full bg-espresso-800 hover:bg-champagne flex items-center justify-center text-chocolate-300 hover:text-espresso-950 transition-all duration-200"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                </svg>
-              </a>
-              <a
-                href="#"
-                aria-label="TikTok"
-                className="w-9 h-9 rounded-full bg-espresso-800 hover:bg-champagne flex items-center justify-center text-chocolate-300 hover:text-espresso-950 transition-all duration-200"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.31 6.31 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z" />
-                </svg>
-              </a>
-              <a
-                href="https://wa.me/94766089763"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="w-9 h-9 rounded-full bg-espresso-800 hover:bg-green-500 flex items-center justify-center text-chocolate-300 hover:text-white transition-all duration-200"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          {/* ── Column 2: Quick Links ── */}
-          <div>
-            <h4 className="font-serif font-bold text-champagne text-base mb-5 tracking-wide">
-              Quick Links
-            </h4>
-            <ul className="space-y-2.5">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="flex items-center gap-1.5 text-sm text-chocolate-300 hover:text-champagne transition-colors duration-200 group"
-                  >
-                    <ChevronRight
-                      size={14}
-                      className="text-espresso-600 group-hover:text-champagne transition-colors"
-                    />
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* ── Column 3: Categories ── */}
-          <div>
-            <h4 className="font-serif font-bold text-champagne text-base mb-5 tracking-wide">
-              Categories
-            </h4>
-            <ul className="space-y-2.5">
-              {categories.map((cat) => (
-                <li key={cat.id}>
-                  <Link
-                    href={`/shop/${cat.slug}`}
-                    className="flex items-center gap-1.5 text-sm text-chocolate-300 hover:text-champagne transition-colors duration-200 group"
-                  >
-                    <ChevronRight
-                      size={14}
-                      className="text-espresso-600 group-hover:text-champagne transition-colors"
-                    />
-                    {cat.name}
-                    <span className="text-espresso-600 text-[10px] ml-auto">
-                      {cat.productCount}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* ── Column 4: Contact ── */}
-          <div>
-            <h4 className="font-serif font-bold text-champagne text-base mb-5 tracking-wide">
-              Contact Info
-            </h4>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <MapPin
-                  size={15}
-                  className="text-champagne shrink-0 mt-0.5"
-                />
-                <div>
-                  <p className="text-sm text-chocolate-300 leading-relaxed">
-                    No 01 Main Street
-                    <br />
-                    Galle, Sri Lanka
-                  </p>
+                <span className="text-xs uppercase font-bold tracking-widest text-chocolate-300 block mb-3">
+                  Connect With Us
+                </span>
+                <div className="flex items-center justify-center lg:justify-start gap-3 flex-wrap">
+                  {/* Instagram */}
                   <a
-                    href="https://maps.google.com?q=No+01+Main+Street+Galle"
+                    href="https://instagram.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-champagne hover:text-champagne-light underline underline-offset-2 mt-1 inline-block"
+                    aria-label="Instagram"
+                    className="w-10 h-10 rounded-full bg-white/10 hover:bg-champagne hover:text-espresso-950 text-white flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-110"
                   >
-                    Get Directions →
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                    </svg>
+                  </a>
+
+                  {/* Facebook */}
+                  <a
+                    href="https://facebook.com/sweetmoon.sl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    className="w-10 h-10 rounded-full bg-white/10 hover:bg-champagne hover:text-espresso-950 text-white flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-110"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg>
+                  </a>
+
+                  {/* WhatsApp */}
+                  <a
+                    href="https://wa.me/94766089763"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WhatsApp"
+                    className="w-10 h-10 rounded-full bg-white/10 hover:bg-green-500 hover:text-white text-white flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-110"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z" />
+                    </svg>
+                  </a>
+
+                  {/* TikTok */}
+                  <a
+                    href="#"
+                    aria-label="TikTok"
+                    className="w-10 h-10 rounded-full bg-white/10 hover:bg-champagne hover:text-espresso-950 text-white flex items-center justify-center transition-all duration-300 shadow-sm hover:scale-110"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.31 6.31 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z" />
+                    </svg>
                   </a>
                 </div>
               </div>
-
-              <div className="flex items-center gap-3">
-                <Phone size={15} className="text-champagne shrink-0" />
-                <a
-                  href="tel:+94766089763"
-                  className="text-sm text-chocolate-300 hover:text-champagne transition-colors"
-                >
-                  076 608 9763
-                </a>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="15"
-                  height="15"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="text-green-400 shrink-0"
-                >
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
-                </svg>
-                <a
-                  href="https://wa.me/94766089763"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-chocolate-300 hover:text-green-400 transition-colors"
-                >
-                  WhatsApp Us
-                </a>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Clock size={15} className="text-champagne shrink-0" />
-                <span className="text-sm text-chocolate-300">
-                  Always Open — 24/7
-                </span>
-              </div>
             </div>
-          </div>
 
-          {/* ── Column 5: Newsletter ── */}
-          <div>
-            <h4 className="font-serif font-bold text-champagne text-base mb-2 tracking-wide">
-              Stay Sweet
-            </h4>
-            <p className="text-chocolate-400 text-sm mb-4 leading-relaxed">
-              Subscribe for exclusive deals, new arrivals, and sweet
-              surprises.
-            </p>
-            <form onSubmit={handleSubscribe} className="space-y-2">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
-                required
-                className="w-full bg-espresso-800 border border-espresso-700 rounded-xl px-4 py-2.5 text-sm text-ivory placeholder:text-espresso-500 focus:outline-none focus:ring-2 focus:ring-champagne focus:border-transparent transition-all duration-200"
-              />
-              <button
-                type="submit"
-                className="w-full btn-primary justify-center py-2.5 rounded-xl"
-              >
-                <Send size={14} />
-                Subscribe
-              </button>
-            </form>
-            {subscribed && (
-              <p className="text-green-400 text-xs mt-2 text-center animate-fade-in">
-                ✓ Thank you for subscribing!
+            {/* RIGHT: Direct "Contact Us" Form (7 cols) */}
+            <div className="lg:col-span-7 bg-white/[0.04] border border-white/10 rounded-3xl p-6 sm:p-8 backdrop-blur-md shadow-2xl">
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-2">
+                Contact Us
+              </h3>
+              <p className="text-xs sm:text-sm text-chocolate-300 mb-6">
+                Have a question about custom gift hampers or bulk delivery in Galle? Send us a quick note.
               </p>
-            )}
 
-            {/* Accepted payments */}
-            <div className="mt-5">
-              <p className="text-espresso-500 text-xs mb-2">We Accept:</p>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  { label: "COD", color: "bg-green-900 text-green-300 border-green-800" },
-                  { label: "Bank Transfer", color: "bg-blue-900 text-blue-300 border-blue-800" },
-                  { label: "Card", color: "bg-purple-900 text-purple-300 border-purple-800" },
-                ].map((p) => (
-                  <span
-                    key={p.label}
-                    className={`text-[10px] font-semibold px-2 py-1 rounded-md border ${p.color} tracking-wide`}
+              <form onSubmit={handleSendMessage} className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-[11px] font-semibold text-chocolate-200 uppercase tracking-wider mb-1.5">
+                      Your Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="e.g. Kasun Perera"
+                      value={formState.name}
+                      onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl bg-white/[0.07] border border-white/15 text-white text-sm placeholder-white/40 focus:outline-none focus:border-champagne focus:ring-1 focus:ring-champagne transition-all"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[11px] font-semibold text-chocolate-200 uppercase tracking-wider mb-1.5">
+                      Your Mail *
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      placeholder="e.g. kasun@example.com"
+                      value={formState.email}
+                      onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl bg-white/[0.07] border border-white/15 text-white text-sm placeholder-white/40 focus:outline-none focus:border-champagne focus:ring-1 focus:ring-champagne transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-[11px] font-semibold text-chocolate-200 uppercase tracking-wider mb-1.5">
+                    Your Message *
+                  </label>
+                  <textarea
+                    rows={3}
+                    required
+                    placeholder="Tell us about your gift box idea or order inquiry..."
+                    value={formState.message}
+                    onChange={(e) => setFormState({ ...formState, message: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl bg-white/[0.07] border border-white/15 text-white text-sm placeholder-white/40 focus:outline-none focus:border-champagne focus:ring-1 focus:ring-champagne transition-all resize-none"
+                  />
+                </div>
+
+                <div className="flex items-center justify-between pt-1">
+                  <button
+                    type="submit"
+                    disabled={isSending}
+                    className="px-7 py-3 rounded-full bg-white hover:bg-champagne text-espresso-950 font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 shadow-md hover:scale-105 active:scale-95 flex items-center gap-2"
                   >
-                    {p.label}
+                    {isSending ? (
+                      "Sending..."
+                    ) : sent ? (
+                      <>
+                        <CheckCircle2 size={16} className="text-green-600" /> Sent Successfully!
+                      </>
+                    ) : (
+                      <>
+                        Send Message <Send size={14} />
+                      </>
+                    )}
+                  </button>
+
+                  <span className="text-[11px] text-chocolate-400 hidden sm:inline">
+                    Direct WhatsApp: 076 608 9763
                   </span>
-                ))}
-              </div>
+                </div>
+              </form>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* ── Bottom Bar ── */}
-      <div className="border-t border-espresso-800">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-chocolate-500 text-xs text-center sm:text-left">
-            © {currentYear} Sweet Moon. All rights reserved. Crafted with{" "}
-            <span className="text-champagne">♥</span> in Galle, Sri Lanka.
-          </p>
-          <div className="flex items-center gap-4">
-            <Link
-              href="/privacy"
-              className="text-chocolate-500 hover:text-champagne text-xs transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <span className="text-espresso-700 text-xs">|</span>
-            <Link
-              href="/terms"
-              className="text-chocolate-500 hover:text-champagne text-xs transition-colors"
-            >
-              Terms of Service
-            </Link>
+          {/* ── LOWER SECTION: 4 QUICK COLUMNS (NAV, CATEGORIES, BOUTIQUE, INFO) ── */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-xs">
+            {/* Quick Links */}
+            <div>
+              <h4 className="font-serif text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-white/10 pb-2">
+                Quick Links
+              </h4>
+              <ul className="space-y-2 text-chocolate-300">
+                {quickLinks.slice(0, 5).map((l) => (
+                  <li key={l.href}>
+                    <Link href={l.href} className="hover:text-champagne transition-colors">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Top Categories */}
+            <div>
+              <h4 className="font-serif text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-white/10 pb-2">
+                Categories
+              </h4>
+              <ul className="space-y-2 text-chocolate-300">
+                {categories.slice(0, 5).map((c) => (
+                  <li key={c.id}>
+                    <Link href={`/shop/${c.slug}`} className="hover:text-champagne transition-colors">
+                      {c.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Galle Main Boutique */}
+            <div>
+              <h4 className="font-serif text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-white/10 pb-2">
+                Main Boutique
+              </h4>
+              <p className="text-chocolate-300 leading-relaxed">
+                No. 01 Main Street (New Street),<br />
+                Galle 80000, Sri Lanka
+              </p>
+              <p className="text-chocolate-400 mt-2">
+                Walk-in: 9:00 AM – 9:00 PM Daily
+              </p>
+            </div>
+
+            {/* Customer Care */}
+            <div>
+              <h4 className="font-serif text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-white/10 pb-2">
+                Customer Care
+              </h4>
+              <p className="text-chocolate-300">📞 076 608 9763 / 077 690 3192</p>
+              <p className="text-chocolate-300 mt-1">💬 WhatsApp Orders: Always Active</p>
+              <p className="text-chocolate-300 mt-1">🚚 Island-wide Secure Delivery</p>
+            </div>
+          </div>
+
+          {/* ── BOTTOM COPYRIGHT & LEGAL BAR ── */}
+          <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-chocolate-400">
+            <p>
+              Copyright © Sweet Moon {currentYear}. All Rights Reserved.
+            </p>
+            <div className="flex items-center gap-4">
+              <Link href="/policies/privacy" className="hover:text-champagne transition-colors">
+                Privacy Policy
+              </Link>
+              <span>•</span>
+              <Link href="/policies/terms" className="hover:text-champagne transition-colors">
+                Terms of Service
+              </Link>
+              <span>•</span>
+              <Link href="/policies/delivery" className="hover:text-champagne transition-colors">
+                Delivery Info
+              </Link>
+            </div>
           </div>
         </div>
       </div>

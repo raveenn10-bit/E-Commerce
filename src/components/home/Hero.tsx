@@ -23,7 +23,6 @@ interface HeroSlide {
   subheadline: string;
   tagline: string;
   image: string;
-  bgGradient: string;
   accentColor: string;
   accentBadge: string;
   shadowColor: string;
@@ -35,27 +34,25 @@ const HERO_SLIDES: HeroSlide[] = [
     slug: "ferrero-rocher-t24",
     headline: "Indulge in Golden Luxury",
     subheadline:
-      "Whole roasted hazelnuts enveloped in velvety chocolate cream, enclosed in a crispy wafer shell with milk chocolate and chopped hazelnut pieces.",
+      "Whole roasted hazelnuts enveloped in velvety chocolate cream, encased in a crispy wafer shell covered in milk chocolate and chopped hazelnuts.",
     tagline: "Signature Italian Chocolates",
     image:
       "https://images.unsplash.com/photo-1548907040-4baa42d10919?w=800&h=800&fit=crop",
-    bgGradient: "radial-gradient(ellipse 80% 80% at 50% 40%, #2c1e0e 0%, #170e06 60%, #0d0702 100%)",
     accentColor: "#C9A84C",
     accentBadge: "Gold Reserve",
-    shadowColor: "rgba(201,168,76,0.22)",
+    shadowColor: "rgba(201,168,76,0.35)",
   },
   {
     id: "slide-2",
-    slug: "coca-cola-vanilla-zero-sugar-325ml",
-    headline: "Crisp Sparkling Vanilla",
+    slug: "fanta-strawberry-soda-250ml",
+    headline: "Fizzy Wild Cherry Rush",
     subheadline:
-      "Authentic imported Coca-Cola Vanilla Zero Sugar. Smooth natural vanilla aroma delicately blended with crisp effervescent cola and zero sugar guilt.",
-    tagline: "Imported Chilled Soda",
-    image: "/hero/coca-cola.png",
-    bgGradient: "radial-gradient(ellipse 80% 80% at 50% 40%, #30090c 0%, #1c0406 60%, #0d0102 100%)",
-    accentColor: "#f87171",
-    accentBadge: "Ice Cold Import",
-    shadowColor: "rgba(239,68,68,0.22)",
+      "Sweet, effervescent, and bursting with vibrant wild cherry flavor. A rare imported 100% natural flavor Fanta edition perfect for fruity refreshment.",
+    tagline: "Imported Sparkling Soda",
+    image: "/hero/fanta.png",
+    accentColor: "#db2777",
+    accentBadge: "Wild Cherry Edition",
+    shadowColor: "rgba(219,39,119,0.35)",
   },
   {
     id: "slide-3",
@@ -65,10 +62,9 @@ const HERO_SLIDES: HeroSlide[] = [
       "The world-famous Samyang 3X Spicy Hot Chicken Flavor Ramen. Thick chewy noodles tossed in rich, fiery Korean chili sauce for true spice lovers.",
     tagline: "Viral Spicy Selection",
     image: "/hero/buldak-ramen.png",
-    bgGradient: "radial-gradient(ellipse 80% 80% at 50% 40%, #2c0b02 0%, #1a0600 60%, #0b0200 100%)",
-    accentColor: "#fb923c",
+    accentColor: "#ea580c",
     accentBadge: "Extreme 3X Spicy",
-    shadowColor: "rgba(249,115,22,0.22)",
+    shadowColor: "rgba(234,88,12,0.35)",
   },
   {
     id: "slide-4",
@@ -78,10 +74,9 @@ const HERO_SLIDES: HeroSlide[] = [
       "The pinnacle of gifting in Galle. An opulent bespoke collection of luxury imported chocolates, Ferrero, Nutella, roses, and savory gourmet treats.",
     tagline: "Custom Boutique Gifting",
     image: "/hero/gift-box.png",
-    bgGradient: "radial-gradient(ellipse 80% 80% at 50% 40%, #2b0d1e 0%, #180611 60%, #0a0107 100%)",
-    accentColor: "#fb7185",
+    accentColor: "#e11d48",
     accentBadge: "Luxury Collection",
-    shadowColor: "rgba(244,63,94,0.22)",
+    shadowColor: "rgba(225,29,72,0.35)",
   },
 ];
 
@@ -165,42 +160,46 @@ export default function Hero() {
       aria-label="Hero Product Showcase"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
-      className="relative min-h-[90vh] lg:min-h-[88vh] flex flex-col justify-between overflow-hidden transition-all duration-700 select-none"
-      style={{
-        background: currentSlide.bgGradient,
-      }}
+      className="relative min-h-[85vh] lg:min-h-[88vh] flex flex-col justify-between overflow-hidden bg-gradient-to-b from-white via-[#FAF6EF] to-white select-none transition-colors duration-700"
     >
-      {/* Background Ambience & Lighting Rings */}
-      <div className="absolute inset-0 pointer-events-none opacity-40 mix-blend-screen">
+      {/* Background Luxury Ambient Glow */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-[100px] transition-colors duration-1000"
+          className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[140px] opacity-25 transition-all duration-1000"
           style={{ background: currentSlide.shadowColor }}
         />
+        <div className="absolute top-10 left-10 w-96 h-96 rounded-full blur-[120px] bg-champagne/10 pointer-events-none" />
       </div>
 
-      {/* ── MAIN 3-COLUMN SHOWCASE CONTAINER ── */}
-      <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10 pb-6 flex-1 flex flex-col justify-center">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-4 items-center">
-          {/* ── LEFT COLUMN: EDITORIAL HEADLINE & STORY (4 cols) ── */}
-          <div className="lg:col-span-4 text-center lg:text-left order-1 flex flex-col justify-center space-y-3 sm:space-y-4">
+      {/* ── MAIN 2-COLUMN LUXURY SHOWCASE CONTAINER ── */}
+      <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-6 flex-1 flex flex-col justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          {/* ── LEFT COLUMN: EDITORIAL HEADLINE, PRICING & CTAs (5-6 cols) ── */}
+          <div className="lg:col-span-6 text-center lg:text-left order-2 lg:order-1 flex flex-col justify-center space-y-4 sm:space-y-5">
             {/* Tagline Badge */}
             <div className="flex items-center justify-center lg:justify-start gap-2">
               <span
-                className="inline-flex items-center gap-1.5 px-3 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider uppercase border backdrop-blur-md transition-all duration-500"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase border shadow-sm transition-all duration-500"
                 style={{
                   color: currentSlide.accentColor,
-                  borderColor: `${currentSlide.accentColor}40`,
-                  backgroundColor: `${currentSlide.accentColor}15`,
+                  borderColor: `${currentSlide.accentColor}35`,
+                  backgroundColor: `${currentSlide.accentColor}12`,
                 }}
               >
-                <Sparkles size={12} /> {currentSlide.tagline}
+                <Sparkles size={13} /> {currentSlide.tagline}
               </span>
+              {currentProduct && (
+                <span className="hidden sm:inline-flex items-center gap-1 text-xs text-espresso-700 font-medium bg-espresso-50 px-2.5 py-1 rounded-full border border-espresso-100">
+                  <Star size={12} className="text-amber-500" fill="currentColor" />
+                  {currentProduct.rating} ({currentProduct.reviewCount})
+                </span>
+              )}
             </div>
 
             {/* Headline */}
             <h1
               key={`headline-${currentIndex}`}
-              className="font-serif text-2xl sm:text-3xl lg:text-5xl font-bold text-white tracking-tight leading-tight animate-hero-text"
+              className="font-serif text-3xl sm:text-4xl lg:text-6xl font-bold text-espresso-950 tracking-tight leading-[1.1] animate-hero-text"
             >
               {currentSlide.headline}
             </h1>
@@ -208,35 +207,73 @@ export default function Hero() {
             {/* Subcopy */}
             <p
               key={`copy-${currentIndex}`}
-              className="text-chocolate-200/90 text-xs sm:text-sm md:text-base leading-relaxed max-w-md mx-auto lg:mx-0 animate-hero-text line-clamp-2 sm:line-clamp-none"
+              className="text-chocolate-800 text-sm sm:text-base leading-relaxed max-w-lg mx-auto lg:mx-0 animate-hero-text"
             >
               {currentSlide.subheadline}
             </p>
 
-            {/* CTA Buttons */}
-            <div className="pt-1 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3">
-              <Link
-                href="/shop"
-                className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-luxury hover:scale-105 active:scale-95 flex items-center gap-2"
+            {/* Price Pill & Specifications */}
+            {currentProduct && (
+              <div
+                key={`price-${currentIndex}`}
+                className="flex items-center justify-center lg:justify-start gap-4 pt-1 animate-hero-text"
+              >
+                <div className="flex items-baseline gap-2">
+                  <span
+                    className="font-bold text-2xl sm:text-3xl tracking-tight"
+                    style={{ color: currentSlide.accentColor }}
+                  >
+                    {formatPrice(currentProduct.price)}
+                  </span>
+                  {currentProduct.originalPrice && (
+                    <span className="text-sm sm:text-base text-chocolate-400 line-through">
+                      {formatPrice(currentProduct.originalPrice)}
+                    </span>
+                  )}
+                </div>
+                <span className="text-xs font-semibold text-espresso-600 bg-white px-3 py-1 rounded-full border border-chocolate-200 shadow-sm">
+                  {currentProduct.weight || "Standard"}
+                </span>
+              </div>
+            )}
+
+            {/* CTAs */}
+            <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3.5">
+              <button
+                onClick={handleAddToCart}
+                aria-label={`Add ${currentProduct?.name} to cart`}
+                className={`px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-luxury hover:scale-105 active:scale-95 flex items-center gap-2 ${
+                  addedToCart
+                    ? "bg-green-600 text-white"
+                    : "text-white hover:opacity-95"
+                }`}
                 style={{
-                  backgroundColor: currentSlide.accentColor,
-                  color: "#1a0a00",
+                  backgroundColor: addedToCart ? undefined : currentSlide.accentColor,
                 }}
               >
-                Shop Now <ArrowRight size={14} />
-              </Link>
+                {addedToCart ? (
+                  <>
+                    <Check size={16} /> Added to Cart!
+                  </>
+                ) : (
+                  <>
+                    <ShoppingCart size={16} /> Add to Cart
+                  </>
+                )}
+              </button>
+
               <Link
-                href="/gift-boxes/builder"
-                className="px-4 sm:px-5 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wider text-white border border-white/20 hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
+                href="/shop"
+                className="px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider text-espresso-950 bg-white border border-chocolate-200 hover:border-espresso-950 hover:bg-espresso-50 transition-all duration-300 shadow-sm flex items-center gap-2"
               >
-                Build Box
+                Explore Shop <ArrowRight size={15} />
               </Link>
             </div>
           </div>
 
-          {/* ── CENTER COLUMN: OVERSIZED PRODUCT & 3D OVAL SHADOW (5 cols) ── */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center order-2 relative py-2 sm:py-4">
-            <div className="relative w-[210px] sm:w-[280px] md:w-[350px] lg:w-[420px] aspect-square flex items-center justify-center">
+          {/* ── RIGHT/CENTER COLUMN: 20% LARGER PRODUCT IMAGE (6-7 cols) ── */}
+          <div className="lg:col-span-6 flex flex-col items-center justify-center order-1 lg:order-2 relative py-4 sm:py-8">
+            <div className="relative w-[280px] sm:w-[380px] md:w-[460px] lg:w-[540px] aspect-square flex items-center justify-center">
               {/* Product Image with Vertical Enter/Exit Animation */}
               <div
                 key={`img-${currentIndex}`}
@@ -252,114 +289,31 @@ export default function Hero() {
                     alt={currentSlide.headline}
                     fill
                     priority
-                    sizes="(max-width: 640px) 210px, (max-width: 1024px) 350px, 440px"
-                    className="object-contain filter drop-shadow-[0_20px_25px_rgba(0,0,0,0.45)]"
+                    sizes="(max-width: 640px) 280px, (max-width: 1024px) 460px, 560px"
+                    className="object-contain filter drop-shadow-[0_25px_35px_rgba(0,0,0,0.22)]"
                   />
                 </div>
               </div>
 
               {/* Separate Soft Blurred Oval Shadow Beneath Product */}
               <div
-                className="absolute -bottom-1 sm:-bottom-3 w-[150px] sm:w-[220px] md:w-[280px] h-[20px] sm:h-[32px] rounded-[100%] filter blur-[8px] sm:blur-[10px] pointer-events-none transition-all duration-500 animate-shadow-pulse"
+                className="absolute -bottom-3 sm:-bottom-6 w-[220px] sm:w-[320px] md:w-[380px] h-[25px] sm:h-[40px] rounded-[100%] filter blur-[12px] sm:blur-[16px] pointer-events-none transition-all duration-500 animate-shadow-pulse"
                 style={{
                   background: currentSlide.shadowColor,
-                  opacity: 0.85,
+                  opacity: 0.75,
                 }}
               />
             </div>
           </div>
-
-          {/* ── RIGHT COLUMN: PRODUCT SPECIFICATIONS & ADD TO CART (3 cols) ── */}
-          <div className="lg:col-span-3 text-center lg:text-left order-3 flex flex-col justify-center space-y-3">
-            {currentProduct && (
-              <div
-                key={`details-${currentIndex}`}
-                className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-5 text-white space-y-2.5 sm:space-y-3 shadow-luxury animate-hero-text max-w-sm mx-auto lg:max-w-none w-full"
-              >
-                {/* Brand & Category */}
-                <div className="flex items-center justify-between gap-2 border-b border-white/10 pb-2">
-                  <span className="text-[10px] sm:text-[11px] font-semibold text-chocolate-300 uppercase tracking-widest">
-                    {currentProduct.brand}
-                  </span>
-                  <span
-                    className="text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-md uppercase"
-                    style={{
-                      backgroundColor: `${currentSlide.accentColor}25`,
-                      color: currentSlide.accentColor,
-                    }}
-                  >
-                    {currentSlide.accentBadge}
-                  </span>
-                </div>
-
-                {/* Product Name */}
-                <h3 className="font-serif text-base sm:text-lg font-bold text-white leading-snug">
-                  {currentProduct.name}
-                </h3>
-
-                {/* Ratings & Pack Size */}
-                <div className="flex items-center justify-between text-xs text-chocolate-300">
-                  <div className="flex items-center gap-1 text-amber-400">
-                    <Star size={12} fill="currentColor" />
-                    <span className="font-bold text-white text-xs">
-                      {currentProduct.rating}
-                    </span>
-                    <span className="text-chocolate-400 text-[10px]">
-                      ({currentProduct.reviewCount})
-                    </span>
-                  </div>
-                  <span className="font-medium text-chocolate-200 text-xs">
-                    {currentProduct.weight || "Standard Pack"}
-                  </span>
-                </div>
-
-                {/* Price Display */}
-                <div className="flex items-baseline justify-center lg:justify-start gap-2 pt-0.5">
-                  <span
-                    className="font-bold text-xl sm:text-2xl tracking-tight"
-                    style={{ color: currentSlide.accentColor }}
-                  >
-                    {formatPrice(currentProduct.price)}
-                  </span>
-                  {currentProduct.originalPrice && (
-                    <span className="text-xs text-chocolate-400 line-through">
-                      {formatPrice(currentProduct.originalPrice)}
-                    </span>
-                  )}
-                </div>
-
-                {/* Add to Cart CTA */}
-                <button
-                  onClick={handleAddToCart}
-                  aria-label={`Add ${currentProduct.name} to cart`}
-                  className={`w-full py-2.5 sm:py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 shadow-md ${
-                    addedToCart
-                      ? "bg-green-600 text-white"
-                      : "bg-white text-espresso-950 hover:bg-champagne hover:scale-[1.02] active:scale-[0.98]"
-                  }`}
-                >
-                  {addedToCart ? (
-                    <>
-                      <Check size={15} /> Added to Cart!
-                    </>
-                  ) : (
-                    <>
-                      <ShoppingCart size={15} /> Add to Cart
-                    </>
-                  )}
-                </button>
-              </div>
-            )}
-          </div>
         </div>
       </div>
 
-      {/* ── LOWER FOOTER NAVIGATION AREA ── */}
-      <div className="relative z-20 border-t border-white/10 bg-black/25 backdrop-blur-md py-3.5 px-4 sm:px-6 lg:px-8">
+      {/* ── LOWER NAVIGATION BAR (CLEAN LIGHT AESTHETIC) ── */}
+      <div className="relative z-20 border-t border-chocolate-100 bg-white/70 backdrop-blur-md py-3.5 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           {/* Slide Numbers & Progress Indicators */}
           <div className="flex items-center gap-3">
-            <span className="font-serif text-sm font-bold text-white tracking-widest">
+            <span className="font-serif text-sm font-bold text-espresso-950 tracking-widest">
               0{currentIndex + 1}
             </span>
             <div className="flex items-center gap-1.5">
@@ -368,15 +322,15 @@ export default function Hero() {
                   key={slide.id}
                   onClick={() => goToSlide(idx, idx > currentIndex ? "next" : "prev")}
                   aria-label={`Go to slide ${idx + 1}`}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                  className={`h-2 rounded-full transition-all duration-300 ${
                     idx === currentIndex
-                      ? "w-8 bg-champagne"
-                      : "w-2.5 bg-white/30 hover:bg-white/60"
+                      ? "w-8 bg-espresso-950"
+                      : "w-2.5 bg-chocolate-200 hover:bg-chocolate-400"
                   }`}
                 />
               ))}
             </div>
-            <span className="text-xs text-chocolate-400">
+            <span className="text-xs text-chocolate-500">
               / 0{HERO_SLIDES.length}
             </span>
           </div>
@@ -384,12 +338,12 @@ export default function Hero() {
           {/* Next Product Interactive Teaser */}
           <div
             onClick={handleNext}
-            className="hidden md:flex items-center gap-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full py-1.5 px-3.5 cursor-pointer transition-all duration-300 group"
+            className="hidden md:flex items-center gap-3 bg-espresso-50 hover:bg-espresso-100 border border-espresso-200/60 rounded-full py-1.5 px-4 cursor-pointer transition-all duration-300 group"
           >
-            <span className="text-[10px] uppercase font-bold tracking-widest text-chocolate-300 group-hover:text-champagne transition-colors">
-              Next Showcase
+            <span className="text-[10px] uppercase font-bold tracking-widest text-espresso-700 group-hover:text-espresso-950 transition-colors">
+              Next
             </span>
-            <div className="relative w-7 h-7 rounded-full overflow-hidden bg-black/40 border border-white/20">
+            <div className="relative w-7 h-7 rounded-full overflow-hidden bg-white border border-chocolate-200">
               <Image
                 src={nextSlide.image}
                 alt={nextSlide.headline}
@@ -397,7 +351,7 @@ export default function Hero() {
                 className="object-contain p-0.5 group-hover:scale-110 transition-transform"
               />
             </div>
-            <span className="text-xs font-serif font-bold text-white max-w-[120px] truncate">
+            <span className="text-xs font-serif font-bold text-espresso-950 max-w-[130px] truncate">
               {nextSlide.headline.split(" ")[0]} {nextSlide.headline.split(" ")[1]}
             </span>
           </div>
@@ -408,7 +362,7 @@ export default function Hero() {
               onClick={handlePrev}
               disabled={isTransitioning}
               aria-label="Previous slide"
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/20 bg-white/5 hover:bg-white/20 text-white flex items-center justify-center transition-all duration-200 active:scale-95 disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-champagne"
+              className="w-10 h-10 rounded-full border border-chocolate-200 bg-white hover:bg-espresso-950 hover:text-white text-espresso-950 flex items-center justify-center transition-all duration-200 active:scale-95 disabled:opacity-50 shadow-sm"
             >
               <ChevronLeft size={18} />
             </button>
@@ -416,7 +370,7 @@ export default function Hero() {
               onClick={handleNext}
               disabled={isTransitioning}
               aria-label="Next slide"
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/20 bg-white/5 hover:bg-white/20 text-white flex items-center justify-center transition-all duration-200 active:scale-95 disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-champagne"
+              className="w-10 h-10 rounded-full border border-chocolate-200 bg-white hover:bg-espresso-950 hover:text-white text-espresso-950 flex items-center justify-center transition-all duration-200 active:scale-95 disabled:opacity-50 shadow-sm"
             >
               <ChevronRight size={18} />
             </button>
@@ -424,7 +378,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Global CSS for Layered Slide Animations & Floating Idle Physics */}
+      {/* Global CSS */}
       <style jsx global>{`
         @keyframes slideDownIn {
           0% {
@@ -454,7 +408,7 @@ export default function Hero() {
             transform: translateY(0px) rotate(0deg);
           }
           50% {
-            transform: translateY(-8px) rotate(0.8deg);
+            transform: translateY(-10px) rotate(0.6deg);
           }
         }
 
@@ -462,11 +416,11 @@ export default function Hero() {
           0%,
           100% {
             transform: scale(1);
-            opacity: 0.85;
+            opacity: 0.75;
           }
           50% {
-            transform: scale(0.88);
-            opacity: 0.55;
+            transform: scale(0.85);
+            opacity: 0.45;
           }
         }
 
