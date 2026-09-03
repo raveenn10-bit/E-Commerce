@@ -23,10 +23,20 @@ import CurrencySwitcher from "@/components/ui/CurrencySwitcher";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Shop", href: "/shop" },
-  { label: "Canned Drinks", href: "/canned-drinks" },
+  {
+    label: "Canned Drinks",
+    href: "/canned-drinks",
+    badge: "3D",
+    badgeColor: "bg-champagne/20 text-champagne-dark dark:text-champagne border-champagne/40",
+  },
   { label: "Categories", href: "/shop", hasMegaMenu: true, menuType: "categories" as const },
   { label: "Gift Boxes", href: "/shop/gift-boxes", hasMegaMenu: true, menuType: "gift-boxes" as const },
-  { label: "Offers", href: "/shop?filter=offers" },
+  {
+    label: "Offers",
+    href: "/shop?filter=offers",
+    badge: "HOT",
+    badgeColor: "bg-red-500 text-white border-red-400 shadow-[0_0_8px_rgba(239,68,68,0.5)]",
+  },
   { label: "About Us", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -91,21 +101,45 @@ export default function Header() {
               </div>
             </Link>
 
-            {/* ── Desktop Navigation ── */}
-            <nav className="hidden lg:flex items-center gap-1">
-              {navLinks.map((link) =>
-                link.hasMegaMenu ? (
+            {/* ── Unique Floating Island Navigation ── */}
+            <nav className="hidden lg:flex items-center gap-1 bg-espresso-950/[0.03] dark:bg-white/[0.05] p-1.5 rounded-full border border-espresso-950/[0.07] dark:border-white/10 backdrop-blur-md shadow-inner">
+              {navLinks.map((link) => {
+                const isActive =
+                  pathname === link.href ||
+                  (link.href !== "/" && pathname.startsWith(link.href));
+
+                const linkContent = (
+                  <span className="relative flex items-center gap-1.5 z-10">
+                    <span className="tracking-[0.02em]">{link.label}</span>
+                    {link.badge && (
+                      <span
+                        className={`text-[9px] font-extrabold uppercase px-1.5 py-0.5 rounded-full border leading-none shrink-0 ${link.badgeColor}`}
+                      >
+                        {link.badge}
+                      </span>
+                    )}
+                    {link.hasMegaMenu && (
+                      <ChevronDown
+                        size={12}
+                        className={`transition-transform duration-300 group-hover:rotate-180 ${
+                          isActive ? "text-champagne stroke-[2.5]" : "opacity-60"
+                        }`}
+                      />
+                    )}
+                  </span>
+                );
+
+                return link.hasMegaMenu ? (
                   <div key={link.label} className="relative group">
                     <Link
                       href={link.href}
-                      className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
-                        pathname === link.href || pathname.startsWith(link.href + "/")
-                          ? "text-champagne"
-                          : "text-espresso-950 hover:text-champagne"
+                      className={`relative px-3.5 py-1.5 rounded-full text-[13px] font-semibold transition-all duration-200 whitespace-nowrap flex items-center ${
+                        isActive
+                          ? "bg-white dark:bg-[#1D2C44] text-champagne shadow-[0_2px_12px_rgba(201,168,76,0.18)] ring-1 ring-champagne/40"
+                          : "text-espresso-900/90 dark:text-silver hover:text-espresso-950 dark:hover:text-white hover:bg-white/70 dark:hover:bg-white/10"
                       }`}
                     >
-                      {link.label}
-                      <ChevronDown size={14} className="opacity-60" />
+                      {linkContent}
                     </Link>
                     <MegaMenu type={link.menuType} />
                   </div>
@@ -113,16 +147,16 @@ export default function Header() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
-                      pathname === link.href
-                        ? "text-champagne"
-                        : "text-espresso-950 hover:text-champagne"
+                    className={`relative px-3.5 py-1.5 rounded-full text-[13px] font-semibold transition-all duration-200 whitespace-nowrap flex items-center ${
+                      isActive
+                        ? "bg-white dark:bg-[#1D2C44] text-champagne shadow-[0_2px_12px_rgba(201,168,76,0.18)] ring-1 ring-champagne/40"
+                        : "text-espresso-900/90 dark:text-silver hover:text-espresso-950 dark:hover:text-white hover:bg-white/70 dark:hover:bg-white/10"
                     }`}
                   >
-                    {link.label}
+                    {linkContent}
                   </Link>
-                )
-              )}
+                );
+              })}
             </nav>
 
             {/* ── Action Icons ── */}
