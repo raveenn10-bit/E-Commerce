@@ -83,7 +83,7 @@ export default function ComparePage() {
                 Explore All Products
               </Link>
               <button
-                onClick={() => addSample("1", "2")}
+                onClick={() => addSample("p-001", "p-002")}
                 className="btn-secondary py-2.5 px-6 text-xs w-full sm:w-auto"
               >
                 Compare Ferrero vs Lindt
