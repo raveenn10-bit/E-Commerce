@@ -17,8 +17,8 @@ import {
 import { useCartStore } from "@/store/cart";
 import { useWishlistStore } from "@/store/wishlist";
 import { useUIStore } from "@/store/ui";
-import TopBar from "@/components/layout/TopBar";
 import MegaMenu from "@/components/layout/MegaMenu";
+import CurrencySwitcher from "@/components/ui/CurrencySwitcher";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -56,18 +56,13 @@ export default function Header() {
   }, []);
 
   return (
-    <div className="sticky top-0 z-40">
-      {/* TopBar inside sticky container so it scrolls away */}
-      <TopBar />
-
-      {/* Main Header with Transparent Glassmorphism Effect */}
-      <header
-        className={`border-b transition-all duration-300 backdrop-blur-xl backdrop-saturate-150 ${
-          scrolled
-            ? "bg-white/85 dark:bg-[#141E30]/90 border-white/60 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
-            : "bg-white/65 dark:bg-[#141E30]/70 border-white/40 dark:border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.03)]"
-        }`}
-      >
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 backdrop-blur-xl backdrop-saturate-150 ${
+        scrolled
+          ? "bg-white/80 dark:bg-[#141E30]/85 border-white/40 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+          : "bg-white/55 dark:bg-[#141E30]/60 border-white/30 dark:border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.02)]"
+      }`}
+    >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-18">
             {/* ── Logo ── */}
@@ -131,6 +126,11 @@ export default function Header() {
 
             {/* ── Action Icons ── */}
             <div className="flex items-center gap-1 sm:gap-2">
+              {/* Currency Switcher */}
+              <div className="mr-0.5">
+                <CurrencySwitcher />
+              </div>
+
               {/* Theme Toggle (Navy Mirage & Light Silver Dark Mode) */}
               <button
                 onClick={toggleTheme}
@@ -200,9 +200,8 @@ export default function Header() {
                 <Menu size={22} />
               </button>
             </div>
-          </div>
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
   );
 }

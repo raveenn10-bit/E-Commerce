@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
-import TopBar from "@/components/layout/TopBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import BottomNav from "@/components/layout/BottomNav";
-import MobileNav from "@/components/layout/MobileNav";
-import MiniCart from "@/components/cart/MiniCart";
-import SearchOverlay from "@/components/ui/SearchOverlay";
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import ToastContainer from "@/components/ui/ToastContainer";
-import CompareFloatingBar from "@/components/product/CompareFloatingBar";
+import ClientOverlays from "@/components/layout/ClientOverlays";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -42,14 +37,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/harsh-apex-logo.png", sizes: "32x32", type: "image/png" },
+      { url: "/harsh-apex-logo.png", sizes: "16x16", type: "image/png" },
     ],
     shortcut: "/favicon.ico",
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/harsh-apex-logo.png", sizes: "180x180", type: "image/png" },
     ],
   },
   manifest: "/site.webmanifest",
@@ -65,15 +58,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body className="bg-ivory text-espresso-950 antialiased overflow-x-hidden">
         <Header />
-        <main className="min-h-screen pb-16 md:pb-0">{children}</main>
+        <main className="min-h-screen pt-16 md:pt-[72px] pb-16 md:pb-0">{children}</main>
         <Footer />
         <BottomNav />
-        <MiniCart />
-        <SearchOverlay />
-        <WhatsAppButton />
         <ToastContainer />
-        <CompareFloatingBar />
-        <MobileNav />
+        <ClientOverlays />
       </body>
     </html>
   );

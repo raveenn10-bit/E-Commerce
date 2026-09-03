@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useCurrencyStore, CURRENCIES, CurrencyCode } from "@/store/currency";
-import { ChevronDown, Globe } from "lucide-react";
+import { ChevronDown, Globe, Check } from "lucide-react";
 
 interface CurrencySwitcherProps {
   compact?: boolean;
@@ -27,52 +27,74 @@ export default function CurrencySwitcher({ compact = false }: CurrencySwitcherPr
 
   return (
     <div className="relative inline-block text-left" ref={dropdownRef}>
+      {/* Trigger Button */}
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-white/20 hover:border-champagne bg-white/5 hover:bg-white/10 text-xs font-semibold text-white transition-all ${
-          open ? "ring-1 ring-champagne border-champagne" : ""
+        className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-300 shadow-sm ${
+          open
+            ? "bg-champagne/15 text-champagne ring-2 ring-champagne border-champagne"
+            : "bg-espresso-950/5 dark:bg-white/10 hover:bg-espresso-950/10 dark:hover:bg-white/15 text-espresso-950 dark:text-white border border-chocolate-200/80 dark:border-white/15"
         }`}
-        title="Switch Currency"
+        title="Switch Display Currency"
+        aria-label="Switch Display Currency"
       >
-        <span>{selected.flag}</span>
-        <span>{selected.code}</span>
+        <span className="text-sm leading-none drop-shadow-sm">{selected.flag}</span>
+        <span className="tracking-wide uppercase font-mono">{selected.code}</span>
         <ChevronDown
-          size={12}
-          className={`transition-transform duration-200 text-champagne ${
-            open ? "rotate-180" : ""
+          size={13}
+          className={`transition-transform duration-300 ${
+            open ? "rotate-180 text-champagne" : "text-chocolate-400 dark:text-silver"
           }`}
         />
       </button>
 
+      {/* Luxury Dropdown Menu */}
       {open && (
-        <div className="absolute right-0 mt-1.5 w-44 rounded-2xl bg-espresso-950 border border-white/15 shadow-2xl z-50 overflow-hidden py-1.5 backdrop-blur-xl animate-fade-up">
-          <div className="px-3 py-1.5 border-b border-white/10 text-[10px] uppercase font-bold tracking-widest text-champagne flex items-center gap-1">
-            <Globe size={11} /> Select Currency
+        <div className="absolute right-0 mt-2 w-56 rounded-2xl bg-white/95 dark:bg-[#141E30]/95 backdrop-blur-2xl border border-chocolate-200/80 dark:border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.2)] z-50 overflow-hidden py-2 animate-fade-up">
+          {/* Header */}
+          <div className="px-3.5 py-2 border-b border-chocolate-100 dark:border-white/10 flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-chocolate-600 dark:text-silver">
+            <span className="flex items-center gap-1.5">
+              <Globe size={13} className="text-champagne" /> Currency
+            </span>
+            <span className="text-[10px] text-chocolate-400 dark:text-silver/60">Live Rates</span>
           </div>
-          {(Object.keys(CURRENCIES) as CurrencyCode[]).map((code) => {
-            const item = CURRENCIES[code];
-            const isSelected = item.code === currentCurrency;
-            return (
-              <button
-                key={code}
-                onClick={() => {
-                  setCurrency(code);
-                  setOpen(false);
-                }}
-                className={`w-full flex items-center justify-between px-3 py-2 text-xs transition-colors text-left ${
-                  isSelected
-                    ? "bg-champagne text-espresso-950 font-bold"
-                    : "text-white/80 hover:bg-white/10 hover:text-white"
-                }`}
-              >
-                <span className="flex items-center gap-2">
-                  <span className="text-sm">{item.flag}</span>
-                  <span>{item.code}</span>
-                </span>
-                <span className="text-[11px] opacity-75 font-mono">{item.symbol}</span>
-              </button>
-            );
-          })}
+
+          {/* Currency List */}
+          <div className="p-1 space-y-0.5">
+            {(Object.keys(CURRENCIES) as CurrencyCode[]).map((code) => {
+              const item = CURRENCIES[code];
+              const isSelected = item.code === currentCurrency;
+              return (
+                <button
+                  key={code}
+                  onClick={() => {
+                    setCurrency(code);
+                    setOpen(false);
+                  }}
+                  className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs transition-all text-left ${
+                    isSelected
+                      ? "bg-champagne text-espresso-950 font-bold shadow-sm"
+                      : "text-espresso-950 dark:text-white hover:bg-chocolate-50 dark:hover:bg-white/10"
+                  }`}
+                >
+                  <span className="flex items-center gap-2.5">
+                    <span className="text-base">{item.flag}</span>
+                    <span className="flex flex-col">
+                      <span className="font-bold tracking-wide">{item.code}</span>
+                      <span className={`text-[10px] ${isSelected ? "text-espresso-900/80" : "text-chocolate-400 dark:text-silver"}`}>
+                        {item.name}
+                      </span>
+                    </span>
+                  </span>
+
+                  <span className="flex items-center gap-1.5 font-mono">
+                    <span className="text-xs font-semibold">{item.symbol}</span>
+                    {isSelected && <Check size={14} className="stroke-[2.5]" />}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
         </div>
       )}
     </div>
