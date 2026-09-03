@@ -4,11 +4,13 @@ import { useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Heart, ShoppingCart, Eye, Star } from "lucide-react";
+import { Heart, ShoppingCart, Eye, Star, ArrowLeftRight } from "lucide-react";
 import { type Product, formatPrice } from "@/lib/data";
 import { useCartStore } from "@/store/cart";
 import { useWishlistStore } from "@/store/wishlist";
+import { useCompareStore } from "@/store/compare";
 import { useUIStore } from "@/store/ui";
+import Price from "@/components/ui/Price";
 
 interface ProductCardProps {
   product: Product;
@@ -24,8 +26,10 @@ export default function ProductCard({ product, className = "", compact = false }
   const toggleItem = useWishlistStore((s) => s.toggleItem);
   const isInWishlist = useWishlistStore((s) => s.isInWishlist);
   const addToast = useUIStore((s) => s.addToast);
+  const { addItem: addToCompare, removeItem: removeFromCompare, isInCompare } = useCompareStore();
 
   const inWishlist = isInWishlist(product.id);
+  const inCompare = isInCompare(product.id);
 
   const handleWishlist = useCallback(
     (e: React.MouseEvent) => {
@@ -42,6 +46,25 @@ export default function ProductCard({ product, className = "", compact = false }
       setTimeout(() => setHeartBounce(false), 600);
     },
     [toggleItem, addToast, inWishlist, product]
+  );
+
+  const handleCompare = useCallback(
+    (e: React.MouseEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (inCompare) {
+        removeFromCompare(product.id);
+        addToast({ type: "info", message: `${product.name} removed from compare.` });
+      } else {
+        const added = addToCompare(product);
+        if (added) {
+          addToast({ type: "success", message: `${product.name} added to comparison! ⚖️` });
+        } else {
+          addToast({ type: "warning", message: "Maximum 4 products can be compared at once." });
+        }
+      }
+    },
+    [inCompare, removeFromCompare, addToCompare, addToast, product]
   );
 
   const handleAddToCart = useCallback(
@@ -151,6 +174,18 @@ export default function ProductCard({ product, className = "", compact = false }
             />
           </button>
 
+          {/* ── Compare icon button top-right below wishlist ── */}
+          <button
+            onClick={handleCompare}
+            aria-label="Compare product"
+            className={`absolute top-11 right-2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/90 dark:bg-[#1D2C44]/90 backdrop-blur-sm shadow transition-all hover:scale-110 ${
+              inCompare ? "text-champagne ring-2 ring-champagne bg-champagne/10" : "text-gray-400 hover:text-champagne"
+            }`}
+            title={inCompare ? "Remove from comparison" : "Add to comparison"}
+          >
+            <ArrowLeftRight size={13} />
+          </button>
+
           {/* ── Quick View overlay (slides up on hover) ──────── */}
           <div className="absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300 p-3 bg-gradient-to-t from-espresso/80 to-transparent z-10">
             <button
@@ -195,15 +230,15 @@ export default function ProductCard({ product, className = "", compact = false }
           {/* Price row */}
           <div className="flex items-baseline gap-2 mt-auto">
             <span
-              className={`font-bold text-espresso ${compact ? "text-base" : "text-lg"}`}
+              className={`font-bold text-espresso dark:text-champagne ${compact ? "text-base" : "text-lg"}`}
             >
-              {formatPrice(product.price)}
+              <Price amount={product.price} />
             </span>
             {product.originalPrice && (
               <span
                 className={`text-gray-400 line-through ${compact ? "text-xs" : "text-sm"}`}
               >
-                {formatPrice(product.originalPrice)}
+                <Price amount={product.originalPrice} />
               </span>
             )}
           </div>

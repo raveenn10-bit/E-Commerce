@@ -10,6 +10,7 @@ import MiniCart from "@/components/cart/MiniCart";
 import SearchOverlay from "@/components/ui/SearchOverlay";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import ToastContainer from "@/components/ui/ToastContainer";
+import CompareFloatingBar from "@/components/product/CompareFloatingBar";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SearchOverlay />
         <WhatsAppButton />
         <ToastContainer />
+        <CompareFloatingBar />
         <MobileNav />
       </body>
     </html>

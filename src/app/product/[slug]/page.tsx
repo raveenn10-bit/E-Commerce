@@ -9,6 +9,9 @@ import { formatPrice, products, getRelatedProducts, getProductBySlug } from "@/l
 import { useParams } from "next/navigation";
 import ImageGallery from "@/components/product/ImageGallery";
 import ProductCard from "@/components/product/ProductCard";
+import Price from "@/components/ui/Price";
+import RecentlyViewed from "@/components/product/RecentlyViewed";
+import { useRecentlyViewedStore } from "@/store/recentlyViewed";
 import { Star, Truck, ShieldCheck, HeadphonesIcon, BadgeCheck, Minus, Plus, Heart, ChevronRight } from "lucide-react";
 
 export default function ProductPage() {
@@ -21,8 +24,14 @@ export default function ProductPage() {
   const { addItem } = useCartStore();
   const { toggleItem, isInWishlist } = useWishlistStore();
   const { addToast } = useUIStore();
+  const addViewed = useRecentlyViewedStore((s) => s.addViewed);
 
-  useEffect(() => { setQuantity(1); }, [slug]);
+  useEffect(() => {
+    setQuantity(1);
+    if (product) {
+      addViewed(product.id);
+    }
+  }, [slug, product, addViewed]);
 
   if (!product) {
     return (
@@ -98,10 +107,14 @@ export default function ProductPage() {
 
               {/* Price */}
               <div className="flex items-baseline gap-3 mb-4">
-                <span className="text-3xl font-bold text-espresso-950">{formatPrice(product.price)}</span>
+                <span className="text-3xl font-bold text-espresso-950 dark:text-champagne font-serif">
+                  <Price amount={product.price} />
+                </span>
                 {product.originalPrice && (
                   <>
-                    <span className="text-lg text-chocolate-300 line-through">{formatPrice(product.originalPrice)}</span>
+                    <span className="text-lg text-chocolate-300 line-through">
+                      <Price amount={product.originalPrice} />
+                    </span>
                     <span className="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
                       -{product.discount}% OFF
                     </span>
@@ -257,7 +270,7 @@ export default function ProductPage() {
 
         {/* Related Products */}
         {related.length > 0 && (
-          <div className="mt-12">
+          <div className="mt-12 mb-8">
             <h2 className="section-heading mb-6">You May Also Like</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {related.map((p) => <ProductCard key={p.id} product={p} />)}
@@ -265,6 +278,9 @@ export default function ProductPage() {
           </div>
         )}
       </div>
+
+      {/* Recently Viewed Shelf */}
+      <RecentlyViewed />
     </div>
   );
 }

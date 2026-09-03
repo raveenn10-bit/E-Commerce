@@ -1,4 +1,5 @@
 import { MapPin, Clock, Phone } from "lucide-react";
+import CurrencySwitcher from "@/components/ui/CurrencySwitcher";
 
 export default function TopBar() {
   return (
@@ -95,6 +96,11 @@ export default function TopBar() {
               </svg>
             </a>
           </div>
+
+          <span className="text-espresso-700 hidden sm:block select-none">|</span>
+
+          {/* Currency Switcher */}
+          <CurrencySwitcher />
         </div>
       </div>
     </div>
