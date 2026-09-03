@@ -90,6 +90,7 @@ export default function Footer() {
                     src="/harsh-apex-logo.png"
                     alt="Apex Moon Official Logo"
                     fill
+                    sizes="(max-width: 640px) 96px, 112px"
                     className="object-contain p-1"
                     priority
                   />

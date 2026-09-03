@@ -99,6 +99,7 @@ export default function MobileNav() {
                 src="/harsh-apex-logo.png"
                 alt="Apex Moon Logo"
                 fill
+                sizes="36px"
                 className="object-cover"
               />
             </div>
