@@ -10,6 +10,7 @@ import { useUIStore } from "@/store/ui";
 const quickLinks = [
   { label: "Home", href: "/" },
   { label: "Shop All", href: "/shop" },
+  { label: "Live Order Tracking", href: "/track-order", badge: "Live" },
   { label: "Canned Drinks 3D", href: "/canned-drinks" },
   { label: "Gift Box Builder", href: "/gift-boxes/builder" },
   { label: "Special Offers", href: "/offers" },
@@ -254,10 +255,18 @@ export default function Footer() {
                 Quick Links
               </h4>
               <ul className="space-y-2 text-chocolate-300">
-                {quickLinks.slice(0, 5).map((l) => (
+                {quickLinks.slice(0, 6).map((l) => (
                   <li key={l.href}>
-                    <Link href={l.href} className="hover:text-champagne transition-colors">
-                      {l.label}
+                    <Link
+                      href={l.href}
+                      className="hover:text-champagne transition-colors inline-flex items-center gap-1.5"
+                    >
+                      <span>{l.label}</span>
+                      {l.badge && (
+                        <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded-full bg-champagne text-espresso-950 uppercase tracking-wider animate-pulse">
+                          {l.badge}
+                        </span>
+                      )}
                     </Link>
                   </li>
                 ))}
